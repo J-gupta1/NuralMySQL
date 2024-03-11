@@ -1,0 +1,253 @@
+﻿using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DataAccess;
+using System.Data;
+using Cryptography;
+using BussinessLogic;
+
+public partial class Masters_HO_Common_SchemeView  : PageBase
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            uclblMessage.ShowControl = false;
+            if (!IsPostBack)
+            {
+                ucStartDate.Date = PageBase.Fromdate;
+                ucEndDate.Date = PageBase.ToDate;
+            }
+        }
+
+
+        public void blankall()
+        {
+            ucEndDate.Date = "";
+            ucStartDate.Date = "";
+            txtSchemeName.Text = "";
+            cmbSchemeBasedOn.SelectedValue = "0";
+            cmbSchemeBasedType.SelectedValue = "0";
+            cmbSchemeLevel.SelectedValue = "0";
+            cmbSchemeBasedOn.Enabled = true;
+            cmbSchemeBasedType.Enabled = true;
+            cmbSchemeLevel.Enabled = true;
+
+        }
+
+
+        void bindGrid()
+        {
+            using (SchemeData objScheme = new SchemeData())
+            {
+                uclblMessage.Visible = false;
+                //objScheme.CompanyID = PageBase.CompanyID;
+                objScheme.SchemeName = txtSchemeName.Text;
+                if (ucStartDate.Date != "")
+                {
+                    objScheme.FromDate = ucStartDate.Date;
+                }
+                if (ucEndDate.Date != "")
+                {
+                    objScheme.ToDate = ucEndDate.Date;
+                }
+                if (Convert.ToDateTime(ucStartDate.Date) > Convert.ToDateTime(ucEndDate.Date))
+                {
+                    uclblMessage.ShowInfo(Resources.Messages.InvalidDate);
+                    return;
+                }
+
+                objScheme.BaseType = Convert.ToInt16(cmbSchemeBasedType.SelectedValue);
+                objScheme.SchemeLevel = Convert.ToInt16(cmbSchemeLevel.SelectedValue);
+                objScheme.BasedOn = Convert.ToInt16(cmbSchemeBasedOn.SelectedValue);
+
+                DataTable dtScheme = objScheme.GetSchemeInformation();
+                if (dtScheme != null && dtScheme.Rows.Count > 0)
+                {
+                    ViewState["DtExport"] = dtScheme;
+                    grdSchemeDetail.DataSource = dtScheme;
+                }
+                else
+                {
+                    grdSchemeDetail.DataSource = null;
+                    uclblMessage.ShowInfo(Resources.Messages.NoRecord);
+                }
+
+                grdSchemeDetail.DataBind();
+                pnlGrid.Visible = true;
+                updGrid.Update();
+            }
+        }
+      
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (ViewState["SchemeID"] == null)
+            {
+                bindGrid();
+
+            }
+            else
+            {
+                using (SchemeData obj = new SchemeData())
+                {
+                    obj.SchemeID = Convert.ToInt32(ViewState["SchemeID"]);
+                    obj.ToDate = ucEndDate.Date;
+                    obj.FromDate = ucStartDate.Date;
+                    obj.SchemeName = txtSchemeName.Text;
+                    obj.Status = Convert.ToInt16(ViewState["Status"]);
+                    obj.UpdateSchemeInfo();
+                    uclblMessage.ShowInfo(Resources.Messages.EditSuccessfull);
+                    ViewState["SchemeID"] = null;
+                    ViewState["Status"] = null;
+                    bindGrid();
+                    lblMainHeading.Text = "Search";
+                    btnSearch.Text = "Search";
+                    updmain.Update();
+                    blankall();
+
+                }
+
+            }
+
+
+        }
+        protected void grdSchemeDetail_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                Int32 intScheme = Convert.ToInt16(e.CommandArgument);
+                if (e.CommandName == "Active")
+                {
+                   using(SchemeData obj = new SchemeData())
+                    {
+                        obj.SchemeID = intScheme;
+                        DataTable dt = obj.GetSchemeInformation();
+                        obj.ToDate = dt.Rows[0]["ToDate"].ToString();
+                        obj.FromDate = dt.Rows[0]["FromDate"].ToString();
+                        obj.SchemeName = dt.Rows[0]["SchemeName"].ToString();
+                        obj.Status = Convert.ToInt16(dt.Rows[0]["Status"]);
+                        if(obj.Status == 1)
+                        {
+                            obj.Status = 0;
+                        }
+                        else
+                        {
+                            obj.Status = 1;
+                        }
+                        obj.SchemeID = Convert.ToInt32(dt.Rows[0]["SchemeID"]);
+                        obj.UpdateSchemeInfo();
+                        bindGrid();
+                        uclblMessage.ShowInfo(Resources.Messages.StatusChanged);
+
+                    }
+                }
+                if (e.CommandName == "cmdEdit")
+                {
+                    using (SchemeData obj = new SchemeData())
+                    {
+                        obj.SchemeID = intScheme;
+                        ViewState["SchemeID"] = intScheme;
+                        DataTable dt = obj.GetSchemeInformation();
+                        ucEndDate.Date = dt.Rows[0]["ToDate"].ToString();
+                        ucEndDate.Date = dt.Rows[0]["FromDate"].ToString();
+                        txtSchemeName.Text = dt.Rows[0]["SchemeName"].ToString();
+                        cmbSchemeBasedOn.SelectedValue = dt.Rows[0]["BacedOnBit"].ToString();
+                        cmbSchemeBasedOn.Enabled = false;
+                        cmbSchemeBasedType.SelectedValue = dt.Rows[0]["BaseTypeBit"].ToString();
+                        cmbSchemeBasedType.Enabled = false;
+                        cmbSchemeLevel.SelectedValue = dt.Rows[0]["SchemeLevelBit"].ToString();
+                        cmbSchemeLevel.Enabled = false;
+                        ViewState["Status"] = Convert.ToInt16(dt.Rows[0]["Status"]);
+                        btnSearch.Text = "Update";
+                        updmain.Update();
+                        lblMainHeading.Text = "Update";
+                        
+                    }
+                }
+
+                if (e.CommandName == "cmdDetails")
+                {
+                    string str = string.Format("ViewSchemeDetails.aspx?ID ={0}", e.CommandArgument);
+                    Response.Redirect(str);
+
+                }
+ 
+            }
+            catch (Exception ex)
+            {
+
+
+                PageBase.Errorhandling(ex);
+                uclblMessage.ShowError(Resources.Messages.ErrorMsgTryAfterSometime);
+            }
+           
+        }
+        protected void grdSchemeDetail_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    Int32 intSchemeID = Convert.ToInt16(grdSchemeDetail.DataKeys[e.Row.RowIndex].Value);
+
+                    GridViewRow GVR = e.Row;
+                    HyperLink HLDetails = default(HyperLink);
+                    HLDetails = (HyperLink)GVR.FindControl("hyplSchemeDetail");
+                    ImageButton imgbtn = (ImageButton)GVR.FindControl("imgStatus");
+                    //if (PageBase.OfficeLevel != 5)
+                    //{
+                    //    imgbtn.Enabled = false;
+                    //}
+                    string strURL = "SchemeViewDetail.aspx?SchemeID=" + Crypto.Encrypt(Convert.ToString(intSchemeID), "PST");
+                    HLDetails.NavigateUrl = "#";
+                    HLDetails.Attributes.Add("OnClick", "popupPage('" + strURL + "')");
+                }
+            }
+            catch (Exception ex)
+            {
+                uclblMessage.ShowError(Resources.Messages.ErrorMsgTryAfterSometime);
+                PageBase.Errorhandling(ex);
+            }
+
+
+        }
+        protected void btnExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ViewState["DtExport"] != null)
+                {
+                    DataTable Dt = (DataTable)ViewState["DtExport"];
+                    DataTable Dtexport;  
+                    string[] StrCol = new string[] { "SchemeName", "ComponentType", "SchemeStartDate", "SchemeEndDate", "SchemePeriod", "StatusName" };
+                    Dtexport = Dt.DefaultView.ToTable(true, StrCol);
+                    Dtexport.Columns["StatusName"].ColumnName = "Status";
+                    Dtexport.Columns["ComponentType"].ColumnName = "SchemeBasedOn";
+                    DataSet Ds = new DataSet();
+                    Ds.Merge(Dtexport);
+                    String FilePath = Server.MapPath("../../");
+                    string FilenameToexport = "SchemeList";
+                    PageBase.RootFilePath = FilePath;
+                    PageBase.ExportToExecl(Ds, FilenameToexport);
+                    ViewState["DtExport"] = null;
+                }
+                else
+                {
+
+                    uclblMessage.ShowInfo(Resources.Messages.NoRecord);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                PageBase.Errorhandling(ex);
+
+            }
+
+        }
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            blankall();
+            uclblMessage.Visible = false;
+
+        }
+}

@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddItemSuccesfully" xml:space="preserve">
+    <value>Item added successfully.</value>
+  </data>
+  <data name="BlankGridEntryMessage" xml:space="preserve">
+    <value>Please enter record in grid before save.</value>
+  </data>
+  <data name="CheckErrorGrid" xml:space="preserve">
+    <value>Check errors in grid.</value>
+  </data>
+  <data name="CreateSuccessfull" xml:space="preserve">
+    <value>Records created successfully.</value>
+  </data>
+  <data name="DataUploadSuccess" xml:space="preserve">
+    <value>Data uploaded successfully.</value>
+  </data>
+  <data name="DateValidate" xml:space="preserve">
+    <value>Date should be greater than or equal to current date.</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Records deleted successfully.</value>
+  </data>
+  <data name="EditSuccessfull" xml:space="preserve">
+    <value>Records updated successfully.</value>
+  </data>
+  <data name="Emailvalidate" xml:space="preserve">
+    <value>Please enter proper email id.</value>
+  </data>
+  <data name="EndDateValidation" xml:space="preserve">
+    <value>End date should be greater then from date.</value>
+  </data>
+  <data name="ErrorMsgTryAfterSometime" xml:space="preserve">
+    <value>Unexpected error occured! Inconvience regretted. Please try later.</value>
+  </data>
+  <data name="InsertSuccessfull" xml:space="preserve">
+    <value>Records inserted succesfully.</value>
+  </data>
+  <data name="IntegerValidation" xml:space="preserve">
+    <value>Please enter only integer value.</value>
+  </data>
+  <data name="InvalidInvoiceNumber" xml:space="preserve">
+    <value>Invalid invoice, no data found.</value>
+  </data>
+  <data name="InvalidPercentage" xml:space="preserve">
+    <value>Percentage should not be greater than 100.</value>
+  </data>
+  <data name="Invaliduser" xml:space="preserve">
+    <value>Invalid user ID or password.</value>
+  </data>
+  <data name="MailNotSend" xml:space="preserve">
+    <value>Mail is not send due to some reason</value>
+  </data>
+  <data name="MandatoryField" xml:space="preserve">
+    <value>Please fill all the mandatory fields properly.</value>
+  </data>
+  <data name="MandatoryFieldValidation" xml:space="preserve">
+    <value>Please fill all the mandatory fields properly.</value>
+  </data>
+  <data name="MobileValidate" xml:space="preserve">
+    <value>Please enter proper mobile no.</value>
+  </data>
+  <data name="NoModelForTemplate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>No record found.</value>
+  </data>
+  <data name="NoRecordexport" xml:space="preserve">
+    <value>No Record found to export.</value>
+  </data>
+  <data name="PasswordBlocked" xml:space="preserve">
+    <value>Password Is blocked.Please conatct your administrator</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Password changed successfully.</value>
+  </data>
+  <data name="PasswordExpired" xml:space="preserve">
+    <value>Your Password is expired. Please change to continue.</value>
+  </data>
+  <data name="PinCodevalidate" xml:space="preserve">
+    <value>Please enter proper pin code.</value>
+  </data>
+  <data name="ReportDateValidation" xml:space="preserve">
+    <value>To Date  must be greater than or equal to From Date</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Please select a file.</value>
+  </data>
+  <data name="SlabInvalid" xml:space="preserve">
+    <value>Slab Entered is Invalid. Please Retry</value>
+  </data>
+  <data name="StatusChanged" xml:space="preserve">
+    <value>Status changed successfully.</value>
+  </data>
+  <data name="StockEntryMessage" xml:space="preserve">
+    <value>Kindly do purchase as stock is not avalilable for sales.</value>
+  </data>
+  <data name="StockInHandCheck" xml:space="preserve">
+    <value>Quantity should be less than stock in hand.</value>
+  </data>
+  <data name="StockNotFound" xml:space="preserve">
+    <value>Stock not available for SKU.</value>
+  </data>
+  <data name="StockQtyCheck" xml:space="preserve">
+    <value>Quantity Should be greater than 0.</value>
+  </data>
+  <data name="Uploadonlyxlsx" xml:space="preserve">
+    <value>Please upload only .xlsx file.</value>
+  </data>
+  <data name="UploadSuccessfully" xml:space="preserve">
+    <value>File uploaded successfuly.Please click on save button to insert records.</value>
+  </data>
+  <data name="ValidationSales" xml:space="preserve">
+    <value>Please go on sales interface to update your sales.</value>
+  </data>
+  <data name="ValidateInvoiceDateWithRetrurn" xml:space="preserve">
+    <value>Invoice date is greater then return date, select invoice before return date.</value>
+  </data>
+  <data name="ValidateReturnDate" xml:space="preserve">
+    <value>Please enter valid return date.</value>
+  </data>
+  <data name="InvalidDateMessage" xml:space="preserve">
+    <value>Please enter valid date.</value>
+  </data>
+  <data name="DecimalValidation" xml:space="preserve">
+    <value>Please enter decimal values.</value>
+  </data>
+  <data name="ProperDateFormat" xml:space="preserve">
+    <value>Please enter proper date.</value>
+  </data>
+  <data name="NotDelete" xml:space="preserve">
+    <value>Records could not be delete.</value>
+  </data>
+  <data name="NotEditable" xml:space="preserve">
+    <value>Records could not be editable.</value>
+  </data>
+  <data name="MessageValidQuantity" xml:space="preserve">
+    <value>Please enter valid quantity.</value>
+  </data>
+  <data name="MessageValidValue" xml:space="preserve">
+    <value>Please enter valid value.</value>
+  </data>
+  <data name="MessageValidSKUSelection" xml:space="preserve">
+    <value>Please select SKU.</value>
+  </data>
+  <data name="MessageValidInvoiceQtyInReturn" xml:space="preserve">
+    <value>Please enter return quantity less then equal to invoiced quantity.</value>
+  </data>
+  <data name="MessageSAPIntegrationSucessfull" xml:space="preserve">
+    <value>Download from staging database has been completed.</value>
+  </data>
+  <data name="MessageSchemeRunSuccess" xml:space="preserve">
+    <value>Scheme runs successfully.</value>
+  </data>
+  <data name="MessageSelectClub" xml:space="preserve">
+    <value>Please select club.</value>
+  </data>
+  <data name="MessageSelectQuarter" xml:space="preserve">
+    <value>Please select quarter. </value>
+  </data>
+  <data name="MessageSelectTIC" xml:space="preserve">
+    <value>Please select tic.</value>
+  </data>
+  <data name="ValidationSalesReturn" xml:space="preserve">
+    <value>Please go on sales return interface to update your sales return.</value>
+  </data>
+  <data name="SelectifferentClub" xml:space="preserve">
+    <value>Please select different club name.</value>
+  </data>
+  <data name="SerialNoExpression" xml:space="preserve">
+    <value>^[a-zA-Z0-9]{6,18}$</value>
+  </data>
+  <data name="SerialNoErrorMessage" xml:space="preserve">
+    <value>Invalid serial no. product serial no. should be alpha numeric value between 6 to 18 characters.Special characters not allowed.</value>
+  </data>
+  <data name="PriceListAlreadyExists" xml:space="preserve">
+    <value>Price List Already Exists with this state at this date.</value>
+  </data>
+  <data name="PriceListExistsWSState" xml:space="preserve">
+    <value>Another Price List already Exists with same state at this date. </value>
+  </data>
+  <data name="InvoiceAlreadyAck" xml:space="preserve">
+    <value>Invoice has already been Acknowledged/Cancelled.</value>
+  </data>
+  <data name="InvoiceAlreadyCancelled" xml:space="preserve">
+    <value>Invoice has already been Acknowledged/Cancelled.</value>
+  </data>
+</root>

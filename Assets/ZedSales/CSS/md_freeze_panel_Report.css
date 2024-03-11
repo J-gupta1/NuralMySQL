@@ -1,0 +1,22 @@
+DIV#tblcontainer { OVERFLOW: auto; WIDTH: 880px; SCROLLBAR-BASE-COLOR: #c4cfc4; HEIGHT: 275px }
+	 
+	DIV#tblcontainer TABLE TH { WIDTH: 120px }
+	DIV#tblcontainer TABLE TH.Model { WIDTH: 70px;  }
+	THEAD TH { BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 7px; FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 28px; BACKGROUND-COLOR: #c4cfc4; TEXT-ALIGN: left }
+	THEAD TH.locked { BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 7px; FONT-WEIGHT: bold; FONT-SIZE: 10px; CURSOR: default; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; POSITION: relative; HEIGHT: 28px;  BACKGROUND-COLOR: #c4cfc4;Z-INDEX: 30;}
+	THEAD TH { Z-INDEX: 20; ; TOP: expression(document.getElementById("tblcontainer").scrollTop-2);}
+	/*TD.locked { BORDER-RIGHT: silver 1px solid; PADDING-LEFT: 13px;  Z-INDEX: 10; ; LEFT: expression(document.getElementById("tblcontainer").scrollLeft); POSITION: relative; BACKGROUND-COLOR: #c4cfc4 }*/
+	TH.locked { BORDER-RIGHT: silver 1px solid; FONT-WEIGHT: bold; Z-INDEX: 10; ; LEFT: expression(document.getElementById("tblcontainer").scrollLeft); POSITION: relative; BACKGROUND-COLOR: #ffeaff }
+	BUTTON { BORDER-RIGHT: #78a178 1px solid; BORDER-TOP: #78a178 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 10px; BORDER-LEFT: #78a178 1px solid; COLOR: #333333; BORDER-BOTTOM: #78a178 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #c7d3c7 }
+	
+  /*  td.inputboxtd{padding-left:7px;padding-right:5px; FONT-SIZE: 9px;} 
+    td.inputboxtd input{font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 11px;width: 40px;}
+
+thead th, thead th.locked	{
+font-size: 10px;
+text-align: center;
+background-color: #c4cfc4;
+border-right: 1px solid silver;
+position:relative;
+cursor: default; 
+}*/

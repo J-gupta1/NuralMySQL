@@ -1,0 +1,136 @@
+﻿.SimpleEntertainmentMenu ul.AspNet-Menu /* Tier 1 */ {
+    /*width: 970px;*/ /* This is more than (6em x 2) because we want to leave room for borders around the <li> elements that are selected */
+    z-index: 1;
+}
+
+    .SimpleEntertainmentMenu ul.AspNet-Menu ul /* Tier 2 */ {
+        top: 100%;
+        left: 0;
+        font-weight: bold;
+        display: none;
+    }
+
+        .SimpleEntertainmentMenu ul.AspNet-Menu ul ul /* Tier 3+ */ {
+            top: 0%;
+            left: 185px;
+            padding-left: 1px;
+        }
+
+AspNet-Menu-Leaf {
+    display: none;
+}
+
+.SimpleEntertainmentMenu li /* all list items */ {
+    line-height: 26px;
+    background: url('Images/menusep.gif') no-repeat left center;
+    color: #ffffff;
+    font-family: arial;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+    .SimpleEntertainmentMenu li:hover, /* list items being hovered over */
+    .SimpleEntertainmentMenu li.AspNet-Menu-Hover {
+        color: #ffffff;
+        z-index: 90;
+    }
+
+.SimpleEntertainmentMenu a, /* all anchors and spans (nodes with no link) */
+.SimpleEntertainmentMenu span,
+a.AspNet-Menu-WithChildren {
+    color: #ffffff;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: normal;
+    float: left;
+    padding: 0px 10px 0px 10px;
+    height: 31px;
+    line-height: 31px;
+}
+
+.SimpleEntertainmentMenu li.AspNet-Menu-Leaf a, /* leaves */
+.SimpleEntertainmentMenu li.AspNet-Menu-Leaf span {
+    color: #314400;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.SimpleEntertainmentMenu li:hover a, /* hovered text */
+.SimpleEntertainmentMenu li:hover span,
+.SimpleEntertainmentMenu li.AspNet-Menu-Hover a,
+.SimpleEntertainmentMenu li.AspNet-Menu-Hover span,
+.SimpleEntertainmentMenu li:hover li:hover a,
+.SimpleEntertainmentMenu li:hover li:hover span,
+.SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover a,
+.SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover span,
+.SimpleEntertainmentMenu li:hover li:hover li:hover a,
+.SimpleEntertainmentMenu li:hover li:hover li:hover span,
+.SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover li.AspNet-Menu-Hover a,
+.SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover li.AspNet-Menu-Hover span {
+    color: #fff;
+/*    background: url('Images/navbghover.gif') repeat-x left top;*/
+    background-color: #33499F;
+    z-index: 99;
+}
+
+.SimpleEntertainmentMenu li:hover li {
+    background: none;
+    border-right: 1px solid #939191;
+    border-left: 1px solid #939191;
+    padding: 0px;
+    margin: 0px;
+}
+
+    .SimpleEntertainmentMenu li:hover li a, /* the tier above this one is hovered */
+    .SimpleEntertainmentMenu li:hover li span,
+    .SimpleEntertainmentMenu li.AspNet-Menu-Hover li a,
+    .SimpleEntertainmentMenu li.AspNet-Menu-Hover li span,
+    .SimpleEntertainmentMenu li:hover li:hover li a,
+    .SimpleEntertainmentMenu li:hover li:hover li span,
+    .SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover li a,
+    .SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover li span {
+        color: #000000;
+        font-family: arial;
+        font-size: 11px;
+        font-weight: normal;
+        background: #e6e6e6 url('Images/arrow1.png') 10px 10px no-repeat;
+        padding-left: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 185px;
+        line-height: 15px;
+        border-bottom: 1px solid #939191;
+    }
+
+        .SimpleEntertainmentMenu li:hover li a:hover, /* the tier above this one is hovered */
+        .SimpleEntertainmentMenu li:hover li span:hover,
+        .SimpleEntertainmentMenu li.AspNet-Menu-Hover li a:hover,
+        .SimpleEntertainmentMenu li.AspNet-Menu-Hover li span:hover,
+        .SimpleEntertainmentMenu li:hover li:hover li a:hover,
+        .SimpleEntertainmentMenu li:hover li:hover li span:hover,
+        .SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover li a:hover,
+        .SimpleEntertainmentMenu li.AspNet-Menu-Hover li.AspNet-Menu-Hover li span:hover {
+            color: #ffffff;
+            background: #3cc0d4 url('Images/arrow2.png') 10px 10px no-repeat;
+            width: 185px;
+            font-weight: normal;
+            border-bottom: 1px solid #939191;
+        }
+
+.AspNet-Menu-Link .AspNet-Menu-Selected /* this tier is selected */ {
+}
+
+.SimpleEntertainmentMenu .AspNet-Menu-ChildSelected /* a tier below this one is selected */ {
+}
+
+.SimpleEntertainmentMenu .AspNet-Menu-ParentSelected /* a tier above this one is selected */ {
+}
+
+#EntertainmentMessage {
+}
+
+#ucMenu_HeaderMenu a {
+    white-space:normal !important;
+}

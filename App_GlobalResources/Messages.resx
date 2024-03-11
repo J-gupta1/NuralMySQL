@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Activate" xml:space="preserve">
+    <value>Record activated successfully.</value>
+  </data>
+  <data name="AddItemSuccesfully" xml:space="preserve">
+    <value>Item added successfully.</value>
+  </data>
+  <data name="BlankGridEntryMessage" xml:space="preserve">
+    <value>Please enter record in grid before save.</value>
+  </data>
+  <data name="BlankSpaceNotAllow" xml:space="preserve">
+    <value>Blank spaces are not allowed in login name.</value>
+  </data>
+  <data name="BlankSpaceNotAllowPassword" xml:space="preserve">
+    <value>Blank spaces are not allowed in password.</value>
+  </data>
+  <data name="CheckErrorGrid" xml:space="preserve">
+    <value>Please check errors in grid.</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>Connection could not be Established.</value>
+  </data>
+  <data name="CreateSuccessfull" xml:space="preserve">
+    <value>Records created successfully.</value>
+  </data>
+  <data name="DataUploadSuccess" xml:space="preserve">
+    <value>Data uploaded successfully.</value>
+  </data>
+  <data name="DateRangeValidation" xml:space="preserve">
+    <value>Date should be less than or equal to current date.</value>
+  </data>
+  <data name="DateRangeValidation2" xml:space="preserve">
+    <value>Date should be greater than or equal to current date.</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Item deleted successfully.</value>
+  </data>
+  <data name="DownLoadFailed" xml:space="preserve">
+    <value>Downloading of File Failed.</value>
+  </data>
+  <data name="DuplicateMenu" xml:space="preserve">
+    <value>Duplicate Menu Name is not allowed</value>
+  </data>
+  <data name="EditSuccessfull" xml:space="preserve">
+    <value>Records updated successfully.</value>
+  </data>
+  <data name="Emailvalidate" xml:space="preserve">
+    <value>Please enter proper email id.</value>
+  </data>
+  <data name="EnterInvoiceNo" xml:space="preserve">
+    <value>Please enter invoice number.</value>
+  </data>
+  <data name="Enterpassword" xml:space="preserve">
+    <value>Please enter password.</value>
+  </data>
+  <data name="Entersalesqty" xml:space="preserve">
+    <value>please enter quantity.</value>
+  </data>
+  <data name="Entervalidqty" xml:space="preserve">
+    <value>Enter numeric quantity.</value>
+  </data>
+  <data name="ErrorMsgTryAfterSometime" xml:space="preserve">
+    <value>Unexpected error occured! Inconvience regretted. Please try later.</value>
+  </data>
+  <data name="ExceptionOccured" xml:space="preserve">
+    <value>Exception has Occured During the Process.</value>
+  </data>
+  <data name="FailToChange" xml:space="preserve">
+    <value>Password can't be change. </value>
+  </data>
+  <data name="Inactivate" xml:space="preserve">
+    <value>Record deactivated successfully.</value>
+  </data>
+  <data name="InsertSuccessfull" xml:space="preserve">
+    <value>Records inserted successfully.</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Record Entered is Invalid. Please Retry</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>Invalid date range</value>
+  </data>
+  <data name="Invaliduser" xml:space="preserve">
+    <value>Invalid User ID or Password or Company Name</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>User successfully unlocked.</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>User successfully logged off</value>
+  </data>
+  <data name="MailNotSend" xml:space="preserve">
+    <value>Mail not send.</value>
+  </data>
+  <data name="MandatoryField" xml:space="preserve">
+    <value>Please fill all the mandatory fields properly.</value>
+  </data>
+  <data name="Mobilevalidate" xml:space="preserve">
+    <value>Please enter valid mobile no.</value>
+  </data>
+  <data name="NoFileExistDownLoad" xml:space="preserve">
+    <value>No file exist for downloading.</value>
+  </data>
+  <data name="NoFileExistUploading" xml:space="preserve">
+    <value>No file exist for uploading.</value>
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>No record found.</value>
+  </data>
+  <data name="PageTitleText" xml:space="preserve">
+    <value>Nural SFA</value>
+  </data>
+  <data name="PasswordBlocked" xml:space="preserve">
+    <value>Account is locked out due to multiple wrong attempts. Please contact your administrator.</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Password changed successfully.</value>
+  </data>
+  <data name="PasswordExpired" xml:space="preserve">
+    <value>Your Password is expired. Please change to continue.</value>
+  </data>
+  <data name="PinCodevalidate" xml:space="preserve">
+    <value>Please enter valid pin code.</value>
+  </data>
+  <data name="PriceMaster" xml:space="preserve">
+    <value>ManagePrice.aspx</value>
+  </data>
+  <data name="SalesAlreadyExists" xml:space="preserve">
+    <value>Invoice already exists, please modify through edit interface.</value>
+  </data>
+  <data name="SalesChannelNotMatched" xml:space="preserve">
+    <value>Sales channel code is invalid.</value>
+  </data>
+  <data name="SalesEntity" xml:space="preserve">
+    <value>Sales Channel</value>
+  </data>
+  <data name="SalesNotModify" xml:space="preserve">
+    <value>Sales could not be modified as the return already taken for this invoice.</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Please select file.</value>
+  </data>
+  <data name="SelectSchemeLevel" xml:space="preserve">
+    <value>Please select scheme level.</value>
+  </data>
+  <data name="SelecttargtcatandLevel" xml:space="preserve">
+    <value>Please select target category and user type for downloading reference code.</value>
+  </data>
+  <data name="SelectUserLocation" xml:space="preserve">
+    <value>Please select at least one location.</value>
+  </data>
+  <data name="StatusChanged" xml:space="preserve">
+    <value>Status changed successfully.</value>
+  </data>
+  <data name="StockAdjustmentDateValidation" xml:space="preserve">
+    <value>Stock adjustment date should be greater than or equal to opening stock date.</value>
+  </data>
+  <data name="StockEntryFlag" xml:space="preserve">
+    <value>Stock not entered. Please enter stock.</value>
+  </data>
+  <data name="StockInHandCheck" xml:space="preserve">
+    <value>Sales quantity should be less than stock in hand.</value>
+  </data>
+  <data name="TargetTemplateType" xml:space="preserve">
+    <value>Please select target template type.</value>
+  </data>
+  <data name="UpLoadFailed" xml:space="preserve">
+    <value>Uploading of File Failed.</value>
+  </data>
+  <data name="UploadXlxs" xml:space="preserve">
+    <value>Please upload only .xlsx file.</value>
+  </data>
+  <data name="UserLogin" xml:space="preserve">
+    <value>User already logged in.</value>
+  </data>
+  <data name="ValidationSalesDays" xml:space="preserve">
+    <value>(Only Number days Back Date Sales Allowed)</value>
+  </data>
+  <data name="ZeroQtyNotAllowed" xml:space="preserve">
+    <value>Zero quantity not allowed.</value>
+  </data>
+  <data name="OpeningStockAlreadyEnter" xml:space="preserve">
+    <value>Opening stock already entered.</value>
+  </data>
+  <data name="EnterCurrentDate" xml:space="preserve">
+    <value>Please enter current date.</value>
+  </data>
+  <data name="InvalidDateEntered" xml:space="preserve">
+    <value>Please enter valid date.</value>
+  </data>
+  <data name="ApproveSuccess" xml:space="preserve">
+    <value>Acknowledgment Approval has successfully been done.</value>
+  </data>
+  <data name="RejectSuccess" xml:space="preserve">
+    <value>Acknowlegde Rejection has successfully been done.</value>
+  </data>
+  <data name="DSRUpload_Insert_ErrorMSG" xml:space="preserve">
+    <value>Please upload an excel file.</value>
+  </data>
+  <data name="DSR_src_norecordfound" xml:space="preserve">
+    <value>No record found.</value>
+  </data>
+  <data name="DuplicateLocationName" xml:space="preserve">
+    <value>Duplicate Location Name or Location Code !</value>
+  </data>
+  <data name="DuplicateInformation" xml:space="preserve">
+    <value>Duplicate Login Name !</value>
+  </data>
+  <data name="NoMapping" xml:space="preserve">
+    <value>User has no mapping with Location !</value>
+  </data>
+  <data name="InvoiceCancelled" xml:space="preserve">
+    <value>Invoice Cancelled Successfully.</value>
+  </data>
+  <data name="InvalidUserFP" xml:space="preserve">
+    <value>Invalid User ID or Email ID.</value>
+  </data>
+  <data name="SkuNotMentioned" xml:space="preserve">
+    <value>Not Mentioned</value>
+  </data>
+  <data name="PartialDataUpload" xml:space="preserve">
+    <value>Partial data processed, click Invalid Data link for invalid data.</value>
+  </data>
+  <data name="BlankMsg" xml:space="preserve">
+    <value>cannot be left blank!</value>
+  </data>
+  <data name="UniqeMsg" xml:space="preserve">
+    <value>should be unique!</value>
+  </data>
+  <data name="ValidationSalesReturnDays" xml:space="preserve">
+    <value>(Only Number days Back Date Sales Return Allowed)</value>
+  </data>
+  <data name="SearchCriteriaBlank" xml:space="preserve">
+    <value>Please select at least one search criteria!</value>
+  </data>
+  <data name="InvalidExcelColumnsDoesntMatch" xml:space="preserve">
+    <value>Invalid excel sheet, columns doesn't match to required fields</value>
+  </data>
+  <data name="FileSize" xml:space="preserve">
+    <value>File size should be less than </value>
+  </data>
+  <data name="YesNoOnly" xml:space="preserve">
+    <value>Only Yes or No allowed</value>
+  </data>
+  <data name="BlankFileMessage" xml:space="preserve">
+    <value>Blank File cannot be updated.</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>Unexpected error occurred. Please retry after sometime.</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="DuplicateEntityType" xml:space="preserve">
+    <value>Duplicate Entity Type</value>
+  </data>
+  <data name="AdminDelete" xml:space="preserve">
+    <value>Record Deleted Successfully.</value>
+  </data>
+  <data name="NotDeleted" xml:space="preserve">
+    <value>Record is already attach with other information,Not permitted to delete.</value>
+  </data>
+  <data name="ToggleSuccess" xml:space="preserve">
+    <value>Active status changed successfully.</value>
+  </data>
+  <data name="UpdateSuccessfull" xml:space="preserve">
+    <value>Records updated successfully.</value>
+  </data>
+</root>

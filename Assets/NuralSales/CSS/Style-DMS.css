@@ -1,0 +1,19 @@
+﻿/*header {
+    margin-bottom: 0;
+}*/
+
+table td .buttonbg {
+    padding: 4px 8px;
+}
+
+    table td .buttonbg:hover {
+        font-size: 13px;
+        padding: 4px 8px;
+        transition: ease-in-out .5s;
+    }
+
+@media only screen and (min-width: 1024px) {
+    .welcomepagebg {
+        min-height: 485px;
+    }
+}

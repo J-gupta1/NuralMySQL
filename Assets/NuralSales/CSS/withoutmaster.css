@@ -1,0 +1,8 @@
+/**************************************************
+'Project          : Motorola
+'Created By       : Kalpana
+'Company       	  : Zed-Axis Technologies Pvt. Ltd.
+'File Description : Style sheet for Motorola  Application
+'*************************************************/
+
+body					{ margin:0; padding:0; font-family:arial; font-size:12px; color:#000; background:#ffffff url(Images/innerbg2.gif) repeat-x top; height:100%; min-height:100%;}

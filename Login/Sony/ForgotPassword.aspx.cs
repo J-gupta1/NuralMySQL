@@ -1,0 +1,127 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Data.SqlClient;
+using Microsoft.ApplicationBlocks.Data;
+using System.Globalization;
+using DataAccess;
+using BussinessLogic;
+
+public partial class ForgotPassword : System.Web.UI.Page
+{
+    protected string strAssets = PageBase.strAssets;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+         if (!IsPostBack)
+         {
+             
+                LblHeader.Text = "";
+          }
+    }
+    protected void BtnSubmit_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string strLoginName = null;
+            string strEmail = null;
+
+            if (TxtLoginName.Text.Trim().Length == 0 & TxtEMail.Text.Trim().Length == 0)
+            {
+                LblHeader.Text = "Please enter LoginID or EmailID";
+            }
+            else
+            {
+                strLoginName = clsRemoveHTMLTags.clsRemoveHTMLTags.fncRemoveHTMLTags(TxtLoginName.Text);
+                strEmail = clsRemoveHTMLTags.clsRemoveHTMLTags.fncRemoveHTMLTags(TxtEMail.Text);
+                subchkloginName(strLoginName, strEmail);
+                subclearFlds();
+            }
+        }
+        catch (Exception ex)
+        {
+            LblHeader.Text = ex.Message.ToString();
+            PageBase.Errorhandling(ex);
+        }
+    }
+    protected void BttnClear_Click(object sender, EventArgs e)
+    {
+        subclearFlds();
+    }
+    public void subchkloginName(string loginname, string EMail)
+    {
+        try
+        {
+            DataTable dtUserInfo;
+            using (UserData objUsers = new UserData())
+            {
+                dtUserInfo = objUsers.GetUsersInfoForgotPassword(loginname, EMail);
+            };
+            if (dtUserInfo == null || dtUserInfo.Rows.Count == 0)
+            {
+                
+                LblHeader.Text = "Invalid User Name or EmailID";//change
+            }
+            else
+            {
+                string ErrDesc = string.Empty;
+                string Password = string.Empty;
+                using (Authenticates ObjAuth = new Authenticates())
+                {
+                    Password = ObjAuth.DecryptPassword(Convert.ToString(dtUserInfo.Rows[0]["Password"]), Convert.ToString(dtUserInfo.Rows[0]["PasswordSalt"]));
+                };
+
+                bool SendMailStatus;
+                //Mailer.LoginName = Convert.ToString(dtUserInfo.Rows[0]["LoginName"].ToString());
+                //Mailer.Password = Password;
+                //Mailer.EmailID = dtUserInfo.Rows[0]["Email"].ToString();
+                //Mailer.UserName = Convert.ToString(dtUserInfo.Rows[0]["DisplayName"].ToString());
+                //SendMailStatus = Mailer.sendmail("../../" + strAssets + "/Mailer/UserForgetPassword.htm");
+                //if (SendMailStatus == false)
+                //    LblHeader.Text ="Mail not send due to invalid email Id";
+                //else
+                //    LblHeader.Text = "Password has been send to your email Id";
+                using (UserData objUsers = new UserData())
+                {
+                    objUsers.DisplayName = Convert.ToString(dtUserInfo.Rows[0]["DisplayName"].ToString());
+                    objUsers.UserLoginName = Convert.ToString(dtUserInfo.Rows[0]["LoginName"].ToString());
+                    objUsers.StrPassword = Password;
+                    objUsers.EmailID = dtUserInfo.Rows[0]["Email"].ToString();
+                    SendMailStatus=objUsers.SendForgetPassword();
+                };
+                if (SendMailStatus == false)
+                    LblHeader.Text ="Mail not send due to invalid email Id";
+                else
+                    LblHeader.Text = "Password has been send to your email Id";
+            }
+        }
+        catch (Exception ex)
+        {
+
+            LblHeader.Text = ex.ToString();
+            PageBase.Errorhandling(ex);
+        }
+    }
+    public void subclearFlds()
+    {
+        try
+        {
+            TxtLoginName.Text = "";
+            TxtEMail.Text = "";
+        }
+        catch (Exception ex)
+        {
+
+            LblHeader.Text = ex.Message.ToString();
+            PageBase.Errorhandling(ex);
+        }
+    } 
+
+}

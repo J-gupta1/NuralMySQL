@@ -1,0 +1,157 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="CommonMasterPages_MasterPage" %>
+
+<%@ Register Src="~/UserControls/Footer.ascx" TagName="ucFooter" TagPrefix="uc2" %>
+<%@ Register Src="~/UserControls/Header.ascx" TagName="ucHeader" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/ucMenu.ascx" TagName="ucMenu" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/ucCheckSessionTimeout.ascx" TagName="checkSessionTimeout" TagPrefix="uc5" %> <%--#CC01 Added--%>
+<%--<%@ Register src="../UserControls/TimeoutControl.ascx" tagname="TimeoutControl" tagprefix="uc3" %>--%>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server" id="Head1">
+    <title>
+        <%=(String)GetGlobalResourceObject("Messages", "PageTitleText")%></title>
+    <%--Add START  --%>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%-- Add END --%>
+    <meta http-equiv="Page-Enter" content="progid:DXImageTransform.Microsoft.Fade(Duration=1)" />
+    <meta http-equiv="Page-Exit" content="progid:DXImageTransform.Microsoft.Fade(Duration=1)" />
+    <link rel="stylesheet" id="bootstrapCss" runat="server" type="text/css" />
+    <link rel="stylesheet" id="StyleCss" runat="server" type="text/css" />
+    <link rel="stylesheet" id="modalCss" runat="server" type="text/css" />
+    <link rel="stylesheet" id="menuCss" runat="server" type="text/css" />    
+    <script type="text/javascript" src="../../Assets/Jscript/JSAsynRequest.js"></script>    
+    <script src="../Assets/Jscript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Assets/Jscript/JsValidate.js"></script>
+    <script type="text/javascript" src="../../Assets/Jscript/jquery-1.4.4.min.js"></script>
+    <asp:Literal ID="litScripts" runat="server" ></asp:Literal>
+    
+  
+   <script type="text/javascript">
+       function changeCSSDropDown1() {
+           try {
+               $("select").focusin(function() {
+                
+                   $(this).removeClass('formselect');
+                   $(this).addClass('expand');
+               });
+               $("select").focus(function() {
+                   $(this).removeClass('formselect');
+                   $(this).addClass('expand');
+               });
+               $("select").blur(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+               $("select").focusout(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+
+               $("select").change(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+
+               $("select").change(function() {
+
+                   $(this.blur()).removeClass('expand');
+                   $(this.blur()).addClass('formselect');
+               });
+           } catch (e) {
+              
+           }
+       }
+
+    </script>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+ 
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="changeCSSDropDown1();" >  
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <!--Wrapper Start-->
+            <div id="container">
+                <!--Container Start-->
+                <header>
+                        <!--header Start-->
+                        <div>
+                            <div>
+                                <uc1:ucHeader ID="ucHeader" runat="server" />
+                            </div>
+                            <uc1:ucMenu ID="ucMenu" runat="server" />
+                            <div class="heading">
+                                <div class="container">
+                                    <div class="hd1">
+                                        <div id="tblHeading" runat="server">
+                                            <ul>
+                                                <li>
+                                                    <asp:Label ID="lblPageHeading" runat="server" Visible="false"></asp:Label>
+                                                </li>
+                                                <li>
+                                                    <asp:LinkButton ID="LBSwitchToBrand" runat="server" CausesValidation="False" CssClass="elink7"
+                                                        Text="" OnClick="LBSwitchToBrand_Click" Visible="false"></asp:LinkButton>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                  
+                </header>
+                <!--header End-->
+                <article>
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <div class="bodycontent">
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    <Services>
+                                        <asp:ServiceReference Path="~/CommonService.asmx" />
+                                    </Services>
+                                </asp:ScriptManager>
+                                <uc5:checkSessionTimeout ID="uccheckSessionTimeout" runat="server" />
+                                <%--#CC01 Added--%>
+                                <%--<uc3:TimeoutControl ID="ucTimeOut" runat="server" />--%>
+                                <asp:ContentPlaceHolder ID="contentHolderMain" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!--bodycontent End-->
+            </div>
+            <!--Container End-->
+
+
+            <!--footer Start-->
+            <footer>
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Zed-Axis Technologies 2018-19. All Rights Reserved. 
+                    </div>
+                    <div>
+                        <asp:HyperLink ID="hypfooterlogo" CausesValidation="false" runat="server" Visible="false" />
+                    </div>
+                </div>
+            </footer>
+            <!--footer End-->
+        </div>
+        <div id="updateProgressDiv" class="updateProgress" style="display: none; background-color: #d0e1ee; position: fixed; top: 50%; left: 45%; padding: 10px; border: 1px solid #7cbdef">
+            <div align="center" class="Progress">
+                Loading...
+            <%--<img align="absmiddle" alt="" src='../<%=strAssets%>/CSS/Images/loading.gif' />--%>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

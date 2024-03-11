@@ -1,0 +1,282 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="CommonMasterPages_MasterPage" %>
+<%@ Import Namespace="System.Security.Cryptography" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Register Src="~/UserControls/Footer.ascx" TagName="ucFooter" TagPrefix="uc2" %>
+<%@ Register Src="~/UserControls/Header.ascx" TagName="ucHeader" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/ucMenu.ascx" TagName="ucMenu" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/ucCheckSessionTimeout.ascx" TagName="checkSessionTimeout" TagPrefix="uc5" %> <%--#CC01 Added--%>
+<%--<%@ Register src="../UserControls/TimeoutControl.ascx" tagname="TimeoutControl" tagprefix="uc3" %>--%>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server" id="Head1">
+    <title>
+        <%=(String)GetGlobalResourceObject("Messages", "PageTitleText")%></title>
+    <%--Add START  --%>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%-- Add END --%>
+    <meta http-equiv="Page-Enter" content="progid:DXImageTransform.Microsoft.Fade(Duration=1)" />
+    <meta http-equiv="Page-Exit" content="progid:DXImageTransform.Microsoft.Fade(Duration=1)" />
+    <link rel="stylesheet" id="bootstrapCss" runat="server" type="text/css" />
+    <link rel="stylesheet" id="StyleCss" runat="server" type="text/css" />
+    <link rel="stylesheet" id="modalCss" runat="server" type="text/css" />
+    <link rel="stylesheet" id="menuCss" runat="server" type="text/css" />  
+     <link rel="stylesheet" href="../plugins/bs-stepper/css/custom-style.css">  
+     <link rel="custom-style" id="popcss" runat="server" type="text/css" />
+    <script type="text/javascript" src="<%# Page.ResolveClientUrl("~/" + strAssets + "/Jscript/jquery-1.4.4.min.js") %>"></script>
+    <script type="text/javascript" src="../../Assets/Jscript/JSAsynRequest.js"></script>    
+     <script type="text/javascript" src="../Assets/FCKEditor/editor/_source/classes/custom-js.js"></script>  
+    <script src="<%# Page.ResolveClientUrl("~/" + strAssets + "/Jscript/bootstrap.min.js") %>"></script>
+    <script type="text/javascript" src="<%# Page.ResolveClientUrl("~/" + strAssets + "/Jscript/JsValidate.js") %>"></script>
+    <asp:Literal ID="litScripts" runat="server" ></asp:Literal>
+    
+  
+   <script type="text/javascript">
+       function changeCSSDropDown1() {
+           try {
+               $("select").focusin(function() {
+                
+                   $(this).removeClass('formselect');
+                   $(this).addClass('expand');
+               });
+               $("select").focus(function() {
+                   $(this).removeClass('formselect');
+                   $(this).addClass('expand');
+               });
+               $("select").blur(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+               $("select").focusout(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+
+               $("select").change(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+
+               $("select").change(function() {
+
+                   $(this.blur()).removeClass('expand');
+                   $(this.blur()).addClass('formselect');
+               });
+           } catch (e) {
+              
+           }
+       }
+
+    </script>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+ 
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="changeCSSDropDown1();" >  
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <!--Wrapper Start-->
+            <div id="container">
+                <!--Container Start-->
+                <header>
+                        <!--header Start-->
+                        <div>
+                            <div>
+                                <uc1:ucHeader ID="ucHeader" runat="server" />
+                            </div>
+                            <uc1:ucMenu ID="ucMenu" runat="server" />
+                            <div class="heading">
+                                <div class="container">
+                                    <div class="hd1">
+                                        <div id="tblHeading" runat="server">
+                                            <ul>
+                                                <li>
+                                                    <asp:Label ID="lblPageHeading" runat="server" Visible="false"></asp:Label>
+                                                </li>
+                                                <li>
+                                                    <asp:LinkButton ID="LBSwitchToBrand" runat="server" CausesValidation="False" CssClass="elink7"
+                                                        Text="" OnClick="LBSwitchToBrand_Click" Visible="false"></asp:LinkButton>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                  
+                </header>
+                <!--header End-->
+                <article>
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <div class="bodycontent">
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    <Services>
+                                        <asp:ServiceReference Path="~/CommonService.asmx" />
+                                    </Services>
+                                </asp:ScriptManager>
+                                <uc5:checkSessionTimeout ID="uccheckSessionTimeout" runat="server" />
+                                <%--#CC01 Added--%>
+                                <%--<uc3:TimeoutControl ID="ucTimeOut" runat="server" />--%>
+                                <asp:ContentPlaceHolder ID="contentHolderMain" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!--bodycontent End-->
+            </div>
+            <!--Container End-->
+
+
+            <!--footer Start-->
+            <footer>
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Zed-Axis Technologies 2018-19. All Rights Reserved. 
+                    </div>
+                    <div>
+                        <asp:HyperLink ID="hypfooterlogo" CausesValidation="false" runat="server" Visible="false" />
+                    </div>
+                </div>
+            </footer>
+            <!--footer End-->
+        </div>
+        <div id="updateProgressDiv" class="updateProgress" style="display: none; background-color: #d0e1ee; position: fixed; top: 50%; left: 45%; padding: 10px; border: 1px solid #7cbdef">
+            <div align="center" class="Progress">
+                Loading...
+            <%--<img align="absmiddle" alt="" src='../<%=strAssets%>/CSS/Images/loading.gif' />--%>
+            </div>
+        </div>
+
+    </form>
+    <!-----------/// Popup ----->
+<!-- Modal -->
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="popUpContent-inner">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-----------/// Popup Eend ---->
+</body>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+
+
+<script>
+    $('.owl-carousel').owlCarousel({
+        margin: 10,
+        nav: true,
+        navText: ["<img src='../images/prev-icon.jpg'/>", "<img src='../images/next-icon.jpg'/>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 5
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+
+
+    /// Close
+    $('.popUpClose').click(function () {
+
+        $('.popUpBg, .popUpContent,.loader').hide();
+    });
+
+    /// Team 
+    $('.item-inner').click(function () {
+        var getId = $(this).attr('data-entityTypeID');
+        var getname = $(this).attr('data-entityTypename');
+        //alert(getId)
+       // var getid = '<%= Session["encryptuserid"] %>';
+        //alert(getId)
+        $('.popUpBg,.loader').show();
+        $('.popUpContent-inner').html('');
+
+        /// Encript 
+       
+        //var getEncript = CryptoJS.AES.encrypt('10271', "123").toString();
+        //alert(getEncript);
+        //19667
+
+
+
+        $.ajax({
+            url: 'DashboardSFA2popup.aspx?UserID=' + getId,
+            type: 'GET',
+            success: function (data) {
+                $('.loader').hide();
+                $('.popUpContent').show();
+                $('.popUpContent-inner').html($(data).find('#contentHolderMain_updMsg').html());
+                
+                // Test 
+                setTimeout(function () {
+                    
+                    $('.popUpContent-inner #clientName').text(getname);
+                    $('.popUpContent-inner div#contentHolderMain_customtabsthreebusiness .carousel-wrap').show();
+                    $('.owl-carousel-popup').owlCarousel({
+                        margin: 10,
+                        nav: true,
+                        navText: ["<img src='../images/prev-icon.jpg'/>", "<img src='../images/next-icon.jpg'/>"],
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 4
+                            },
+                            1000: {
+                                items: 4
+                            }
+                        }
+                    });
+
+                }, 3000);
+                // Test End 
+                //alert(data.serialize());
+                //var content = $('<div>').append(data).find('#content');
+                //$('#content').html(content);
+            }
+        });
+
+       // '<%= Session["encryptuserid"] %>'=""
+
+        //$.get("DashboardSFA2popup.aspx?userID=20173", function (data, status) {
+        //alert("Data: " + data + "\nStatus: " + status);
+       
+
+    });
+
+</script>
+</html>

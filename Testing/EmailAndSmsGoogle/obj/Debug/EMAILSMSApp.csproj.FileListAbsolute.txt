@@ -1,0 +1,8 @@
+E:\WebProjects\ZEDEBSProjects\EmailAndSms\bin\Debug\EMAILSMSApp.exe.config
+E:\WebProjects\ZEDEBSProjects\EmailAndSms\bin\Debug\EMAILSMSApp.exe
+E:\WebProjects\ZEDEBSProjects\EmailAndSms\bin\Debug\EMAILSMSApp.pdb
+E:\WebProjects\ZEDEBSProjects\EmailAndSms\obj\Debug\EMAILSMSApp.exe
+E:\WebProjects\ZEDEBSProjects\EmailAndSms\obj\Debug\EMAILSMSApp.pdb
+D:\Works\EmailAndSmsGoogle\bin\Debug\EMAILSMSApp.exe.config
+D:\Works\EmailAndSmsGoogle\obj\Debug\EMAILSMSApp.exe
+D:\Works\EmailAndSmsGoogle\obj\Debug\EMAILSMSApp.pdb

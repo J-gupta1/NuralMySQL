@@ -1,0 +1,4631 @@
+/**************************************************
+'Project          : ZedSales
+'Created By       : Kalpana
+'Company       	  : Zed-Axis Technologies Pvt. Ltd.
+"Last Edited      : 16Oct18"
+'*************************************************/
+/*New Responsive CSS*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+article {
+    /*min-height: 418px;*/
+}
+form, p, div, span, ul, li, input, h4 {
+    padding: 0;
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+}
+
+td {
+    font-size: 11px;
+}
+
+option {
+    z-index: 50;
+    position: relative;
+}
+
+img, form, div, button {
+    border: 0;
+}
+
+div, p, h1, h2, h3, h4, img, ul, li, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a, a img {
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+article {
+    position: relative;
+}
+
+
+/** Grid Classes **/
+.gridbg
+{
+    background: #fff;
+}
+.gridborder
+{
+    background: #fff;
+    border: 1px solid #dddddd;
+}
+.gridheader {
+    font-family: Arial;
+    font-size: 11px;
+    color: #fff !important;
+    background: #c8c8c8 url('Images/gridheader.jpg') repeat-x left top;
+    height: 25px;
+    min-height: 25px;
+    text-align: left;
+    line-height: 13px;
+    word-wrap: break-word;
+    border-right-style: solid;
+    border-right-color: #dddcdc;
+    border-right-width: 1px;
+}
+
+.gridfooter {
+    font-size: 11px;
+    color: #000;
+    background: #cccccc;
+    word-wrap: break-word;
+    text-align: left;
+    line-height: 13px;
+    word-wrap: break-word;
+    border-right-style: solid;
+    border-right-color: #dddcdc;
+    border-right-width: 1px;
+}
+.gridrow {
+    font-size: 11px;
+    color: #000;
+    background-color: #f7f6f3;
+    word-wrap: break-word;
+}
+.altrow, .Altrow {
+    font-size: 11px;
+    color: #000;
+    background-color: #fff;
+    word-wrap: break-word;
+}
+
+.gridrow1 {
+    background: #e5e3e3;
+    color: #000;
+    min-height: 25px;
+    vertical-align: middle;
+    font-size: 11px;
+}
+
+.gridrow_selected {
+    background-color: #aed9ff;
+    color: #000;
+}
+
+.gridrowsm {
+    background: #dfdfdf;
+    color: #5b5b5b;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 11px;
+}
+
+.gridrowsm1 {
+    background: #f5f5f5;
+    color: #5b5b5b;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 11px;
+}
+
+.tableposition {
+    position: relative;
+}
+
+.mainheading, .mainheading_rpt, .subheading {
+    float: left;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    color: #323232;
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    padding: 3px 10px;
+    margin-top: 5px;
+    background-color: #dddddd;
+    overflow: hidden;
+}
+
+.contentbox, .contentbox3, .innerarea {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f6f6f6;
+    border: solid 1px #dddddd;
+    border-top: 3px solid #dddddd;
+    border-radius: 0 3px 3px 3px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    overflow: hidden;
+    clear: both;
+}
+
+
+.formtext {
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: arial;
+    padding-top: 4px;
+}
+.form_input2
+{
+    width: 140px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    height: 15px;
+    font-size: 11px;
+    padding: 1px;
+}
+.buttonbg {
+    font-size: 11px;
+    font-weight: normal;
+    color: #fff;
+    white-space: inherit;
+    padding: 1px 8px;
+    background-color: #0090a6;
+    border: 1px #0090a6 solid;
+    outline: none;
+    cursor: pointer;
+    height: 22px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+ .buttonbg:hover {
+        font-size: 11px;
+        font-weight: normal;
+        color: #fff;
+        white-space: inherit;
+        padding: 1px 8px;
+        background-color: #3cc0d4;
+        border: 1px #0090a6 solid;
+        outline: none;
+        cursor: pointer;
+        height: 22px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+/*.grid1
+{
+    overflow: auto;
+    width: 750px;
+    height: 200px;
+    border: #c9c9c9 1px solid;
+    scrollbar-base-color: #fff;
+    scrollbar-3dlight-color: #fff;
+    scrollbar-arrow-color: #000;
+    scrollbar-darkshadow-color: #fff;
+    scrollbar-face-color: #ebebeb;
+    scrollbar-highlight-color: #fff;
+    scrollbar-shadow-color: #fff;
+    scrollbar-track-color: #fff;
+    margin: 0;
+    background-color: #cfcfcf;
+}
+.grid3
+{
+    overflow: auto;
+    width: 730px;
+    height: 200px;
+    border: #c9c9c9 1px solid;
+    scrollbar-base-color: #fff;
+    scrollbar-3dlight-color: #fff;
+    scrollbar-arrow-color: #000;
+    scrollbar-darkshadow-color: #fff;
+    scrollbar-face-color: #ebebeb;
+    scrollbar-highlight-color: #fff;
+    scrollbar-shadow-color: #fff;
+    scrollbar-track-color: #fff;
+    margin: 0;
+    background-color: #cfcfcf;
+}*/
+/*grid started*/
+/*grid started*/
+.grid1 {
+    width: 100%;
+    overflow: auto;
+    clear: both;
+    border-radius: 4px;
+}
+
+.grid2 {
+    width: 100%;
+    height: auto;
+    max-height: 130px;
+    overflow: auto;
+    background-color: #dddcdc;
+    scrollbar-base-color: #fff;
+    scrollbar-3dlight-color: #fff;
+    scrollbar-arrow-color: #505050;
+    scrollbar-darkshadow-color: #fff;
+    scrollbar-face-color: #6b6d6e;
+    scrollbar-highlight-color: #fff;
+    scrollbar-shadow-color: #fff;
+    scrollbar-track-color: #fff;
+    border-radius: 4px;
+}
+
+.grid3 {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    background-color: #dddcdc;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: solid 1px #cbcbcb;
+    border-radius: 4px;
+}
+
+.grid4 {
+    width: 100%;
+    height: auto;
+    max-height: 390px;
+    min-height: .01%;
+    overflow-x: auto;
+    background-color: #dddcdc;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: solid 1px #cbcbcb;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 767px) {
+    .grid1 {
+        width: 100%;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: solid 1px #cbcbcb;
+    }
+
+    .grid2 {
+        width: 100%;
+        height: auto;
+        max-height: 130px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: solid 1px #cbcbcb;
+    }
+
+    .grid3 {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: solid 1px #cbcbcb;
+    }
+
+    .grid4 {
+        width: 100%;
+        height: auto;
+        max-height: 390px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: solid 1px #cbcbcb;
+    }
+}
+
+.grid1 table, .grid2 table, .grid3 table, .grid4 table {
+    border-collapse: collapse;
+}
+
+.grid1 td, .grid1 th,
+.grid2 td, .grid2 th,
+.grid3 td, .grid3 th,
+.grid4 td, .grid4 th {
+    border: solid 1px #cbcbcb;
+    font-family: Arial;
+}
+
+    .grid1 td td, .grid2 td td, .grid3 td td, .grid4 td td {
+        border: none;
+    }
+
+/*grid ended*/
+
+/*table start*/
+.table > tbody > tr > td,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+    padding: 2px;
+    line-height: 1.22857143;
+    vertical-align: top;
+    border: solid 1px #cbcbcb;
+}
+
+.table > tbody > tr > th {
+    min-height: 25px;
+}
+/*table end*/
+/***** Error Style Sheet ****/
+
+.info, .success, .warning, .erroruc, .validation {
+    /*width:100%;*/
+    margin: 3px 0px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    min-height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    clear: both;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('Images/Message/info.png');
+    padding-top: 5px;
+    border: 1px solid #7cd2fb;
+    border-radius: 3px;
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('Images/Message/success.png');
+    padding-top: 5px;
+    border: 1px solid #68894a;
+    border-radius: 3px;
+}
+
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('Images/Message/warning.png');
+    padding-top: 5px;
+    border: 1px solid #dab729;
+    border-radius: 3px;
+}
+
+.erroruc {
+    color: #000;
+    background-color: #FFBABA;
+    background-image: url('Images/Message/error.png');
+    padding-top: 5px;
+    border: 1px solid #d28989;
+    border-radius: 3px;
+}
+
+    .info p, .success p, .warning p, .erroruc p {
+        padding: 0px 0px;
+    }
+
+    .info a, .success a, .warning a, .erroruc a {
+        float: right;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+.container img {
+    border: none;
+}
+/*Pagination Styles*/
+.PagerStyle {  
+    background-color: #bfbfbf;
+    height: 25px;
+    border-radius: 4px;
+}
+
+    .PagerStyle a {
+     color: #000;
+     font-size: 11px;
+    font-weight: normal;
+    white-space: inherit;
+    padding: 1px 8px;
+    background-color: #fff;
+    border: 1px #bbbbbb solid;
+    outline: none;
+    cursor: pointer;
+    height: 22px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    }
+
+    .PagerStyle span {
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    white-space: inherit;
+    padding: 1px 8px;
+    background-color: #0090a6;
+    border: 1px #0090a6 solid;
+    outline: none;
+    cursor: pointer;
+    height: 22px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    }
+
+.form_select {
+    width: 75px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_select1 {
+    width: 183px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_select2 {
+    width: 100px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_select3 {
+    width: 60px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_select4 {
+    width: 75px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_select5 {
+    width: 100px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+/*CSS for Target Entry for Zonal Manager*/
+.form_select6 {
+    width: 210px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_select7 {
+    width: 150px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    font-size: 11px;
+}
+
+.form_textarea {
+    width: 160px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    height: 60px;
+    font-size: 11px;
+    padding: 1px;
+}
+
+.form_textarea2 {
+    width: 200px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    height: 60px;
+    font-size: 11px;
+    padding: 1px;
+}
+
+.form_textarea5 {
+    width: 162px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    height: 60px;
+    font-size: 11px;
+    padding: 1px;
+}
+
+.form_file {
+    width: 220px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    font-size: 11px;
+    background-color: #fff;
+}
+
+.form_file2 {
+    width: 230px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    font-size: 11px;
+    background-color: #fff;
+}
+
+.error {
+    font-size: 10px;
+    color: #f00;
+    font-family: Tahoma;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: normal;
+}
+
+.mandatory {
+    font-size: 10px;
+    color: #f00;
+    font-family: Tahoma;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.formtext {
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+    font-family: arial;
+    padding-top: 4px;
+}
+
+.form_input2 {
+    width: 160px;
+    border: 1px solid #c3c3c3;
+    color: #333;
+    background: #fff;
+    height: 18px;
+    font-size: 11px;
+    padding: 1px;
+}
+
+.form_input5 {
+    width: 60px;
+    border: 1px solid #c3c3c3;
+    text-align: left;
+    color: #333;
+    background: #fff;
+    height: 15px;
+    font-size: 11px;
+    padding: 1px;
+}
+
+.calimg {
+    background: url(Images/Calender.gif) no-repeat left 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 16px;
+    height: 16px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.text_bold {
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: arial;
+    padding-top: 4px;
+}
+
+.form_text3 {
+    color: #333;
+    font-weight: bold;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-margin {
+    float: left;
+    margin-right: 10px;
+}
+
+.float-padding {
+    float: left;
+    font-size: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+.padding-right {
+    padding-right: 5px;
+}
+
+.padding-top {
+    padding-top: 5px;
+}
+
+.padding-bottom {
+    padding-top: 5px;
+}
+
+.padding {
+    padding: 5px;
+    overflow: hidden;
+}
+
+.margin-all {
+    margin: 10px;
+}
+
+.margin-left {
+    margin-left: 10px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.main-box {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+
+    .formselect, .formselect10, .expand, .expand1, .formfields, .text-formfields {
+        min-width: 160px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+    .formselect, .formselect10, .expand, .expand1, .formfields, .text-formfields {
+        min-width: 160px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+
+    .formselect, .expand, .expand1, .formfields {
+        min-width: 160px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .formselect, .expand, .expand1, .formfields {
+        min-width: 120px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .formselect, .expand, .expand1, .formfields {
+        min-width: 120px;
+    }
+}
+
+/*input start*/
+
+.formfields-W70 {
+    display: block;
+    margin-right: 3%;
+    width: 70px;
+    height: 23px !important;
+    padding: 0 2px 0 3px;
+    font-size: 11px;
+    line-height: 1.228571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.formselect:-moz-placeholder,
+.formfields:-moz-placeholder {
+    color: #999;
+}
+
+.formselect::-moz-placeholder,
+.formfields::-moz-placeholder {
+    color: #999;
+}
+
+.formselect:-ms-input-placeholder,
+.formfields:-ms-input-placeholder {
+    color: #999;
+}
+
+.formselect::-webkit-input-placeholder,
+.formfields::-webkit-input-placeholder {
+    color: #999;
+}
+
+.formselect, .formselect10,
+.expand, .expand1,
+.formfields,
+.text-formfields {
+    display: block;
+    margin-right: 3%;
+    width: 93%;
+    height: 23px;
+    padding: 0 3px 0 2px;
+    font-size: 11px;
+    line-height: 1.228571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+    .formselect:focus,
+    .formfields:focus,
+    .formselect .expand,
+    .formselect .expand1 {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    }
+
+    .formselect[disabled], .formselect[readonly], fieldset[disabled] .formselect,
+    .formfields[disabled], .formfields[readonly], fieldset[disabled] .formfields {
+        cursor: not-allowed;
+        background-color: #eee;
+    }
+
+textarea.formselect, textarea.formfields {
+    height: auto;
+}
+/*input end*/
+/*.form_textarea start*/
+.form_textarea {
+    display: block;
+    margin-right: 3%;
+    width: 93%;
+    height: 30px;
+    padding: 0 3px 0 2px;
+    font-size: 11px;
+    line-height: 1.228571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+    .form_textarea :focus,
+    .form_textarea .expand,
+    .form_textarea .expand1 {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    }
+
+    .form_textarea[disabled], .form_textarea[readonly] {
+        cursor: not-allowed;
+        background-color: #eee;
+    }
+
+/*.form_textarea end*/
+
+/*Textarea start*/
+textarea:-moz-placeholder {
+    color: #999;
+}
+
+textarea::-moz-placeholder {
+    color: #999;
+}
+
+textarea:-ms-input-placeholder {
+    color: #999;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #999;
+}
+
+textarea {
+    display: block;
+    margin-right: 3%;
+    width: 93%;
+    padding: 3px 3px;
+    font-size: 11px;
+    line-height: 1.228571429;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+    textarea:focus, textarea .expand {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    }
+
+    textarea[disabled], textarea[readonly] {
+        cursor: not-allowed;
+        background-color: #eee;
+    }
+
+    textarea.formselect, textarea.formfields {
+        height: auto;
+    }
+/*Textarea end*/
+
+.calander-icon {
+    float: left;
+    padding: 3px;
+}
+
+.datepicker {
+    width: 85px;
+    line-height: 1.228571429;
+    height: 23px;
+    padding: 0 3px 0 5px;
+    border: 1px solid #ccc;
+    font-size: 11px;
+    color: #333333;
+    font-weight: normal;
+    background-color: #fff;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+/*upload file input start*/
+.fileuploads, .form_file,
+.dxucEditArea {
+    position: relative;
+    overflow: hidden;
+    margin-right: 3%;
+    width: 95%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 11px !important;
+}
+
+    .fileuploads input[type=file],
+    .dxucEditArea input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+/*upload file input end*/
+
+
+/*new responsive css start*/
+/*=======================height 35 ==================*/
+/*.H35-C3 start*/
+
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H35-C3 {
+        overflow: hidden;
+        width: 100%;
+    }
+
+        .H35-C3 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3 .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H35-C3 {
+        float: left;
+    }
+
+        .H35-C3 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H35-C3 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H35-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H35-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C3 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H35-C3 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H35-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H35-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C3 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H35-C3 .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H35-C3 .text-field {
+            float: left;
+            width: 49%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H35-C3 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H35-C3 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H35-C3 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H35-C3 .text-field {
+            float: left;
+            width: 33%;
+        }
+}
+
+.H35-C3 {
+    float: left;
+}
+
+    .H35-C3 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H35-C3 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 35px;
+            min-height: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H35-C3 end*/
+
+/*.H35-C3-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H35-C3-S {
+        overflow: hidden;
+    }
+
+        .H35-C3-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3-S .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3-S .text-field {
+            display: block;
+            width: 100%;
+        }
+
+        .H35-C3-S .text-field3 {
+            display: block;
+            width: 95%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H35-C3-S {
+        float: left;
+    }
+
+        .H35-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H35-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H35-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H35-C3-S .text-field {
+            display: block;
+            width: 98%;
+        }
+
+        .H35-C3-S .text-field3 {
+            display: block;
+            width: 95%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H35-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H35-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H35-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H35-C3-S .text-field {
+            display: block;
+            width: 98%;
+        }
+
+        .H35-C3-S .text-field3 {
+            display: inline;
+            width: 58%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H35-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C3-S .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H35-C3-S .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H35-C3-S .text-field {
+            float: left;
+            display: inline;
+            width: 49%;
+        }
+
+        .H35-C3-S .text-field3 {
+            display: inline;
+            width: 79%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H35-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H35-C3-S .text {
+            float: left;
+            display: inline;
+            width: 12%;
+        }
+
+        .H35-C3-S .field {
+            float: left;
+            display: inline;
+            width: 21%;
+        }
+
+        .H35-C3-S .text-field {
+            float: left;
+            display: inline;
+            width: 33%;
+        }
+
+        .H35-C3-S .text-field3 {
+            display: inline;
+            width: 86%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+.H35-C3-S {
+    float: left;
+}
+
+    .H35-C3-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H35-C3-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 35px;
+            min-height: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H35-C3-S end*/
+
+
+/*.H35-C2 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H35-C2 {
+        overflow: hidden;
+    }
+
+        .H35-C2 .text {
+            display: block;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2 .field {
+            display: block;
+            width: 55%;
+            text-align: left;
+        }
+
+        .H35-C2 .link {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H35-C2 {
+        float: left;
+    }
+
+        .H35-C2 .text {
+            float: left;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2 .field {
+            float: left;
+            width: 55%;
+            text-align: left;
+        }
+
+        .H35-C2 .link {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H35-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C2 .text {
+            float: left;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2 .field {
+            float: left;
+            width: 55%;
+            text-align: left;
+        }
+
+
+        .H35-C2 .link {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H35-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C2 .text {
+            float: left;
+            display: inline;
+            width: 18%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2 .field {
+            float: left;
+            display: inline;
+            width: 31%;
+            text-align: left;
+        }
+
+        .H35-C2 .link {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H35-C2 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H35-C2 .text {
+            float: left;
+            display: inline;
+            width: 18%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2 .field {
+            float: left;
+            display: inline;
+            width: 31%;
+            text-align: left;
+        }
+
+        .H35-C2 .link {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+}
+
+.H35-C2 {
+    float: left;
+}
+
+    .H35-C2 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H35-C2 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 35px;
+            min-height: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H35-C2 end*/
+
+/*.H35-C2-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H35-C2-S {
+        overflow: hidden;
+    }
+
+        .H35-C2-S .text {
+            display: block;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2-S .field {
+            display: block;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H35-C2-S {
+        float: left;
+    }
+
+        .H35-C2-S .text {
+            float: left;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2-S .field {
+            float: left;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H35-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C2-S .text {
+            float: left;
+            width: 40%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2-S .field {
+            float: left;
+            width: 59%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H35-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C2-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2-S .field {
+            float: left;
+            display: inline;
+            width: 34%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H35-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H35-C2-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C2-S .field {
+            float: left;
+            display: inline;
+            width: 34%;
+            text-align: left;
+        }
+}
+
+.H35-C2-S {
+    float: left;
+}
+
+    .H35-C2-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H35-C2-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 35px;
+            min-height: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H35-C2-S end*/
+
+/*.H35-C start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H35-C {
+        overflow: hidden;
+    }
+
+        .H35-C .text {
+            display: block;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C .field {
+            display: block;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H35-C {
+        float: left;
+    }
+
+        .H35-C .text {
+            float: left;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C .field {
+            float: left;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H35-C {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C .text {
+            float: left;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C .field {
+            float: left;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H35-C {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C .text {
+            float: left;
+            display: inline;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C .field {
+            float: left;
+            display: inline;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H35-C {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H35-C .text {
+            float: left;
+            display: inline;
+            width: 44%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C .field {
+            float: left;
+            display: inline;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+.H35-C {
+    float: left;
+}
+
+    .H35-C ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H35-C ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 35px;
+            min-height: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H35-C end*/
+
+
+/*.H35-C-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H35-C-S {
+        overflow: hidden;
+    }
+
+        .H35-C-S .text {
+            display: block;
+            width: 34%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C-S .field {
+            display: block;
+            width: 65%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H35-C-S {
+        float: left;
+    }
+
+        .H35-C-S .text {
+            float: left;
+            width: 34%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C-S .field {
+            float: left;
+            width: 65%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H35-C-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C-S .text {
+            float: left;
+            width: 34%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C-S .field {
+            float: left;
+            width: 65%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H35-C-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H35-C-S .text {
+            float: left;
+            display: inline;
+            width: 34%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C-S .field {
+            float: left;
+            display: inline;
+            width: 65%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H35-C-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H35-C-S .text {
+            float: left;
+            display: inline;
+            width: 34%;
+            text-align: left;
+            padding-right: 1%;
+        }
+
+        .H35-C-S .field {
+            float: left;
+            display: inline;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+.H35-C-S {
+    float: left;
+}
+
+    .H35-C-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H35-C-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 35px;
+            min-height: 35px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H35-C-S end*/
+
+/*=======================height 30 ==================*/
+/*.H30-C4 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H30-C4 {
+        overflow: hidden;
+    }
+
+        .H30-C4 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C4 .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C4 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H30-C4 {
+        float: left;
+    }
+
+        .H30-C4 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H30-C4 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H30-C4 .field3 {
+            float: left;
+            padding-left: 40%;
+        }
+
+        .H30-C4 .text-field {
+            float: left;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H30-C4 {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C4 .text {
+            float: left;
+            width: 22%;
+        }
+
+        .H30-C4 .field {
+            float: left;
+            width: 27%;
+        }
+
+        .H30-C4 .field3 {
+            float: left;
+            padding-left: 22%;
+        }
+
+        .H30-C4 .text-field {
+            float: left;
+            width: 49%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H30-C4 {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C4 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H30-C4 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H30-C4 .field3 {
+            float: left;
+            padding-left: 15%;
+        }
+
+        .H30-C4 .text-field {
+            float: left;
+            width: 33%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H30-C4 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H30-C4 .text {
+            float: left;
+            display: inline;
+            width: 10%;
+        }
+
+        .H30-C4 .field {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H30-C4 .text-field {
+            float: left;
+            width: 25%;
+        }
+}
+
+.H30-C4 {
+    float: left;
+}
+
+    .H30-C4 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H30-C4 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H25-C4 end*/
+
+/*.H30-C4-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H30-C4-S {
+        overflow: hidden;
+    }
+
+        .H30-C4-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C4-S .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H30-C4-S {
+        float: left;
+    }
+
+        .H30-C4-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H30-C4-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H30-C4-S .field3 {
+            float: left;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H30-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C4-S .text {
+            float: left;
+            width: 22%;
+        }
+
+        .H30-C4-S .field {
+            float: left;
+            width: 27%;
+        }
+
+        .H30-C4-S .field3 {
+            float: left;
+            padding-left: 22%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H30-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C4-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H30-C4-S .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H30-C4-S .field3 {
+            float: left;
+            padding-left: 15%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H30-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H30-C4-S .text {
+            float: left;
+            display: inline;
+            width: 7%;
+        }
+
+        .H30-C4-S .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+}
+
+.H30-C4-S {
+    float: left;
+}
+
+    .H30-C4-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H30-C4-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H30-C4-S end*/
+
+/*.H30-C3 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H30-C3 {
+        overflow: hidden;
+    }
+
+        .H30-C3 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C3 .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H30-C3 {
+        float: left;
+    }
+
+        .H30-C3 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H30-C3 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H30-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H30-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C3 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H30-C3 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H30-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H30-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H30-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C3 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H30-C3 .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H30-C3 .text-field {
+            display: block;
+            width: 49%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H30-C3 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H30-C3 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H30-C3 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H30-C3 .text-field {
+            display: block;
+            width: 33%;
+        }
+}
+
+.H30-C3 {
+    float: left;
+}
+
+    .H30-C3 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H30-C3 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+    .H30-C3 .link {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+/*.H30-C3 end*/
+
+/*.H30-C3-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H30-C3-S {
+        overflow: hidden;
+    }
+
+        .H30-C3-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C3-S .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H30-C3-S .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H30-C3-S {
+        float: left;
+    }
+
+        .H30-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H30-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H30-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H30-C3-S .text-field {
+            float: left;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H30-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H30-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H30-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H30-C3-S .text-field {
+            float: left;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H30-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C3-S .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H30-C3-S .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H30-C3-S .text-field {
+            float: left;
+            width: 49%;
+        }
+
+        .H30-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 20%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H30-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H30-C3-S .text {
+            float: left;
+            display: inline;
+            width: 12%;
+        }
+
+        .H30-C3-S .field {
+            float: left;
+            display: inline;
+            width: 21%;
+        }
+
+        .H30-C3-S .text-field {
+            float: left;
+            width: 33%;
+        }
+}
+
+.H30-C3-S {
+    float: left;
+}
+
+    .H30-C3-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H30-C3-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            min-height: 30px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+    .H30-C3-S .link {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+
+/*.H30-C3-S end*/
+
+
+/*.H30-C2 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H30-C2 {
+        overflow: hidden;
+    }
+
+        .H30-C2 .text {
+            display: block;
+            width: 45%;
+            text-align: right;
+        }
+
+        .H30-C2 .field {
+            display: block;
+            width: 50%;
+            text-align: left;
+        }
+
+        .H30-C2 .img {
+            display: block;
+            width: 5%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H30-C2 {
+        float: left;
+    }
+
+        .H30-C2 .text {
+            float: left;
+            width: 45%;
+            text-align: right;
+        }
+
+        .H30-C2 .field {
+            float: left;
+            width: 50%;
+            text-align: left;
+        }
+
+        .H30-C2 .img {
+            float: left;
+            width: 5%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H30-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C2 .text {
+            float: left;
+            width: 45%;
+            text-align: right;
+        }
+
+        .H30-C2 .field {
+            float: left;
+            width: 50%;
+            text-align: left;
+        }
+
+        .H30-C2 .img {
+            float: left;
+            width: 5%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H30-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C2 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+            text-align: right;
+        }
+
+        .H30-C2 .field {
+            float: left;
+            display: inline;
+            width: 33%;
+            text-align: left;
+        }
+
+        .H30-C2 .img {
+            float: left;
+            width: 2%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H30-C2 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H30-C2 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+            text-align: right;
+        }
+
+        .H30-C2 .field {
+            float: left;
+            display: inline;
+            width: 33%;
+            text-align: left;
+        }
+
+        .H30-C2 .img {
+            float: left;
+            width: 2%;
+        }
+}
+
+.H30-C2 {
+    float: left;
+}
+
+    .H30-C2 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H30-C2 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            min-height: 30px;
+            margin-bottom: 10px;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H30-C2 end*/
+
+/*.H30-C2-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H30-C2-S {
+        overflow: hidden;
+    }
+
+        .H30-C2-S .text {
+            display: block;
+            width: 98%;
+            text-align: left;
+            padding-right: 1%;
+            min-height: 12px;
+        }
+
+        .H30-C2-S .field {
+            display: block;
+            width: 99%;
+            text-align: left;
+        }
+
+        .H30-C2-S .field2 {
+            float: left;
+            display: inline;
+            width: 99%;
+            text-align: left;
+        }
+
+        .H30-C2-S .text-field {
+            float: left;
+            display: inline;
+            width: 99%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H30-C2-S {
+        float: left;
+    }
+
+        .H30-C2-S .text {
+            float: left;
+            width: 98%;
+            text-align: left;
+            padding-right: 1%;
+            min-height: 12px;
+        }
+
+        .H30-C2-S .field {
+            float: left;
+            width: 99%;
+            text-align: left;
+        }
+
+        .H30-C2-S .field2 {
+            float: left;
+            display: inline;
+            width: 99%;
+            text-align: left;
+        }
+
+        .H30-C2-S .text-field {
+            float: left;
+            display: inline;
+            width: 99%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H30-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C2-S .text {
+            float: left;
+            width: 44%;
+            text-align: right;
+            padding-right: 1%;
+        }
+
+        .H30-C2-S .field {
+            float: left;
+            width: 55%;
+            text-align: left;
+        }
+
+        .H30-C2-S .field2 {
+            float: left;
+            display: inline;
+            width: 55%;
+            text-align: left;
+        }
+
+        .H30-C2-S .text-field {
+            float: left;
+            display: inline;
+            width: 55%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H30-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H30-C2-S .text {
+            float: left;
+            display: inline;
+            width: 18%;
+            text-align: right;
+            padding-right: 1%;
+        }
+
+        .H30-C2-S .field {
+            float: left;
+            display: inline;
+            width: 31%;
+            text-align: left;
+        }
+
+        .H30-C2-S .field2 {
+            float: left;
+            display: inline;
+            width: 80%;
+            text-align: left;
+        }
+
+        .H30-C2-S .text-field {
+            float: left;
+            display: inline;
+            width: 49%;
+            text-align: left;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H30-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H30-C2-S .text {
+            float: left;
+            display: inline;
+            width: 18%;
+            text-align: right;
+            padding-right: 1%;
+        }
+
+        .H30-C2-S .field {
+            float: left;
+            display: inline;
+            width: 31%;
+            text-align: left;
+        }
+
+        .H30-C2-S .field2 {
+            float: left;
+            display: inline;
+            width: 80%;
+            text-align: left;
+        }
+
+        .H30-C2-S .text-field {
+            float: left;
+            display: inline;
+            width: 49%;
+            text-align: left;
+        }
+}
+
+.H30-C2-S {
+    float: left;
+}
+
+    .H30-C2-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H30-C2-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            min-height: 30px;
+            margin-bottom: 10px;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H30-C2-S end*/
+
+/*=======================height 25 ==================*/
+/*.H25-C4 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H25-C4 {
+        overflow: hidden;
+    }
+
+        .H25-C4 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C4 .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H25-C4 {
+        float: left;
+    }
+
+        .H25-C4 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C4 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C4 .field3 {
+            float: left;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H25-C4 {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C4 .text {
+            float: left;
+            width: 22%;
+        }
+
+        .H25-C4 .field {
+            float: left;
+            width: 27%;
+        }
+
+        .H25-C4 .field3 {
+            float: left;
+            padding-left: 22%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H25-C4 {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C4 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H25-C4 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H25-C4 .field3 {
+            float: left;
+            padding-left: 15%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H25-C4 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H25-C4 .text {
+            float: left;
+            display: inline;
+            width: 10%;
+        }
+
+        .H25-C4 .field {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+}
+
+.H25-C4 {
+    float: left;
+}
+
+    .H25-C4 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H25-C4 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 25px;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H25-C4 end*/
+
+
+/*.H25-C4-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H25-C4-S {
+        overflow: hidden;
+    }
+
+        .H25-C4-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C4-S .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C4-S .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H25-C4-S {
+        float: left;
+    }
+
+        .H25-C4-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C4-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C4-S .field3 {
+            float: left;
+            padding-left: 40%;
+        }
+
+        .H25-C4-S .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H25-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C4-S .text {
+            float: left;
+            width: 22%;
+        }
+
+        .H25-C4-S .field {
+            float: left;
+            width: 27%;
+        }
+
+        .H25-C4-S .field3 {
+            float: left;
+            padding-left: 22%;
+        }
+
+        .H25-C4-S .text-field {
+            float: left;
+            display: inline;
+            width: 49%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H25-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C4-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H25-C4-S .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H25-C4-S .field3 {
+            float: left;
+            padding-left: 15%;
+        }
+
+        .H25-C4-S .text-field {
+            float: left;
+            display: inline;
+            width: 33%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H25-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H25-C4-S .text {
+            float: left;
+            display: inline;
+            width: 7%;
+        }
+
+        .H25-C4-S .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H25-C4-S .text-field {
+            float: left;
+            display: inline;
+            width: 25%;
+        }
+}
+
+.H25-C4-S {
+    float: left;
+}
+
+    .H25-C4-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H25-C4-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 25px;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H25-C4-S end*/
+
+
+/*.H25-C3 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H25-C3 {
+        overflow: hidden;
+    }
+
+        .H25-C3 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3 .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3 .field2 {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H25-C3 {
+        float: left;
+    }
+
+        .H25-C3 .text {
+            float: left;
+            display: inline;
+            width: 40%;
+        }
+
+        .H25-C3 .field {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H25-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H25-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H25-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H25-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C3 .text {
+            float: left;
+            display: inline;
+            width: 40%;
+        }
+
+        .H25-C3 .field {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H25-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H25-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H25-C3 .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H25-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C3 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H25-C3 .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H25-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H25-C3 .text-field {
+            float: left;
+            display: inline;
+            width: 49%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H25-C3 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H25-C3 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H25-C3 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H25-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 51%;
+        }
+
+        .H25-C3 .text-field {
+            float: left;
+            display: inline;
+            width: 33%;
+        }
+}
+
+.H25-C3 {
+    float: left;
+}
+
+    .H25-C3 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H25-C3 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 25px;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H25-C3 end*/
+
+
+/*.H25-C3-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H25-C3-S {
+        overflow: hidden;
+        width: 100%;
+    }
+
+        .H25-C3-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3-S .field {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3-S .field2 {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3-S .text-field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H25-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C3-S .field2 {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C3-S .text-field {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3-S .text-field3 {
+            display: block;
+            width: 95%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H25-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C3-S .field2 {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H25-C3-S .text-field {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C3-S .text-field3 {
+            display: block;
+            width: 95%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H25-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C3-S .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H25-C3-S .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H25-C3-S .field2 {
+            float: left;
+            display: inline;
+            width: 78%; /*field % + text % + field% */
+        }
+
+        .H25-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 20%;
+        }
+
+        .H25-C3-S .text-field {
+            display: inline;
+            width: 49%; /*field % + text %*/
+        }
+
+        .H25-C3-S .text-field3 {
+            display: inline;
+            width: 79%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H25-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H25-C3-S .text {
+            float: left;
+            display: inline;
+            width: 12%;
+        }
+
+        .H25-C3-S .field {
+            float: left;
+            display: inline;
+            width: 21%;
+        }
+
+        .H25-C3-S .field2 {
+            float: left;
+            display: inline;
+            width: 54%; /*field % + text % + field %*/
+        }
+
+        .H25-C3-S .text-field {
+            display: inline;
+            width: 33%; /*text % + field %*/
+        }
+
+        .H25-C3-S .text-field3 {
+            display: inline;
+            width: 86%; /*field % + text % + field% + text % + field %*/
+        }
+}
+
+.H25-C3-S {
+    float: left;
+}
+
+    .H25-C3-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H25-C3-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 25px;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+    .H25-C3-S .link {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+/*.H25-C3-S end*/
+
+
+
+/*.H25-C2 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H25-C2 {
+        overflow: hidden;
+    }
+
+        .H25-C2 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C2 .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H25-C2 {
+        float: left;
+    }
+
+        .H25-C2 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C2 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C2 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H25-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C2 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C2 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C2 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+
+        .H25-C2 .text-field {
+            float: left;
+            display: inline;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H25-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C2 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H25-C2 .field {
+            float: left;
+            display: inline;
+            width: 30%;
+        }
+
+        .H25-C2 .text-field {
+            float: left;
+            display: inline;
+            width: 50%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H25-C2 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H25-C2 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H25-C2 .field {
+            float: left;
+            display: inline;
+            width: 30%;
+        }
+
+        .H25-C2 .text-field {
+            float: left;
+            display: inline;
+            width: 50%;
+        }
+}
+
+.H25-C2 {
+    float: left;
+}
+
+    .H25-C2 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H25-C2 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 25px;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H25-C2 end*/
+
+/*.H25-C2-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H25-C2-S {
+        overflow: hidden;
+    }
+
+        .H25-C2-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H25-C2-S .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H25-C2-S {
+        float: left;
+    }
+
+        .H25-C2-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C2-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C2-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H25-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C2-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H25-C2-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H25-C2-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H25-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H25-C2-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H25-C2-S .field {
+            float: left;
+            display: inline;
+            width: 35%;
+        }
+
+        .H25-C2-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 15%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H25-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H25-C2-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H25-C2-S .field {
+            float: left;
+            display: inline;
+            width: 35%;
+        }
+}
+
+.H25-C2-S {
+    float: left;
+}
+
+    .H25-C2-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H25-C2-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 25px;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H25-C2-S end*/
+
+/*=======================height 20 ==================*/
+/*.H20-C4 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H20-C4 {
+        overflow: hidden;
+    }
+
+        .H20-C4 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H20-C4 .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H20-C4 {
+        float: left;
+    }
+
+        .H20-C4 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C4 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C4 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H20-C4 {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C4 .text {
+            float: left;
+            width: 22%;
+        }
+
+        .H20-C4 .field {
+            float: left;
+            width: 27%;
+        }
+
+        .H20-C4 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 22%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H20-C4 {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C4 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H20-C4 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H20-C4 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 15%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H20-C4 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H20-C4 .text {
+            float: left;
+            display: inline;
+            width: 10%;
+        }
+
+        .H20-C4 .field {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+}
+
+.H20-C4 {
+    float: left;
+}
+
+    .H20-C4 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H20-C4 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 20px;
+            min-height: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H20-C4 end*/
+
+/*.H20-C4-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H20-C4-S {
+        overflow: hidden;
+    }
+
+        .H20-C4-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H20-C4-S .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H20-C4-S {
+        float: left;
+    }
+
+        .H20-C4-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C4-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C4-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H20-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C4-S .text {
+            float: left;
+            width: 22%;
+        }
+
+        .H20-C4-S .field {
+            float: left;
+            width: 27%;
+        }
+
+        .H20-C4-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 22%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H20-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C4-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H20-C4-S .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H20-C4-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H20-C4-S .text {
+            float: left;
+            display: inline;
+            width: 7%;
+        }
+
+        .H20-C4-S .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+}
+
+.H20-C4-S {
+    float: left;
+}
+
+    .H20-C4-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H20-C4-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 20px;
+            min-height: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H20-C4-S end*/
+
+
+/*.H20-C3 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H20-C3 {
+        overflow: hidden;
+    }
+
+        .H20-C3 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H20-C3 .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H20-C3 {
+        float: left;
+    }
+
+        .H20-C3 .text {
+            float: left;
+            display: inline;
+            width: 40%;
+        }
+
+        .H20-C3 .field {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H20-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H20-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H20-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C3 .text {
+            float: left;
+            display: inline;
+            width: 40%;
+        }
+
+        .H20-C3 .field {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H20-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 60%;
+        }
+
+        .H20-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H20-C3 {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C3 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H20-C3 .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H20-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H20-C3 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 20%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H20-C3 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H20-C3 .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H20-C3 .field {
+            float: left;
+            display: inline;
+            width: 18%;
+        }
+
+        .H20-C3 .field2 {
+            float: left;
+            display: inline;
+            width: 51%;
+        }
+}
+
+.H20-C3 {
+    float: left;
+}
+
+    .H20-C3 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H20-C3 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 20px;
+            min-height: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H20-C3 end*/
+
+/*.H20-C3-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H20-C3-S {
+        overflow: hidden;
+    }
+
+        .H20-C3-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H20-C3-S .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H20-C3-S {
+        float: left;
+    }
+
+        .H20-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C3-S .field2 {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H20-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C3-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C3-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C3-S .field2 {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H20-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C3-S .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H20-C3-S .field {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H20-C3-S .field2 {
+            float: left;
+            display: inline;
+            width: 29%;
+        }
+
+        .H20-C3-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 20%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H20-C3-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H20-C3-S .text {
+            float: left;
+            display: inline;
+            width: 12%;
+        }
+
+        .H20-C3-S .field {
+            float: left;
+            display: inline;
+            width: 21%;
+        }
+
+        .H20-C3-S .field2 {
+            float: left;
+            display: inline;
+            width: 54%;
+        }
+}
+
+.H20-C3-S {
+    float: left;
+}
+
+    .H20-C3-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H20-C3-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 20px;
+            min-height: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H20-C3-S end*/
+
+/*.H20-C2 start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H20-C2 {
+        overflow: hidden;
+    }
+
+        .H20-C2 .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H20-C2 .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H20-C2 {
+        float: left;
+    }
+
+        .H20-C2 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C2 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C2 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H20-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C2 .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C2 .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C2 .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H20-C2 {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C2 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H20-C2 .field {
+            float: left;
+            display: inline;
+            width: 30%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H20-C2 {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H20-C2 .text {
+            float: left;
+            display: inline;
+            width: 20%;
+        }
+
+        .H20-C2 .field {
+            float: left;
+            display: inline;
+            width: 30%;
+        }
+}
+
+.H20-C2 {
+    float: left;
+}
+
+    .H20-C2 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H20-C2 ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 20px;
+            min-height: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+/*.H20-C2 end*/
+
+
+/*.H20-C2-S start*/
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .H20-C2-S {
+        overflow: hidden;
+    }
+
+        .H20-C2-S .text {
+            display: block;
+            width: 100%;
+        }
+
+        .H20-C2-S .field {
+            display: block;
+            width: 100%;
+        }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .H20-C2-S {
+        float: left;
+    }
+
+        .H20-C2-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C2-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C2-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .H20-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C2-S .text {
+            float: left;
+            width: 40%;
+        }
+
+        .H20-C2-S .field {
+            float: left;
+            width: 60%;
+        }
+
+        .H20-C2-S .field3 {
+            float: left;
+            display: inline;
+            padding-left: 40%;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .H20-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+        .H20-C2-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H20-C2-S .field {
+            float: left;
+            display: inline;
+            width: 35%;
+        }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .H20-C2-S {
+        float: left;
+        width: 100%;
+    }
+
+
+        .H20-C2-S .text {
+            float: left;
+            display: inline;
+            width: 15%;
+        }
+
+        .H20-C2-S .field {
+            float: left;
+            display: inline;
+            width: 35%;
+        }
+}
+
+.H20-C2-S {
+    float: left;
+}
+
+    .H20-C2-S ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .H20-C2-S ul li {
+            font-family: Arial;
+            font-size: 11px;
+            font-weight: normal;
+            color: #000;
+            height: 20px;
+            min-height: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 13px;
+            float: left;
+        }
+
+
+/*.H20-C2-S end*/

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Collections>
+  <RETAILERAPPROVALLEVELS>
+    <Value>0</Value>
+    <Description>Approval Not Required</Description>
+    <Active>1</Active>
+  </RETAILERAPPROVALLEVELS>
+  <RETAILERAPPROVALLEVELS>
+    <Value>1</Value>
+    <Description>1 Level Approval</Description>
+    <Active>1</Active>
+  </RETAILERAPPROVALLEVELS>
+  <RETAILERAPPROVALLEVELS>
+    <Value>2</Value>
+    <Description>2 Level Approval</Description>
+    <Active>1</Active>
+  </RETAILERAPPROVALLEVELS>
+
+  <SALESCHANNELAPPROVALVALUES>
+    <Value>0</Value>
+    <Description>Approval Not Required</Description>
+    <Active>1</Active>
+    </SALESCHANNELAPPROVALVALUES>
+  <SALESCHANNELAPPROVALVALUES>
+      <Value>1</Value>
+      <Description>1 Level Approval</Description>
+      <Active>1</Active>
+    </SALESCHANNELAPPROVALVALUES>
+  <SALESCHANNELAPPROVALVALUES>
+      <Value>2</Value>
+      <Description>2 Level Approval</Description>
+      <Active>1</Active>
+  </SALESCHANNELAPPROVALVALUES>
+  <RetailerUniqueMobile>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </RetailerUniqueMobile>
+  <RetailerUniqueMobile>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </RetailerUniqueMobile>
+  
+  <ISPUniqueMobile>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </ISPUniqueMobile>
+  <ISPUniqueMobile>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </ISPUniqueMobile>
+  <ALLOWRETPARENTCHECK>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </ALLOWRETPARENTCHECK>
+  <ALLOWRETPARENTCHECK>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </ALLOWRETPARENTCHECK>
+  <SecondarySalesReturnApproval>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </SecondarySalesReturnApproval>
+  <SecondarySalesReturnApproval>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </SecondarySalesReturnApproval>
+  <IntermediarySalesReturnApproval>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </IntermediarySalesReturnApproval>
+  <IntermediarySalesReturnApproval>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </IntermediarySalesReturnApproval>
+
+  <ISDSalePunchStockOutUsingCSAAPI>
+  <Value>0</Value>
+    <Description>ISD Sale Punch Stock Out and Save in Tertiary Sale</Description>
+    <Active>1</Active>
+  </ISDSalePunchStockOutUsingCSAAPI>
+  <ISDSalePunchStockOutUsingCSAAPI>
+    <Value>1</Value>
+    <Description>ISD Sale Punch Stop Stock Out and Not Save in Tertiary Sale</Description>
+    <Active>1</Active>
+  </ISDSalePunchStockOutUsingCSAAPI>
+  <UploadDateFormat>
+    <Value>0</Value>
+    <Description>MM/DD/YYYY</Description>
+    <Active>1</Active>
+  </UploadDateFormat>
+  <UploadDateFormat>
+    <Value>1</Value>
+    <Description>DD/MM/YYYY</Description>
+    <Active>1</Active>
+  </UploadDateFormat>
+  <BeatPlanAutoApprove>
+  <Value>0</Value>
+  <Description>Approval Required</Description>
+  <Active>1</Active>
+</BeatPlanAutoApprove>
+  <BeatPlanAutoApprove>
+  <Value>1</Value>
+  <Description>Approval Not Required</Description>
+  <Active>1</Active>
+</BeatPlanAutoApprove>
+  <PhysicalStockAutoStockAdjustment>
+    <Value>0</Value>
+    <Description>Stock Adjustment of Physical Stock Approval Required</Description>
+    <Active>1</Active>
+  </PhysicalStockAutoStockAdjustment>
+  <PhysicalStockAutoStockAdjustment>
+    <Value>1</Value>
+    <Description>Stock Adjustment of Physical Stock Auto Approval</Description>
+    <Active>1</Active>
+  </PhysicalStockAutoStockAdjustment>
+  <BackDateExpense>
+  <Value>0</Value>
+  <Description>Expense Submission Allowed for Back Date</Description>
+  <Active>1</Active>
+</BackDateExpense>
+  <BackDateExpense>
+  <Value>1</Value>
+  <Description>Expense Submission Not Allowed for Back Date</Description>
+  <Active>1</Active>
+</BackDateExpense>
+  
+
+</Collections>

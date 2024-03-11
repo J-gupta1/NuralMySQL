@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminPage.master.cs" Inherits="CommonMasterPages_AdminPage" %>
+
+<%@ Register Src="~/UserControls/Footer.ascx" TagName="ucFooter" TagPrefix="uc2" %>
+<%@ Register Src="~/UserControls/Header.ascx" TagName="ucHeader" TagPrefix="uc1" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server" id="Head1">
+    <title><%=(String)GetGlobalResourceObject("Messages", "PageTitleText")%></title>
+    <%--Add START  --%>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%-- Add END --%>
+    <link rel="icon" type="image/x-icon" href="<%# Page.ResolveClientUrl("~/Assets/NuralSales/CSS/Images/favicon.png") %>" />
+    <meta http-equiv="Page-Enter" content="progid:DXImageTransform.Microsoft.Fade(Duration=1)" />
+    <meta http-equiv="Page-Exit" content="progid:DXImageTransform.Microsoft.Fade(Duration=1)" />
+    <link rel="stylesheet" type="text/css" href="<%# Page.ResolveClientUrl("~/" + strAssets + "/CSS/bootstrap.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%# Page.ResolveClientUrl("~/" + strAssets + "/CSS/Style.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%# Page.ResolveClientUrl("~/" + strAssets + "/CSS/Menu.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%# Page.ResolveClientUrl("~/" + strAssets + "/CSS/modal.css") %>" />
+    <script type="text/javascript" src="../../Assets/Jscript/JsValidate.js"></script>    
+    <script src="../Assets/Jscript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Assets/Jscript/JSAsynRequest.js"></script>
+
+    <script type="text/javascript" src="../../Assets/Jscript/jquery-1.4.4.min.js"></script>
+
+   <script type="text/javascript">
+       function changeCSSDropDown1() {
+           try {
+               $("select").focusin(function() {
+            
+                   $(this).removeClass('formselect');
+                   $(this).addClass('expand');
+               });
+               $("select").focus(function() {
+                   $(this).removeClass('formselect');
+                   $(this).addClass('expand');
+               });
+               $("select").blur(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+               $("select").focusout(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+
+               $("select").change(function() {
+
+                   $(this).removeClass('expand');
+                   $(this).addClass('formselect');
+               });
+
+               $("select").change(function() {
+
+                   $(this.blur()).removeClass('expand');
+                   $(this.blur()).addClass('formselect');
+               });
+           } catch (e) {
+
+           }
+       }
+       
+        /// Fixed Header 
+        //$(window).scroll(function () {
+        //    var sticky = $('header'),
+        //        scroll = $(window).scrollTop();
+
+        //    if (scroll >= 100) sticky.addClass('fixed');
+        //    else sticky.removeClass('fixed');
+        //});
+
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+ 
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="changeCSSDropDown1();">
+    <form id="form1" runat="server">
+    
+        <div id="wrapper">
+            <!--Wrapper Start-->
+            <div id="container">
+                <!--Container Start-->
+                <!--header Start-->
+                <header>                    
+                        <uc1:ucHeader ID="ucHeader" runat="server" />                   
+                </header>
+                <!--header End-->
+                <article>
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <div class="bodycontent">
+                                <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"></asp:ScriptManager>
+                                <asp:UpdatePanel ID="UpAdminMasterPage" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:ContentPlaceHolder ID="contentHolderMain" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!--bodycontent End-->
+            </div>
+            <!--Container End-->
+
+            <!--footer Start-->
+            <footer>
+                <div class="container">
+                    <div class="copyrightnew">
+                        Powered by <span class="ftrlogo">
+                            <img src='<%=strSiteUrl%><%=strAssets %>/CSS/Images/footerlogo.png'></span>
+                    </div>
+                    <div>
+                        <asp:HyperLink ID="hypfooterlogo" CausesValidation="false" runat="server" Visible="false" />
+                    </div>
+                </div>
+            </footer>
+            <!--footer End-->
+        </div>
+   
+    <div id="updateProgressDiv" class="updateProgress" style="display: none; background-color: #d0e1ee;  position:fixed; top:50%; left:45%;
+        padding: 10px; border: 1px solid #7cbdef">
+        <div align="center" class="Progress">
+            Loading...
+           <%--<img align="absmiddle" alt="" src='../<%=strAssets%>/CSS/Images/loading.gif' />--%></div>
+    </div>
+    </form>
+</body>
+</html>

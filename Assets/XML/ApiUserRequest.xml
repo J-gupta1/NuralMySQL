@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Collections>
+  <ApiUserEnumType>
+    <ID>1</ID>
+    <ApiUserType>Can Mark As Sold</ApiUserType>
+    <Active>1</Active>
+  </ApiUserEnumType>
+  <ApiUserEnumType>
+    <ID>2</ID>
+    <ApiUserType>Can Mark As Un-Sold</ApiUserType>
+    <Active>1</Active>
+  </ApiUserEnumType>
+</Collections>
+

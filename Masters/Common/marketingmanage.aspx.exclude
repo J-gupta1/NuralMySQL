@@ -1,0 +1,326 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CommonMasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="marketingmanage.aspx.cs" Inherits="Masters_Common_marketingmanage" %>
+
+
+
+<%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
+<%@ Import Namespace="BussinessLogic" %>
+<%@ Register Src="~/UserControls/ucMessage.ascx" TagName="ucMessage" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControls/ucDatePicker.ascx" TagName="ucDatePicker" TagPrefix="uc2" %>
+<%@ Register Src="~/UserControls/ucTextboxMultiline.ascx" TagPrefix="TA" TagName="ucTextboxMultiline" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+ 
+    <script type="text/javascript" language="javascript">
+        function OnCheckBoxCheckChanged(evt) {
+
+            var src = window.event != window.undefined ? window.event.srcElement : evt.target;
+            var isChkBoxClick = (src.tagName.toLowerCase() == "input" && src.type == "checkbox");
+            if (isChkBoxClick) {
+                var parentTable = GetParentByTagName("table", src);
+                var nxtSibling = parentTable.nextSibling;
+                if (nxtSibling && nxtSibling.nodeType == 1)//check if nxt sibling is not null & is an element node
+                {
+                    if (nxtSibling.tagName.toLowerCase() == "div") //if node has children
+                    {
+                        //check or uncheck children at all levels
+                        CheckUncheckChildren(parentTable.nextSibling, src.checked);
+                    }
+                }
+                //check or uncheck parents at all levels
+                CheckUncheckParents(src, src.checked);
+            }
+        }
+        function CheckUncheckChildren(childContainer, check) {
+            var childChkBoxes = childContainer.getElementsByTagName("input");
+            var childChkBoxCount = childChkBoxes.length;
+            for (var i = 0; i < childChkBoxCount; i++) {
+                childChkBoxes[i].checked = check;
+            }
+        }
+        function CheckUncheckParents(srcChild, check) {
+            var parentDiv = GetParentByTagName("div", srcChild);
+            var parentNodeTable = parentDiv.previousSibling;
+            if (parentNodeTable) {
+                var checkUncheckSwitch;
+                if (check) //checkbox checked
+                {
+                    var isAllSiblingsChecked = AreAllSiblingsChecked(srcChild);
+                    if (isAllSiblingsChecked)
+                        checkUncheckSwitch = true;
+                    else
+                        return; //do not need to check parent if any(one or more) child not checked
+                }
+                else //checkbox unchecked
+                {
+                    checkUncheckSwitch = false;
+                }
+                var inpElemsInParentTable = parentNodeTable.getElementsByTagName("input");
+                if (inpElemsInParentTable.length > 0) {
+                    var parentNodeChkBox = inpElemsInParentTable[0];
+                    parentNodeChkBox.checked = checkUncheckSwitch;
+                    //do the same recursively
+                    CheckUncheckParents(parentNodeChkBox, checkUncheckSwitch);
+                }
+            }
+        }
+        function AreAllSiblingsChecked(chkBox) {
+            var parentDiv = GetParentByTagName("div", chkBox);
+            var childCount = parentDiv.childNodes.length;
+            for (var i = 0; i < childCount; i++) {
+                if (parentDiv.childNodes[i].nodeType == 1) //check if the child node is an element node
+                {
+                    if (parentDiv.childNodes[i].tagName.toLowerCase() == "table") {
+                        var prevChkBox = parentDiv.childNodes[i].getElementsByTagName("input")[0];
+                        //if any of sibling nodes are not checked, return false
+                        if (!prevChkBox.checked) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        //utility function to get the container of an element by tagname
+        function GetParentByTagName(parentTagName, childElementObj) {
+            var parent = childElementObj.parentNode;
+            while (parent.tagName.toLowerCase() != parentTagName.toLowerCase()) {
+                parent = parent.parentNode;
+            }
+            return parent;
+        }
+        function validateTreeView() {
+            var isChecked = false;
+            var tvNodes = document.getElementById('<%=tvLevel.ClientID %>');
+            var chBoxes = tvNodes.getElementsByTagName("input");
+            for (var i = 0; i < chBoxes.length; i++) {
+                var chk = chBoxes[i];
+                if (chk.type == "checkbox" && chk.checked == true) {
+                    isChecked = true;
+                }
+            }
+            if (isChecked == true) {
+                document.getElementById('<%=lbltvErrorMsg.ClientID %>').style.display = "none";
+                $("#trContent").hide();
+                document.getElementById("tdContentImg").innerHTML = "<img src='Images/loading.gif' />";
+                //$("#tdContentImg").append('<td align="center"><img src='Images/loading.gif' /></td>');
+            } else {
+                document.getElementById('<%=lbltvErrorMsg.ClientID %>').style.display = "";
+            }
+            return isChecked;
+        }
+    </script>
+ 
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contentHolderMain" Runat="Server">
+   
+    <div>
+        <asp:Label ID="lbltvErrorMsg" runat="server" Visible="false"></asp:Label>
+        <asp:UpdatePanel runat="server" ID="updMsg" UpdateMode="Conditional">
+            <ContentTemplate>
+                <uc1:ucMessage ID="ucMsg" runat="server" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdatePanel ID="updAddUserMain" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="mainheading">
+                    Add / Edit Bulletin
+                </div>
+                <div class="export">
+                    <asp:LinkButton ID="LBViewBulletin" runat="server" CausesValidation="False" CssClass="elink7"
+                        OnClick="LBViewBulletin_Click">View List</asp:LinkButton>
+                </div>
+                <div class="contentbox">
+                    <div class="mandatory">
+                        (*) Marked fields are mandatory
+                    </div>
+                    <div class="H25-C3-S">
+                        <ul>
+                            <li class="text">
+                                <asp:Label ID="lblbulletinSubject" CssClass="formtext" runat="server" AssociatedControlID="txtSubject">Subject:<span class="error">*</span></asp:Label>
+                            </li>
+                            <li class="field">
+                                <asp:TextBox ID="txtSubject" runat="server" CssClass="formfields" MaxLength="50"
+                                    ValidationGroup="AddUserValidationGroup"></asp:TextBox>
+                                <div>
+                                    <asp:RequiredFieldValidator ID="reqSubject" runat="server" ControlToValidate="txtSubject"
+                                        CssClass="error" Display="Dynamic" ErrorMessage="Please enter bulletiin subject."
+                                        SetFocusOnError="true" ValidationGroup="AddUserValidationGroup"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="regFUserName" ControlToValidate="txtSubject"
+                                        CssClass="error" ErrorMessage="Invalid" ValidationExpression="[^<>/\@%]{1,50}"
+                                        ValidationGroup="AddUserValidationGroup" runat="server" />
+                                </div>
+                            </li>
+                            <li class="text">
+                                <asp:Label ID="Label1" runat="server" AssociatedControlID="ddlCategory"
+                                    CssClass="formtext">Category:</asp:Label>
+                            </li>
+                            <li class="field">
+                                <asp:UpdatePanel ID="UpddlCategory" UpdateMode="Conditional" runat="server">
+                                    <ContentTemplate>
+                                        <div>
+                                            <asp:DropDownList AutoPostBack="true" CssClass="form_select4" ID="ddlCategory" runat="server"
+                                                OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
+                                            </asp:DropDownList>
+                                        </div>
+
+                                        <div>
+                                            <asp:TextBox ID="txtCategory" runat="server" Visible="false"></asp:TextBox>
+                                        </div>
+                                        <asp:RequiredFieldValidator ID="RequiredCategory" ValidationGroup="AddUserValidationGroup" runat="server"
+                                            ControlToValidate="ddlCategory" ErrorMessage="Please select Category." InitialValue="0"
+                                            CssClass="error" Display="Dynamic" ForeColor=""></asp:RequiredFieldValidator>
+                                    </ContentTemplate>
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="ddlCategory" EventName="SelectedIndexChanged" />
+                                    </Triggers>
+                                </asp:UpdatePanel>
+                            </li>
+                            <li class="text">
+                                <asp:Label ID="lblSubCategory" runat="server" AssociatedControlID="ddlSubCategory"
+                                    CssClass="formtext">Sub Category:</asp:Label>
+                            </li>
+                            <li class="field">
+                                <div>
+                                    <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                                        <ContentTemplate>
+                                            <div>
+
+                                                <asp:DropDownList CausesValidation="true" ID="ddlSubCategory" runat="server" CssClass="form_select4" AutoPostBack="true" OnSelectedIndexChanged="ddlSubCategory_SelectedIndexChanged">
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div>
+                                                <asp:TextBox ID="txtSubCategory" runat="server" Visible="false"></asp:TextBox>
+                                            </div>
+                                            <div style="float: left; width: 145px;">
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlSubCategory"
+                                                    CssClass="error" Display="Dynamic" InitialValue="0" ErrorMessage="Please select sub category."
+                                                    SetFocusOnError="true" ValidationGroup="AddUserValidationGroup"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </ContentTemplate>
+                                        <Triggers>
+                                            <asp:AsyncPostBackTrigger ControlID="ddlCategory" EventName="SelectedIndexChanged" />
+                                        </Triggers>
+                                    </asp:UpdatePanel>
+
+                                </div>
+                                <div>
+                                    <asp:RequiredFieldValidator ID="reqSubCategory" runat="server" ControlToValidate="ddlSubCategory"
+                                        CssClass="error" Display="Dynamic" InitialValue="0" ErrorMessage="Please select sub category."
+                                        SetFocusOnError="true" ValidationGroup="AddUserValidationGroup"></asp:RequiredFieldValidator>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                        <ul>
+                            <li class="text">
+                                <asp:Label ID="lblPublishDate" runat="server" AssociatedControlID="txtSubject" CssClass="formtext">Publish Date:<span class="error">*</span></asp:Label>
+                            </li>
+                            <li class="field">
+                                <uc2:ucDatePicker ID="ucPublishDate" runat="server" IsRequired="true" ErrorMessage="Publish date required."
+                                    ValidationGroup="AddUserValidationGroup" />
+                            </li>
+                            <li class="text">
+                                <asp:Label ID="lblExpiryDate" runat="server" AssociatedControlID="txtSubject" CssClass="formtext">Expiry Date:<span class="error">*</span></asp:Label>
+                            </li>
+                            <li class="field">
+                                <uc2:ucDatePicker ID="ucExpiryDate" runat="server" IsRequired="true" ErrorMessage="Expiry date required." RangeErrorMessage="Date should be greater then equal to current date."
+                                    ValidationGroup="AddUserValidationGroup" />
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                        <%--#CC01 Add Start--%>
+                        <ul id="trBrands" runat="server" visible="false">
+                            <li class="text">
+                                <asp:Label ID="lblBrandText" runat="server" CssClass="formtext">Brand:<span class="error">*</span></asp:Label>
+                            </li>
+                            <li style="height: auto">
+                                <asp:CheckBoxList ID="chckBrandslist" Width="100%" CssClass="radio-rs" CellPadding="2" runat="server" RepeatDirection="Horizontal" RepeatColumns="4"></asp:CheckBoxList>
+                            </li>
+                        </ul>
+                        <%--#CC01 Add End--%>
+                        <div class="clear"></div>
+                        <ul>
+                            <li class="text">
+                                <asp:Label ID="lblAccessType" runat="server" CssClass="formtext">Access Type: <span class="error">*</span></asp:Label>
+                            </li>
+                            <li class="field">
+                                <asp:RadioButtonList ID="rblAccessType" CssClass="radio-rs" CellPadding="2" AutoPostBack="true" runat="server" OnSelectedIndexChanged="rblAccessType_SelectedIndexChanged"
+                                    RepeatDirection="Horizontal">
+                                    <asp:ListItem Value="1" Selected="True">Allow To All</asp:ListItem>
+                                    <asp:ListItem Value="2">Specific</asp:ListItem>
+                                </asp:RadioButtonList>
+                            </li>
+                            <li class="text">Status:
+                            </li>
+                            <li class="field">
+                                <asp:CheckBox ID="chkActive" runat="server" Checked="true" />
+                            </li>
+                            <li class="text">FileUpload:
+                            </li>
+                            <li class="field">
+                                <asp:Panel ID="pnlFiles" runat="server" HorizontalAlign="Left">
+                                    <asp:FileUpload ID="IpFile" runat="server" Width="300px" ToolTip="Select Only PDF File" />
+                                </asp:Panel>
+                                <div>
+                                    <asp:Label ID="lblSizeDisplay" runat="server" Text=" Only PDF files are allowed"></asp:Label> 
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                        <asp:Panel ID="tblSpecific" runat="server" Visible="false" BorderWidth="0">
+                            <ul>
+                                <li class="text"></li>
+                                <li class="field2" style="height: auto;">
+                                    <div class="grid2" style="border: 1px solid #dddddd; overflow: auto">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="4" class="gridrow">
+                                            <tr>
+                                                <td align="left" valign="top" width="40%" style="border-right: 1px solid #b9d0dd;"
+                                                    class="formtext1">
+                                                    <asp:TreeView ID="tvLevel" runat="server" cellpadding="2" cellspacing="0" ShowCheckBoxes="All">
+                                                    </asp:TreeView>
+                                                </td>
+                                                <td align="left" width="60%" valign="top" class="formtext1">
+                                                    <asp:TreeView ID="tvSalesChannel" runat="server" cellpadding="2" cellspacing="0" ShowCheckBoxes="All">
+                                                    </asp:TreeView>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </asp:Panel>
+                        <div class="clear"></div>
+                        <ul>
+                            <li class="text">
+                                <br />
+                                <asp:Label ID="lblDescription" runat="server" CssClass="formtext">Description:<span class="error">*</span></asp:Label>
+                            </li>
+                            <li class="field2" style="height: auto;">
+                                  <TA:ucTextboxMultiline ID="FCKDetails" runat="server" IsRequired="true" CharsLength="250"
+                                                                                    TextBoxWatermarkText="Please enter bulletin  description." ErrorMessage="Please enter Description." ValidationGroup="AddUserValidationGroup" />
+                                                                       
+                                <%--<FCKeditorV2:FCKeditor Width="100%" ID="FCKDetails" Height="350" runat="server" BasePath="~/Assets/FCKEditor/">
+                                </FCKeditorV2:FCKeditor>--%>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <div class="margin-bottom">
+            <div class="float-margin">
+                <asp:Button ID="btnCreate" Text="Submit" runat="server" CausesValidation="true" ValidationGroup="AddUserValidationGroup"
+                    ToolTip="Add Bulletin" CssClass="buttonbg" OnClick="btnCreate_Click" />
+            </div>
+            <div class="float-margin">
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="false" ToolTip="Cancel" CssClass="buttonbg"
+                    OnClick="btnCancel_Click" />
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+ 
+</asp:Content>
+

@@ -1,0 +1,299 @@
+/***********************************************************
+"Project          	: 	ZED-SALES"
+"Created By      	: 	Kalpana"
+***********************************************************/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2396b5 !important;
+    background: url('Images/Login/body-img.png') no-repeat 10% center;
+    background-size: contain;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+}
+
+footer {
+    background-position: left top;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #cac9c9;
+    text-align: center;
+    font-size: small;
+}
+
+.login-header {
+    background: url('Images/Login/logo-login.png') no-repeat center top;
+    background-size: contain;
+    height: 83px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: auto;
+}
+
+.logincont_left {
+    margin-left: 5%;
+    margin-top: 5px;
+    height: 445px;
+    /*background-image: url('Images/Login/logincont_left.png');
+    background-repeat: no-repeat;
+    background-position: left top;*/
+}
+
+.login-area {
+    vertical-align: middle;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login-msg {
+    padding-right: 8%;
+}
+
+.error {
+    font-size: 12px;
+    font-weight: normal;
+    color: cyan;
+    text-decoration: none;
+    height: 15px;
+    line-height:12px !important; 
+}
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.forgotlink {
+    padding-bottom: 10px;
+}
+    .forgotlink a:link, .forgotlink a:visited, .forgotlink a:active {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .forgotlink a:hover {
+        font-size: 12px;
+        font-weight: normal;
+        color: #fba48f;
+        text-decoration: none;
+    }
+
+.form-group {
+    margin-bottom: 15px !important;
+}
+.form-control {
+    padding-left: 40px !important;
+}
+.btn-login {
+    color: #ffffff;
+    background-color: #f77f0b;
+    border-color: #f77f0b;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+    .btn-login:focus {
+        color: #ffffff !important;
+        background-color: #f77f0b;
+        border-color: #f77f0b;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    .btn-login:hover {
+        color: #ffffff !important;
+        background-color: #bf630a;
+        border-color: #bf630a;
+    }
+
+    .btn-login:active {
+        color: #ffffff !important;
+        background-color: #bf630a;
+        border-color: #bf630a;
+    }
+
+        .btn-login:active:focus, .btn-login:active:hover {
+            color: #ffffff !important;
+            background-color: #bf630a;
+            border-color: #bf630a;
+        }
+
+.linkbutton a {
+    color: #68cef1;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 2px 5px;
+    text-decoration:underline;
+}
+
+    .linkbutton a:hover {
+        color: #f77f0b;
+        font-size: 13px;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 2px 5px;
+    }
+
+.container .login-box {
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 20%;
+}
+
+.powerdby {
+    margin-top: 10%;
+}
+.copyright {
+    height: 17px;
+    width: 103px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.zed-logo {
+    background: url('Images/Login/zed_logo_white.png') no-repeat center top;
+    height: 17px;
+    width: 103px;
+}
+
+.row {
+    margin-right:-5px !important;
+}
+
+.font-white {
+    color:  white;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .container .login-box {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .img2 {
+        visibility: hidden;
+        display: none !important;
+    }
+
+    .login-left {
+        display: none !important;
+    }
+
+    .login-right {
+        width: 100%;
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container .login-box {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .img2 {
+        visibility: hidden;
+        display: none !important;
+    }
+
+    .login-left {
+        display: none !important;
+    }
+
+    .login-right {
+        width: 100%;
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .container .login-box {
+        margin-left: 5%;
+        margin-right: 0;
+    }
+
+    .img2 {
+        visibility: hidden;
+        display: none !important;
+    }
+
+    .login-left {
+        display: none !important;
+    }
+
+    .login-right {
+        width: 100%;
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container .login-box {
+        margin-left: 5%;
+        margin-right: 0;
+    }
+
+    .login-left {
+        width: 40%;
+        float: left;
+    }
+
+    .login-right {
+        width: 60%;
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container .login-box {
+        margin-left: 15%;
+        margin-right: 5%;
+    }
+
+    .login-left {
+        width: 45%;
+        float: left;
+    }
+
+    .login-right {
+        margin-top: 5%;
+        width: 50%;
+        float: right;
+    }
+}
+.user-icon {
+    background: url('Images/Login/user.png') no-repeat 10px center;
+    margin-right: 10px;
+}
+.password-icon {
+    background: url('Images/Login/password.png') no-repeat 10px center;
+    margin-right: 10px;
+}
+.mail-icon {
+    background: url('Images/Login/mail.png') no-repeat 10px center;
+    margin-right: 10px;
+}
+
+.col-xs-1, .col-xs-11, .col-sm-1, .col-sm-11, .col-md-1, .col-md-11, .col-lg-1, .col-lg-11 {
+    padding-right: 0 !important;
+    padding-left: 15px;
+}

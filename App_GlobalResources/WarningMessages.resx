@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BrandCode" xml:space="preserve">
+    <value>Please Enter Brand Code.</value>
+  </data>
+  <data name="BrandName" xml:space="preserve">
+    <value>Please Enter Brand Name.</value>
+  </data>
+  <data name="ClassificationCode" xml:space="preserve">
+    <value>Please Enter Classification Code.</value>
+  </data>
+  <data name="ClassificationName" xml:space="preserve">
+    <value>Please Enter Classification Name.</value>
+  </data>
+  <data name="ComparisionValue" xml:space="preserve">
+    <value>##Value1## can not be more than ##Value2##.</value>
+  </data>
+  <data name="EmptyFile" xml:space="preserve">
+    <value>File is Empty!</value>
+  </data>
+  <data name="EnterSearchCriteria" xml:space="preserve">
+    <value>Please enter at least one search criteria</value>
+  </data>
+  <data name="FillAnyParameter" xml:space="preserve">
+    <value>Please fill any Searching criteria.</value>
+    <comment>Deprecated</comment>
+  </data>
+  <data name="FillEntityGroup" xml:space="preserve">
+    <value>Please Select Group Related Information.</value>
+  </data>
+  <data name="NegativeValue" xml:space="preserve">
+    <value>##Value## can not have negative/Zero value.</value>
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>No record found</value>
+  </data>
+  <data name="ProductCategoryCode" xml:space="preserve">
+    <value>Please Enter Product Category Code.</value>
+  </data>
+  <data name="ProductCategoryName" xml:space="preserve">
+    <value>Please Enter Product Category name.</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>Please Enter Product Code.</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Please Enter Terminal Model.</value>
+    <comment>Please Enter Product Name.</comment>
+  </data>
+  <data name="RecordsLimit" xml:space="preserve">
+    <value>Please upload maximum 1000 records in a single upload!</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>Please select file for upload</value>
+  </data>
+  <data name="SubClassificationCode" xml:space="preserve">
+    <value>Please Enter SubClassification Code.</value>
+  </data>
+  <data name="SubClassificationName" xml:space="preserve">
+    <value>Please Enter SubClassification Name.</value>
+  </data>
+  <data name="UploadFail" xml:space="preserve">
+    <value>Records can't be uploaded due to some problem</value>
+  </data>
+  <data name="UpLoadOnlyXLSX" xml:space="preserve">
+    <value>Please upload file of .xlsx format</value>
+  </data>
+  <data name="ValidCapacity" xml:space="preserve">
+    <value>Please Enter Valid Capacity.</value>
+  </data>
+  <data name="ValidVolume" xml:space="preserve">
+    <value>Please Enter Valid Volume(l*b*h).</value>
+  </data>
+  <data name="ValidWeight" xml:space="preserve">
+    <value>Please Enter Valid Weight Information.</value>
+  </data>
+  <data name="ValidWeightInfo" xml:space="preserve">
+    <value>Please Enter Valid Weight Information.##Weight1## is greater than ##Weight2##</value>
+  </data>
+  <data name="ValidTaxPerc" xml:space="preserve">
+    <value>Tax percentage must not be zero</value>
+  </data>
+  <data name="ValidPartTaxCategory" xml:space="preserve">
+    <value>There is no part mapped to tax category</value>
+  </data>
+  <data name="NoMappingRequire" xml:space="preserve">
+    <value>Particular Entity has no need for mapping</value>
+  </data>
+  <data name="FillMappingInfo" xml:space="preserve">
+    <value>Please Fill Mapping Related information.</value>
+  </data>
+  <data name="NoInformation" xml:space="preserve">
+    <value>Particular user has no mapping information</value>
+    <comment>will be used at the modification of the mapping, when there will be no record of mapping in the system of the particular user</comment>
+  </data>
+  <data name="FillAnyInformation" xml:space="preserve">
+    <value>Please fill any Information.</value>
+  </data>
+  <data name="BackDaysIssue" xml:space="preserve">
+    <value>No back days allowed more than limit</value>
+  </data>
+  <data name="FillAllInformation" xml:space="preserve">
+    <value>Please Fill All information.</value>
+  </data>
+  <data name="ZeroValue" xml:space="preserve">
+    <value>Credit Days/Credit Limit can not have the Negative/Zero Value</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Invalid User ID or Password.</value>
+  </data>
+  <data name="PasswordBlocked" xml:space="preserve">
+    <value>Password Is blocked. Please contact to your administrator</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Password changed successfully.</value>
+  </data>
+  <data name="PasswordExpired" xml:space="preserve">
+    <value>Your Password is expired. Please change to continue.</value>
+  </data>
+  <data name="FillRequiredInformation" xml:space="preserve">
+    <value>Please fill all the required information</value>
+  </data>
+  <data name="InvalidPercentageValue" xml:space="preserve">
+    <value>The percentage entered is invalid</value>
+  </data>
+  <data name="InvalidYearCode" xml:space="preserve">
+    <value>The Year code should be exactly 2 digits</value>
+  </data>
+  <data name="SelectPlantForSerial" xml:space="preserve">
+    <value>Please select plant to generate the serial numbers .</value>
+  </data>
+  <data name="thisCannotUpdate" xml:space="preserve">
+    <value>This Product Cannot be updated Because its validTill Expiry.</value>
+  </data>
+  <data name="ValidFromDate" xml:space="preserve">
+    <value>Valid From cannot be less than given valid Date</value>
+  </data>
+  <data name="ChangeBaseUnit" xml:space="preserve">
+    <value>Are you sure you wnat to change base unit.</value>
+  </data>
+  <data name="ValueZero" xml:space="preserve">
+    <value>Please Enter value greater than zero.</value>
+  </data>
+  <data name="NoRecordSelected" xml:space="preserve">
+    <value>No Record Selected.</value>
+  </data>
+  <data name="BatchNo" xml:space="preserve">
+    <value>Please Enter Batch No.</value>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>Please Enter Serial No.</value>
+  </data>
+  <data name="ValidFromdateLess" xml:space="preserve">
+    <value>Valid From date cannot be Less than current date.</value>
+  </data>
+  <data name="ConfirmActivate" xml:space="preserve">
+    <value>Are you sure you want to activate this record</value>
+  </data>
+  <data name="ConfirmDeactivate" xml:space="preserve">
+    <value>Are you sure you want to deactivate this record</value>
+  </data>
+  <data name="TwoBaseUnit" xml:space="preserve">
+    <value>Selected Group have Two base unit which is invalid.</value>
+  </data>
+  <data name="InValidBatchSerialInfo" xml:space="preserve">
+    <value>Please Insert Valid Batch/Serial Info.</value>
+  </data>
+  <data name="SelectEntity" xml:space="preserve">
+    <value>Please Select Entity</value>
+  </data>
+  <data name="UploadedImageSize" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="UploadedImageSizeType" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select  </value>
+  </data>
+  <data name="UploadImageError" xml:space="preserve">
+    <value>Uploaded image is in over size.</value>
+  </data>
+  <data name="NoQuantityEntered" xml:space="preserve">
+    <value>No Quantity has been entered</value>
+  </data>
+  <data name="NoRecordToTransfer" xml:space="preserve">
+    <value>No Data To Transfer</value>
+  </data>
+  <data name="NoUOMSelected" xml:space="preserve">
+    <value>Please Select Uom Type</value>
+  </data>
+  <data name="PositiveValueAllowed" xml:space="preserve">
+    <value>Only positive number is allowed.</value>
+  </data>
+  <data name="QtyGreaterZero" xml:space="preserve">
+    <value>Qunatity must be greater than zero.</value>
+  </data>
+  <data name="AmountGreaterZero" xml:space="preserve">
+    <value>Please Enter Amount Greater than Zero.</value>
+  </data>
+  <data name="ApprovedQuantity" xml:space="preserve">
+    <value>Approved quantity can not be negative.</value>
+  </data>
+  <data name="BatchNoLength" xml:space="preserve">
+    <value>BatchNo length should be 20.</value>
+  </data>
+  <data name="CSTNotDefined" xml:space="preserve">
+    <value>CST not Defined for the Country</value>
+  </data>
+  <data name="DateCannotbelesstahnCurrent" xml:space="preserve">
+    <value>End Date caanot be less than current date.</value>
+  </data>
+  <data name="DocumentForm" xml:space="preserve">
+    <value>The document form must be selected</value>
+  </data>
+  <data name="EntityBlackListed" xml:space="preserve">
+    <value>Entity placing the Order is Blacklisted. Order can't be raised</value>
+  </data>
+  <data name="NoItemSelected" xml:space="preserve">
+    <value>No Product selected for Order</value>
+  </data>
+  <data name="OrderTransferSame" xml:space="preserve">
+    <value>selected entity already holding order , select another one </value>
+  </data>
+  <data name="PackingSlipAllocateSerialDoneAlready" xml:space="preserve">
+    <value>Allocation of Eligible Serial/Batch No. already done for this Packing Slip</value>
+  </data>
+  <data name="PartNameLenth" xml:space="preserve">
+    <value>Part name length should be 100.</value>
+  </data>
+  <data name="SAPPartCodeLength" xml:space="preserve">
+    <value>SAPPartCode length should be 20.</value>
+  </data>
+  <data name="SelectMandatoryFields" xml:space="preserve">
+    <value>Please select mandatory fields.</value>
+    <comment>Please select mandatory fields.</comment>
+  </data>
+  <data name="SelectOrderFromOrderTo" xml:space="preserve">
+    <value>Please select both OrderFrom and OrderTo</value>
+  </data>
+  <data name="SelectOrderTo" xml:space="preserve">
+    <value>Please select OrderTo</value>
+  </data>
+  <data name="SerialNoLenth" xml:space="preserve">
+    <value>SerialNo length should be 20.</value>
+  </data>
+  <data name="StartDatenotLessCuurent" xml:space="preserve">
+    <value>Start date cannot be less than current date</value>
+  </data>
+  <data name="WrongQuantityEnteredComapareToInhandStock" xml:space="preserve">
+    <value>The Quantity entered is greater than Stock in Hand</value>
+  </data>
+</root>

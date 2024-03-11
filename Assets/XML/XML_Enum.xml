@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Collections>
+  <QueryStatusType>
+    <Value>0</Value>
+    <Description>Open Query</Description>
+    <Active>1</Active>
+  </QueryStatusType>
+  <QueryStatusType>
+    <Value>1</Value>
+    <Description>Close Query</Description>
+    <Active>1</Active>
+  </QueryStatusType>
+  <QueryTypeAdmin>
+    <Value>0</Value>
+    <Description>Reply</Description>
+    <Active>1</Active>
+  </QueryTypeAdmin>
+  <QueryTypeAdmin>
+    <Value>1</Value>
+    <Description>Close</Description>
+    <Active>1</Active>
+  </QueryTypeAdmin>
+  <QueryTypeDistributor>
+    <Value>0</Value>
+    <Description>Reply</Description>
+    <Active>1</Active>
+  </QueryTypeDistributor>
+  <!--#CC04 Added for viewbeat plan details vijay kumar prajapati-->
+  <BeatPlanStatus>
+    <Value>0</Value>
+    <Description>Pending</Description>
+    <Active>1</Active>
+  </BeatPlanStatus>
+  <BeatPlanStatus>
+    <Value>1</Value>
+    <Description>Approved</Description>
+    <Active>1</Active>
+  </BeatPlanStatus>
+  <BeatPlanStatus>
+    <Value>3</Value>
+    <Description>Rejected</Description>
+    <Active>1</Active>
+  </BeatPlanStatus>
+  <!--#CC04 End for viewbeat plan details vijay kumar prajapati-->
+  <DOAStatus>
+    <Value>1</Value>
+    <Description>Pending For Receiving At DBR Point</Description>
+    <Active>1</Active>
+  </DOAStatus>
+  <DOAStatus>
+    <Value>2</Value>
+    <Description>Pending For Settlement</Description>
+    <Active>1</Active>
+  </DOAStatus>
+  <DOAStatus>
+    <Value>3</Value>
+    <Description>Pending For Dispatcing At DBR Point</Description>
+    <Active>1</Active>
+  </DOAStatus>
+  <DOAStatus>
+    <Value>4</Value>
+    <Description>Pending For GRN</Description>
+    <Active>1</Active>
+  </DOAStatus>
+  <DOAStatus>
+    <Value>5</Value>
+    <Description>GRN Done</Description>
+    <Active>1</Active>
+  </DOAStatus>
+  <DOAStatus>
+    <Value>6</Value>
+    <Description>C.N. Done</Description>
+    <Active>1</Active>
+  </DOAStatus>
+  <ReceiveType>
+    <Value>0</Value>
+    <Description>Pending For Receive GRN</Description>
+    <Active>1</Active>
+  </ReceiveType>
+  <ReceiveType>
+    <Value>1</Value>
+    <Description>Receive GRN</Description>
+    <Active>1</Active>
+  </ReceiveType>
+  <StockReceiveType>
+    <Value>0</Value>
+    <Description>Stock Received</Description>
+    <Active>1</Active>
+  </StockReceiveType>
+  <DOAMotoStatus>
+    <Value>1</Value>
+    <Description>Received At DBR</Description>
+    <Active>1</Active>
+  </DOAMotoStatus>
+  <DOAMotoStatus>
+    <Value>2</Value>
+    <Description>Received At ND</Description>
+    <Active>1</Active>
+  </DOAMotoStatus>
+  <DOAMotoStatus>
+    <Value>3</Value>
+    <Description>Credit Note Upload</Description>
+    <Active>1</Active>
+  </DOAMotoStatus>
+  
+  <!--=======================================Added #CC01 Vijay Kumar Prajapati============================================-->
+  <GetMappingMode>
+    <ID>1</ID>
+    <Description>Multiple Primary Entities allowed</Description>
+    <Active>1</Active>
+  </GetMappingMode>
+  <GetMappingMode>
+    <ID>2</ID>
+    <Description>Single Primary Entity allowed</Description>
+    <Active>1</Active>
+  </GetMappingMode>
+  <GetMappingMode>
+    <ID>3</ID>
+    <Description>Multiple Primary Entities but one as default parent</Description>
+    <Active>1</Active>
+  </GetMappingMode>
+  
+  <StockMaintainedBySystem>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </StockMaintainedBySystem>
+  <StockMaintainedBySystem>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </StockMaintainedBySystem>
+  <BrandCategoryMappingMode>
+    <Value>0</Value>
+    <Description>Entity Mapping with Brand, Category or BrandCategory not required</Description>
+    <Active>1</Active>
+  </BrandCategoryMappingMode>
+  <BrandCategoryMappingMode>
+    <Value>1</Value>
+    <Description>Entity Mapping with BrandCategory required</Description>
+    <Active>1</Active>
+  </BrandCategoryMappingMode>
+  <BrandCategoryMappingMode>
+    <Value>2</Value>
+    <Description>Entity mapping with Brand required</Description>
+    <Active>1</Active>
+  </BrandCategoryMappingMode >
+  <BrandCategoryMappingMode>
+    <Value>3</Value>
+    <Description>Entity mapping with Product Category Required</Description>
+    <Active>1</Active>
+  </BrandCategoryMappingMode>
+  <GroupMappingMode>
+    <Value>0</Value>
+    <Description>Group Mapping not applicable</Description>
+    <Active>1</Active>
+  </GroupMappingMode>
+  <GroupMappingMode>
+    <Value>1</Value>
+    <Description>Group Mapping applicable</Description>
+    <Active>1</Active>
+  </GroupMappingMode>
+  <WeeklyOffMode>
+    <Value>0</Value>
+    <Description>Weekly Off not applicable</Description>
+    <Active>1</Active>
+  </WeeklyOffMode>
+  <WeeklyOffMode>
+    <Value>1</Value>
+    <Description>Weekly Off applicable</Description>
+    <Active>1</Active>
+  </WeeklyOffMode >
+  <PriceGroupMode>
+    <Value>0</Value>
+    <Description>Price Group not applicable</Description>
+    <Active>1</Active>
+  </PriceGroupMode>
+  <PriceGroupMode>
+    <Value>1</Value>
+    <Description>Price Group applicable</Description>
+    <Active>1</Active>
+  </PriceGroupMode>
+  <EntityAddressMode>
+    <Value>0</Value>
+    <Description>Entity Address not applicable</Description>
+    <Active>1</Active>
+  </EntityAddressMode>
+  <EntityAddressMode>
+    <Value>1</Value>
+    <Description>All Address Type mandatory</Description>
+    <Active>1</Active>
+  </EntityAddressMode >
+  <EntityAddressMode>
+    <Value>2</Value>
+    <Description>Only Primary Address Type applicable</Description>
+    <Active>1</Active>
+  </EntityAddressMode >
+  <EntityAddressMode>
+    <Value>3</Value>
+    <Description>All address Type applicable but primary is mandatory</Description>
+    <Active>1</Active>
+  </EntityAddressMode>
+  <EntityContactMode>
+    <Value>0</Value>
+    <Description>Entity Contact not applicable</Description>
+    <Active>1</Active>
+  </EntityContactMode>
+  <EntityContactMode>
+    <Value>1</Value>
+    <Description>All Contact Type mandatory</Description>
+    <Active>1</Active>
+  </EntityContactMode>
+  <EntityContactMode>
+    <Value>2</Value>
+    <Description>Only Primary Contact Type applicable</Description>
+    <Active>1</Active>
+  </EntityContactMode>
+  <EntityContactMode>
+    <Value>3</Value>
+    <Description>All Contact Type applicable but primary is mandatory</Description>
+    <Active>1</Active>
+  </EntityContactMode>
+  <EntityDetailMode>
+    <Value>0</Value>
+    <Description>Entity Detail not applicable</Description>
+    <Active>1</Active>
+  </EntityDetailMode>
+  <EntityDetailMode>
+    <Value>1</Value>
+    <Description>Entity Detail applicable</Description>
+    <Active>1</Active>
+  </EntityDetailMode>
+  <ApplicationWorkingMode>
+    <Value>0</Value>
+    <Description>Application Mode not applicable</Description>
+    <Active>1</Active>
+  </ApplicationWorkingMode>
+  <ApplicationWorkingMode>
+    <Value>1</Value>
+    <Description>Application Mode applicable</Description>
+    <Active>1</Active>
+  </ApplicationWorkingMode>
+  <EntityStatutoryMode>
+    <Value>0</Value>
+    <Description>Entity Statutory Info not applicable</Description>
+    <Active>1</Active>
+  </EntityStatutoryMode>
+  <EntityStatutoryMode>
+    <Value>1</Value>
+    <Description>Entity Statutory Info applicable</Description>
+    <Active>1</Active>
+  </EntityStatutoryMode >
+  <EntityBankMode>
+    <Value>0</Value>
+    <Description>Entity Bank Detail not applicable</Description>
+    <Active>1</Active>
+  </EntityBankMode>
+  <EntityBankMode>
+    <Value>1</Value>
+    <Description>Entity Bank Detail applicable</Description>
+    <Active>1</Active>
+  </EntityBankMode>
+  <AccessType>
+    <Value>0</Value>
+    <Description>According to access level</Description>
+    <Active>1</Active>
+  </AccessType>
+  <AccessType>
+    <Value>1</Value>
+    <Description>Full Access</Description>
+    <Active>1</Active>
+  </AccessType>
+  <CreditTermMode>
+    <Value>0</Value>
+    <Description>Credit Terms not required</Description>
+    <Active>1</Active>
+  </CreditTermMode>
+  <CreditTermMode>
+    <Value>1</Value>
+    <Description>Credit Terms common</Description>
+    <Active>1</Active>
+  </CreditTermMode>
+  <CreditTermMode>
+    <Value>2</Value>
+    <Description>Credit terms defined Brand wise</Description>
+    <Active>1</Active>
+  </CreditTermMode>
+  <JournalMode>
+    <Value>0</Value>
+    <Description>Journal Entry not allowed</Description>
+    <Active>1</Active>
+  </JournalMode>
+  <JournalMode>
+    <Value>1</Value>
+    <Description>Journal Entry allowed</Description>
+    <Active>1</Active>
+  </JournalMode>
+  <TargetMode>
+    <Value>0</Value>
+    <Description>Target Entry not allowed</Description>
+    <Active>1</Active>
+  </TargetMode>
+  <TargetMode>
+    <Value>1</Value>
+    <Description>Target Entry allowed</Description>
+    <Active>1</Active>
+  </TargetMode>
+  <ServiceCustomerMode>
+    <Value>0</Value>
+    <Description>Not a customer in service process</Description>
+    <Active>1</Active>
+  </ServiceCustomerMode>
+  <ServiceCustomerMode>
+    <Value>1</Value>
+    <Description>Is a customer in service process</Description>
+    <Active>1</Active>
+  </ServiceCustomerMode>
+  <ServicePJPMode>
+    <Value>0</Value>
+    <Description>Not covered by service PJP</Description>
+    <Active>1</Active>
+  </ServicePJPMode>
+  <ServicePJPMode>
+    <Value>1</Value>
+    <Description>Covered by service PJP</Description>
+    <Active>1</Active>
+  </ServicePJPMode>
+  <SAPCodeMode>
+    <Value>0</Value>
+    <Description>Entity ERP Code optional</Description>
+    <Active>1</Active>
+  </SAPCodeMode>
+  <SAPCodeMode>
+    <Value>1</Value>
+    <Description>Entity ERP Code mandatory</Description>
+    <Active>1</Active>
+  </SAPCodeMode>
+  <SAPCodeMode>
+    <Value>2</Value>
+    <Description>Entity ERP code not applicable</Description>
+    <Active>1</Active>
+  </SAPCodeMode>
+  <AuthoriseForLeadPass>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </AuthoriseForLeadPass>
+  <AuthoriseForLeadPass>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </AuthoriseForLeadPass>
+  <CityMappingMode>
+    <Value>0</Value>
+    <Description>Not a customer in service process</Description>
+    <Active>1</Active>
+  </CityMappingMode>
+  <CityMappingMode>
+    <Value>1</Value>
+    <Description>Is a customer in service process</Description>
+    <Active>1</Active>
+  </CityMappingMode>
+  <EntityMilMode>
+    <Value>0</Value>
+    <Description>Entity Mil  Detail not applicable</Description>
+    <Active>1</Active>
+  </EntityMilMode >
+  <EntityMilMode>
+    <Value>1</Value>
+    <Description>Entity Mil Detail applicable</Description>
+    <Active>1</Active>
+  </EntityMilMode>
+  <HolidayCalendarRequired>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </HolidayCalendarRequired >
+  <HolidayCalendarRequired>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </HolidayCalendarRequired>
+
+  <SalesChannelLevel>
+    <Value>1</Value>
+    <Description>First</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>2</Value>
+    <Description>Second</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>3</Value>
+    <Description>Third</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>4</Value>
+    <Description>Fourth</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>5</Value>
+    <Description>Fifth</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>6</Value>
+    <Description>Six</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>7</Value>
+    <Description>Seven</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>8</Value>
+    <Description>Eight</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>9</Value>
+    <Description>Nine</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+  <SalesChannelLevel>
+    <Value>10</Value>
+    <Description>Ten</Description>
+    <Active>1</Active>
+  </SalesChannelLevel>
+
+  <BillToRetailer>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </BillToRetailer>
+  <BillToRetailer>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </BillToRetailer>
+
+  <StockTransferMode>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </StockTransferMode>
+  <StockTransferMode>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </StockTransferMode>
+
+  <AutoCodeGenerateMode>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </AutoCodeGenerateMode>
+  <AutoCodeGenerateMode>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </AutoCodeGenerateMode>
+
+  <ReportHierarchyLevel>
+    <Value>1</Value>
+    <Description>First</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>2</Value>
+    <Description>Second</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>3</Value>
+    <Description>Third</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>4</Value>
+    <Description>Fourth</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>5</Value>
+    <Description>Fifth</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>6</Value>
+    <Description>Six</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>7</Value>
+    <Description>Seven</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>8</Value>
+    <Description>Eight</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>9</Value>
+    <Description>Nine</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+  <ReportHierarchyLevel>
+    <Value>10</Value>
+    <Description>Ten</Description>
+    <Active>1</Active>
+  </ReportHierarchyLevel>
+
+  <IsPanMandatory>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </IsPanMandatory>
+  <IsPanMandatory>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </IsPanMandatory>
+
+  <StockMaintainMode>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </StockMaintainMode>
+  <StockMaintainMode>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </StockMaintainMode>
+
+  <ShowInApp>
+    <Value>0</Value>
+    <Description>No</Description>
+    <Active>1</Active>
+  </ShowInApp>
+  <ShowInApp>
+    <Value>1</Value>
+    <Description>Yes</Description>
+    <Active>1</Active>
+  </ShowInApp>
+  <!--=======================================Added #CC01 Vijay Kumar Prajapati============================================-->
+</Collections>

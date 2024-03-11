@@ -1,0 +1,661 @@
+﻿#region All NameSpace
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using BussinessLogic;
+using System.Data;
+using System.Resources;
+using DataAccess;
+using System.IO;
+using DevExpress.Web.ASPxTreeList;
+using System.Text;
+using Cryptography;
+#endregion
+
+//======================================================================================
+//* Developed By : Amit Srivastava
+//* Role         : Software Engineer
+//* Module       : Bulletin Board
+//* Description  : This page is used for creation and managing of Bulletins information
+//* ====================================================================================
+/* Change Log
+ * -------------------------------------------------------------------------------------
+ * DD-MMM-YYYY, Name, #CCXX, Description
+ * 10-Aug-2016, Sumit Maurya, #CC01, New checkboxlist added to bind Active Brands according to config (BRANDWISEBULLETIN = 1)Accesstype gets binded according to Brand Maping data.
+ * 23-Aug-2016, Sumit Maurya, #CC02, Child of Hierarchy and Saleschannel doesnot gets displayed if config value of BRANDWISEBULLETIN is 1.
+ 
+ */
+
+public partial class BulletinBoard_ManageBulletin : PageBase
+{
+    int BulletinId = 0;
+   
+
+    
+    #region Page Events
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            ValidPageControl();
+            if ((Request.QueryString["BulletinId"] != null) && (Request.QueryString["BulletinId"] != ""))
+            {
+                BulletinId = Convert.ToInt32(Convert.ToString(Crypto.Decrypt(Request.QueryString["BulletinId"], PageBase.KeyStr)));
+            }
+            if (!IsPostBack)
+            {
+                /* #CC01 Add Start */
+                if (PageBase.BRANDWISEBULLETIN == 1)
+                {
+                    trBrands.Visible = true;
+                    BindActiveBrands();
+                }
+                /* #CC01 Add End */
+                BindHierarchyLevelLocationTree();
+                BindSalesChannelLocationTree();
+                BindSubCategory();
+                if (BulletinId != 0)
+                {
+                    PouplateBulletinDetail(BulletinId);
+                }
+
+            }
+        }
+        catch (Exception ex)
+        {
+            ucMsg.ShowError(ex.Message.ToString());
+            PageBase.Errorhandling(ex);
+        }
+    }
+    protected void btnCreate_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            if (IsPageRefereshed == true)
+            {
+                return;
+            }
+            int Result = 0;
+            string ErrorString = "";
+            if (!ValidateControl(ref ErrorString))
+            {
+                ucMsg.ShowInfo(ErrorString);
+                return;
+            }
+            using (BulletinData objBulletin = new BulletinData())
+            {
+                if ((Request.QueryString["BulletinId"] != null) && (Request.QueryString["BulletinId"] != ""))
+                {
+                    BulletinId = Convert.ToInt32(Crypto.Decrypt(Request.QueryString["BulletinId"], PageBase.KeyStr));
+                    objBulletin.BulletinId = BulletinId;
+                }
+                else
+                {
+                    objBulletin.BulletinId = 0;
+                }
+                /* #CC01 Add Start */
+                if (PageBase.BRANDWISEBULLETIN == 1)
+                {
+                    objBulletin.BrandAccessType = Convert.ToInt16(rblAccessType.SelectedValue);
+                }
+                else
+                {
+                    objBulletin.BrandAccessType = null;
+                }
+
+                DataTable DtBrandID = new DataTable();
+                DtBrandID = tempDtBtandID();
+                if (PageBase.BRANDWISEBULLETIN == 1)
+                {
+                    foreach (ListItem li in chckBrandslist.Items)
+                    {
+                        if (li.Selected == true)
+                        {
+                            DataRow dr = DtBrandID.NewRow();
+                            dr["Id"] = li.Value;
+                            DtBrandID.Rows.Add(dr);
+                            DtBrandID.AcceptChanges();
+                        }
+                    }
+                    if (DtBrandID.Rows.Count == 0)
+                    {
+                        ucMsg.ShowInfo("Please select brand.");
+                        return;
+                    }
+
+                }
+
+                objBulletin.DTBrandID = DtBrandID;
+                if (FCKDetails.Value.Trim()=="")
+                {
+                    ucMsg.ShowInfo("Please enter description.");
+                    return;
+                }
+                /* #CC01 Add End */
+
+                objBulletin.BulletinSubject = txtSubject.Text.Trim();
+                objBulletin.SubCategoryId = Convert.ToInt32(ddlSubCategory.SelectedValue);
+                string url = PageBase.siteURL;
+                string description = FCKDetails.Value.Trim();
+                string replacevalue = description.Replace("/ZedSalesV5/", url);
+               // objBulletin.Description = FCKDetails.Value.Trim();
+                objBulletin.Description = replacevalue;
+                objBulletin.PublishDate = Convert.ToDateTime(ucPublishDate.Date);
+                objBulletin.ExpiryDate = Convert.ToDateTime(ucExpiryDate.Date);
+                objBulletin.AccessType = Convert.ToInt16(rblAccessType.SelectedValue);
+                objBulletin.Status = chkActive.Checked;
+                string LevelIds = FindTreeRoots(tvLevel);
+                string LocationIds = FindTreeChild(tvLevel);
+                if (LevelIds.Length > 0 || LevelIds != null)
+                    objBulletin.LevelIds = LevelIds;
+                if (LocationIds.Length > 0 || LocationIds != null)
+                    objBulletin.LocationIds = LocationIds;
+                string SalesChannelTypeIds = FindTreeRoots(tvSalesChannel);
+                string SalesChannelIds = FindTreeChild(tvSalesChannel);
+                if (SalesChannelIds.Length > 0 || SalesChannelIds != null)
+                    objBulletin.SalesChannelIds = SalesChannelIds;
+                if (SalesChannelTypeIds.Length > 0 || SalesChannelTypeIds != null)
+                    objBulletin.SalesChannelTypeIds = SalesChannelTypeIds;
+
+                objBulletin.UserID = PageBase.UserId;
+                objBulletin.CompanyId = PageBase.ClientId;
+                Result = objBulletin.InsertUpdateBulletininfo();
+               
+                if (Result > 0 && (objBulletin.Error == null || objBulletin.Error == ""))
+                {
+                    ClearFrom(); /* #CC01 Added */
+                    if (BulletinId == 0)
+                    {
+                        ucMsg.ShowSuccess(Resources.Messages.CreateSuccessfull);
+                    }
+                    else
+                    {
+                        ucMsg.ShowSuccess(Resources.Messages.EditSuccessfull);
+                    }
+                    /* ClearFrom(); #CC01 Commented */
+                }
+                else
+                {
+                    if (objBulletin.Error != null && objBulletin.Error != "")
+                    {
+                        ucMsg.ShowInfo(objBulletin.Error);
+                    }
+                    else
+                    {
+                        ucMsg.ShowError(Resources.Messages.ErrorMsgTryAfterSometime);
+                    }
+                }
+
+            };
+        }
+        catch (Exception ex)
+        {
+            ucMsg.ShowInfo(ex.Message.ToString());
+            PageBase.Errorhandling(ex);
+        }
+
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        ClearFrom();
+
+    }
+    protected void rblAccessType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (rblAccessType.SelectedValue == "1")
+        {
+            tblSpecific.Visible = false;
+        }
+        if (rblAccessType.SelectedValue == "2")
+        {
+            tblSpecific.Visible = true;
+        }
+        /* #CC01 Add Start */
+        ucMsg.Visible = false;
+        updMsg.Update();
+        /* #CC01 Add End */
+
+    }
+    protected void LBViewBulletin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ViewBulletin.aspx");
+
+    }
+
+    #endregion
+
+    #region Tree Control Events
+    private string FindTreeRoots(TreeView treeView)
+    {
+        string Levels = "";
+        if (treeView.CheckedNodes.Count > 0)
+        {
+            foreach (TreeNode root in treeView.Nodes)
+            {
+                if (root.Checked == true)
+                    Levels += "," + root.Value.ToString();
+            }
+        }
+        return Levels;
+    }
+    private string FindTreeChild(TreeView treeView)
+    {
+        string Locations = "";
+        foreach (TreeNode root in treeView.Nodes)
+        {
+            if (root.Checked == true || root.Checked==false)
+            {
+                foreach (TreeNode child in root.ChildNodes)
+                {
+                    if (child.Checked == true)
+                        Locations += "," + child.Value.ToString();
+
+                }
+            }
+        }
+
+        return Locations;
+    }
+    void UnCheckTreeNode(TreeView treeView)
+    {
+        foreach (TreeNode root in treeView.Nodes)
+        {
+            root.Checked = false;
+            foreach (TreeNode child in root.ChildNodes)
+            {
+                child.Checked = false;
+            }
+        }
+
+    }
+
+    private void FillTreeNode(TreeView treeView, int Id)
+    {
+        DataSet Ds = null;
+        using (BulletinData ObjData = new BulletinData())
+        {
+            ObjData.BulletinId = Id;
+            if (treeView == tvLevel)
+            {
+                Ds = ObjData.GetHierarchyLevelTreeByBulletinId();
+                if (Ds != null || Ds.Tables.Count > 0)
+                {
+                    if (Ds.Tables[0].Rows.Count > 0)
+                    {
+                        for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
+                        {
+                            foreach (TreeNode root in treeView.Nodes)
+                            {
+                                if (root.Value == Ds.Tables[0].Rows[i]["HierarchyLevelID"].ToString())
+                                    root.Checked = true;
+                                if (root.Checked == true)
+                                {
+                                    foreach (TreeNode child in root.ChildNodes)
+                                    {
+                                        child.Checked = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (Ds.Tables[1].Rows.Count > 0)
+                    {
+                        for (int i = 0; i < Ds.Tables[1].Rows.Count; i++)
+                        {
+                            foreach (TreeNode root in treeView.Nodes)
+                            {
+                                if (root.Checked == false)
+                                {
+                                    foreach (TreeNode child in root.ChildNodes)
+                                    {
+                                        if (child.Value == Ds.Tables[1].Rows[i]["LocationID"].ToString())
+                                            child.Checked = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (treeView == tvSalesChannel)
+            {
+
+                Ds = ObjData.GetSalesChannelTreeByBulletinId();
+                if (Ds != null || Ds.Tables.Count > 0)
+                {
+                    if (Ds.Tables[0].Rows.Count > 0)
+                    {
+                        for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
+                        {
+                            foreach (TreeNode root in treeView.Nodes)
+                            {
+                                if (root.Value == Ds.Tables[0].Rows[i]["LevelID"].ToString())
+                                    root.Checked = true;
+                                if (root.Checked == true)
+                                {
+                                    foreach (TreeNode child in root.ChildNodes)
+                                    {
+                                        child.Checked = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (Ds.Tables[1].Rows.Count > 0)
+                    {
+                        for (int i = 0; i < Ds.Tables[1].Rows.Count; i++)
+                        {
+                            foreach (TreeNode root in treeView.Nodes)
+                            {
+                                if (root.Checked == false)
+                                {
+                                    foreach (TreeNode child in root.ChildNodes)
+                                    {
+                                        if (child.Value == Ds.Tables[1].Rows[i]["SalesChannelID"].ToString())
+                                            child.Checked = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #endregion
+
+    #region User defined Function
+    private void PouplateBulletinDetail(int BulletinID)
+    {
+        DataTable DtBulletinDetail;
+        try
+        {
+            using (BulletinData ObjBulletin = new BulletinData())
+            {
+                ObjBulletin.BulletinId = BulletinID;
+                DtBulletinDetail = ObjBulletin.GetBulletinInfo();
+            };
+            if (DtBulletinDetail.Rows.Count > 0 && DtBulletinDetail != null)
+            {
+                CheckValidDateOnEdit(DtBulletinDetail);
+                /* #CC01 Add Start */
+                if (PageBase.BRANDWISEBULLETIN == 1)
+                {
+                    chckBrandslist.Enabled = false;
+                    if (Convert.ToString(DtBulletinDetail.Rows[0]["BrandID"]) != "")
+                    {
+                        string[] strBrandID = Convert.ToString(DtBulletinDetail.Rows[0]["BrandID"]).Split(',');
+                        if (strBrandID.Length > 0)
+                        {
+                            foreach (ListItem li in chckBrandslist.Items)
+                            {
+                                for (int i = 0; i < strBrandID.Length; i++)
+                                {
+                                    if (strBrandID[i] == li.Value)
+                                    {
+                                        li.Selected = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* #CC01 Add End */
+
+                txtSubject.Text = DtBulletinDetail.Rows[0]["BulletinSubject"].ToString();
+                ddlSubCategory.SelectedItem.Selected = false;
+                ddlSubCategory.Items.FindByValue(DtBulletinDetail.Rows[0]["SubCategoryID"].ToString()).Selected = true;
+                ucPublishDate.Date = DtBulletinDetail.Rows[0]["PublishDate"].ToString();
+                ucExpiryDate.Date = DtBulletinDetail.Rows[0]["ExpiryDate"].ToString();
+                FCKDetails.Value = DtBulletinDetail.Rows[0]["Description"].ToString();
+                chkActive.Checked = Convert.ToBoolean(DtBulletinDetail.Rows[0]["Status"].ToString());
+                rblAccessType.SelectedValue = DtBulletinDetail.Rows[0]["AccessType"].ToString();
+                rblAccessType.Enabled = false;
+                rblAccessType_SelectedIndexChanged(rblAccessType, new EventArgs());
+                FillTreeNode(tvLevel, BulletinId);
+                FillTreeNode(tvSalesChannel, BulletinId);
+                btnCreate.Text = "Update";
+
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+            ucMsg.ShowError(ex.ToString(), PageBase.GlobalErrorDisplay());
+            PageBase.Errorhandling(ex);
+        }
+    }
+    void ClearFrom()
+    {
+        txtSubject.Text = "";
+        ddlSubCategory.SelectedIndex = 0;
+        ucExpiryDate.Date = "";
+        ucPublishDate.Date = "";
+        rblAccessType.SelectedValue = "1";
+        FCKDetails.Value = "";
+        btnCreate.Text = "Submit";
+        rblAccessType.SelectedValue = "1";
+        rblAccessType_SelectedIndexChanged(rblAccessType, new EventArgs());
+        UnCheckTreeNode(tvLevel);
+        UnCheckTreeNode(tvSalesChannel);
+        rblAccessType.Enabled = true;
+        /* #CC01 Add Start */
+        if (PageBase.BRANDWISEBULLETIN == 1)
+        {
+            foreach (ListItem li in chckBrandslist.Items)
+            {
+                li.Selected = false;
+            }
+        }
+        /* #CC01 Add End */
+
+
+    }
+    private bool ValidateControl(ref string ErrMessage)
+    {
+        ErrMessage = "";
+        if ((ddlSubCategory.SelectedValue == "0") || (txtSubject.Text.Trim() == ""))
+        {
+            ErrMessage = Resources.Messages.MandatoryField;
+            return false;
+        }
+        if ((Convert.ToDateTime(ucExpiryDate.Date)) < (Convert.ToDateTime(ucPublishDate.Date)))
+        {
+            ErrMessage = "Expiry date should be greater then publish date";
+            return false;
+        }
+        if (rblAccessType.SelectedValue == "2")
+        {
+            int i = 0;
+            i = tvLevel.CheckedNodes.Count + tvSalesChannel.CheckedNodes.Count;
+            if (i <= 0)
+            {
+                ErrMessage = "Please choose at least one node for specific Access Type";
+                return false;
+            }
+        }
+        return true;
+
+    }
+    void ValidPageControl()
+    {
+
+        ucExpiryDate.MinRangeValue = System.DateTime.Now.Date;
+        ucPublishDate.MinRangeValue = System.DateTime.Now.Date;
+        if (btnCreate.Text == "Submit")
+            ucPublishDate.RangeErrorMessage = "Date should be greater then equal to current date.";
+        tvLevel.Attributes.Add("onclick", "OnCheckBoxCheckChanged(event)");
+        tvSalesChannel.Attributes.Add("onclick", "OnCheckBoxCheckChanged(event)");
+        ucMsg.ShowControl = false;
+    }
+    void CheckValidDateOnEdit(DataTable Dt)
+    {
+        if (Dt.Rows.Count > 0)
+        {
+            DateTime dtime = System.DateTime.Now;
+            if (dtime >= Convert.ToDateTime(Dt.Rows[0]["PublishDate"].ToString()))
+            {
+                ucPublishDate.TextBoxDate.Enabled = false;
+                ucPublishDate.imgCal.Enabled = false;
+                ucPublishDate.MinRangeValue = Convert.ToDateTime(Dt.Rows[0]["PublishDate"].ToString());
+                ucPublishDate.RangeErrorMessage = "Date should be greater then or equal to Publish date.";
+            }
+        }
+
+    }
+
+    private void BindSubCategory()
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+            ddlSubCategory.Items.Clear();
+            using (MastersData objMaster = new MastersData())
+            {
+                objMaster.UserId = PageBase.UserId;
+                objMaster.CompanyId = PageBase.ClientId;
+                dt = objMaster.GetAllBulletinSubCategory();
+            };
+            String[] colArray = { "SubCategoryID", "SubCategoryName" };
+            PageBase.DropdownBinding(ref ddlSubCategory, dt, colArray);
+        }
+        catch (Exception ex)
+        {
+            ucMsg.ShowError(ex.Message.ToString());
+            PageBase.Errorhandling(ex);
+        }
+    }
+    private void BindHierarchyLevelLocationTree()
+    {
+        using (BulletinData objBulletinData = new BulletinData())
+        {
+            DataSet objDs = null;
+            objBulletinData.UserID = PageBase.UserId;
+            objBulletinData.CompanyId = PageBase.ClientId;
+            objDs = objBulletinData.GetAllHierarchyLevelwithLocation();
+            if (objDs != null || objDs.Tables.Count > 0)
+            {
+                if (objDs != null || objDs.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < objDs.Tables[0].Rows.Count; i++)
+                    {
+                        TreeNode parentnode = new TreeNode();
+                        parentnode.Text = objDs.Tables[0].Rows[i][1].ToString();
+                        parentnode.Value = objDs.Tables[0].Rows[i][0].ToString();
+                        tvLevel.Nodes.Add(parentnode);
+                        if (objDs.Tables.Count > 1) /* #CC01 Added */
+                            if (PageBase.BRANDWISEBULLETIN == 0) /* #CC02 Added */
+                                for (int j = 0; j < objDs.Tables[1].Rows.Count; j++)
+                                {
+                                    if (objDs.Tables[0].Rows[i][0].ToString() == objDs.Tables[1].Rows[j][0].ToString())
+                                    {
+                                        TreeNode childnode = new TreeNode();
+                                        childnode.Text = objDs.Tables[1].Rows[j][2].ToString();
+                                        childnode.Value = objDs.Tables[1].Rows[j][1].ToString();
+                                        parentnode.ChildNodes.Add(childnode);
+                                    }
+                                }
+                    }
+                }
+            }
+        }
+    }
+    private void BindSalesChannelLocationTree()
+    {
+        using (BulletinData objBulletinData = new BulletinData())
+        {
+            DataSet objDs = null;
+            /* #CC01 Add Start */
+            DataTable DtBrandID = new DataTable();
+            DtBrandID = tempDtBtandID();
+            if (PageBase.BRANDWISEBULLETIN == 1)
+            {
+                foreach (ListItem li in chckBrandslist.Items)
+                {
+                    if (li.Selected == true)
+                    {
+                        DataRow dr = DtBrandID.NewRow();
+                        dr["Id"] = li.Value;
+                        DtBrandID.Rows.Add(dr);
+                        DtBrandID.AcceptChanges();
+                    }
+                }
+            }
+            tvSalesChannel.Nodes.Clear();
+            objBulletinData.DTBrandID = DtBrandID;
+            /* #CC01 Add End */
+            objBulletinData.UserID = PageBase.UserId;
+            objBulletinData.CompanyId = PageBase.ClientId;
+            objDs = objBulletinData.GetAllSalesChannelwithLocation();
+            if (objDs != null || objDs.Tables.Count > 0)
+            {
+                if (objDs != null || objDs.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < objDs.Tables[0].Rows.Count; i++)
+                    {
+                        TreeNode parentnode = new TreeNode();
+                        parentnode.Text = objDs.Tables[0].Rows[i][1].ToString();
+                        parentnode.Value = objDs.Tables[0].Rows[i][0].ToString();
+                        tvSalesChannel.Nodes.Add(parentnode);
+                        if (objDs.Tables.Count > 1) /* #CC01 Added */
+                            if (PageBase.BRANDWISEBULLETIN == 0) /* #CC02 Added */
+                                for (int j = 0; j < objDs.Tables[1].Rows.Count; j++)
+                                {
+                                    if (objDs.Tables[0].Rows[i][0].ToString() == objDs.Tables[1].Rows[j][0].ToString())
+                                    {
+                                        TreeNode childnode = new TreeNode();
+                                        childnode.Text = objDs.Tables[1].Rows[j][1].ToString();
+                                        childnode.Value = objDs.Tables[1].Rows[j][2].ToString();
+                                        parentnode.ChildNodes.Add(childnode);
+                                    }
+
+                                }
+                    }
+                }
+            }
+
+        }
+    }
+    #endregion
+
+    /* #CC01 Add Start */
+    public void BindActiveBrands()
+    {
+        try
+        {
+            ProductData objproduct = new ProductData();
+            objproduct.BrandId = 0;
+            objproduct.BrandSelectionMode = 1;
+            DataTable dtbrandserch = objproduct.SelectBrandInfo();
+            if (dtbrandserch != null)
+            {
+                if (dtbrandserch.Rows.Count > 0)
+                {
+                    chckBrandslist.DataSource = dtbrandserch;
+                    chckBrandslist.DataTextField = "BrandName";
+                    chckBrandslist.DataValueField = "BrandID";
+                    chckBrandslist.DataBind();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            ucMsg.ShowInfo(ex.Message.ToString());
+            PageBase.Errorhandling(ex);
+        }
+    }
+    public DataTable tempDtBtandID()
+    {
+        DataTable dtbrandid = new DataTable();
+        dtbrandid.Columns.Add("Id", typeof(System.Int64));
+        return dtbrandid;
+    }
+
+    /* #CC01 Add END */
+}

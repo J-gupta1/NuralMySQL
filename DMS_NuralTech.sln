@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DMS_NuralTech", "http://localhost/DMS_NuralTech", "{452A5D28-BA71-4FC5-91D7-A34DC13B12E8}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/DMS_NuralTech"
+		Debug.AspNetCompiler.PhysicalPath = "..\Mysql_NuralSFA\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DMS_NuralTech\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DMS_NuralTech"
+		Release.AspNetCompiler.PhysicalPath = "..\Mysql_NuralSFA\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DMS_NuralTech\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\Mysql_NuralSFA\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlHelper", "..\MySqlHelper\MySqlHelper\MySqlHelper\MySqlHelper.csproj", "{2780E0A6-0EEA-4D7B-9F60-26C17E972C9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452A5D28-BA71-4FC5-91D7-A34DC13B12E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452A5D28-BA71-4FC5-91D7-A34DC13B12E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452A5D28-BA71-4FC5-91D7-A34DC13B12E8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{452A5D28-BA71-4FC5-91D7-A34DC13B12E8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2780E0A6-0EEA-4D7B-9F60-26C17E972C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2780E0A6-0EEA-4D7B-9F60-26C17E972C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2780E0A6-0EEA-4D7B-9F60-26C17E972C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2780E0A6-0EEA-4D7B-9F60-26C17E972C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9829AEC1-A337-4CC4-9B07-C367EFB14786}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+/* CSS Document */
+#ddimagetabs{}
+
+#ddimagetabs a{
+display: block;
+
+text-decoration: none;
+font: bold 12px Arial; /*tab font */
+color: black; /*font color */
+width: 414px; /*width of tab image */
+height: 23px; /*height of tab image */
+float: left;
+display: inline;
+margin-left: 0px; /*spacing between tabs */
+padding-top: 4px; /*vertical offset of tab text from top of tab*/
+padding-left: 0px; /*vertical offset of tab text from top of tab*/
+background-image:url(../images/bg_tab.gif); /*URL to tab image */
+background-color:#D6DDD6;
+
+background-repeat: no-repeat;
+text-align: center;
+}
+
+#ddimagetabs a:hover, #ddimagetabs a.current{
+background-image:url(../images/bg_tab_hover.gif); background-position:left; /*URL to tab image onmouseover */
+background-color:#99B999;
+color: black;
+}
+
+#tabcontentcontainer{
+width:714px; /*width of 2nd level content*/
+height:auto; vertical-align:top; /*height of 2nd level content. Set to largest's content height to avoid jittering.*/
+}
+
+.tabcontent{
+display:none; vertical-align:top; height:auto;
+}
+
+/* Previous css code
+#tabcontentcontainer{
+width:714px; /*width of 2nd level content
+height:40px; /*height of 2nd level content. Set to largest's content height to avoid jittering.
+}
+
+.tabcontent{
+display:none; 
+}
+*/

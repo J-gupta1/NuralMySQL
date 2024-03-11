@@ -1,0 +1,23 @@
+th	{ text-align:right; }
+thead th, thead th.locked	{ font-size: 12px; padding:2px; vertical-align:top; }
+
+div#tblcontainer{ overflow:auto; width:949px; border: #B9B9B9 1px solid; scrollbar-base-color: #fff; scrollbar-3dlight-color: #fff; scrollbar-arrow-color: #000; scrollbar-darkshadow-color: #fff; scrollbar-face-color: #EBEBEB; scrollbar-highlight-color: #fff; scrollbar-shadow-color: #fff; scrollbar-track-color: #fff; margin: 0 0 0 0; background-color:#f3f6f7; }
+	 
+div#tblcontainer table th 		{  }
+div#tblcontainer table th.model { background:#d7d7d7; color:#1a3802; font-weight:bold; vertical-align:top; height:25px; font-size:12px; padding:2px; }
+
+thead th 			{ color:#003b78; font-weight:normal; height:37px; font-size:11px; vertical-align:top;}
+thead th.locked 	{ Z-INDEX: 30; height:37px; font-size:11px;}
+thead th 			{ Z-INDEX: 20; height:37px; font-size:11px;}
+td.locked 			{ Z-INDEX: 10; height:37px; font-size:11px;}
+th.locked 			{ Z-INDEX: 10; height:37px; font-size:11px;}
+button	 			{}
+
+td.inputboxtd		{ font-family:Arial, Helvetica, sans-serif; background:#e3e3e3; color:#444; font-weight:normal; vertical-align:top; height:25px; font-size:12px; padding:2px; } 
+th.inputboxtd		{ background:#d7d7d7; color:#1a3802; font-weight:bold; vertical-align:top; height:25px; font-size:13px; padding:2px; }
+
+td.inputboxtd input	{ text-align:right; width:50px; border:1px solid #c3c3c3; color:#444; background:#fff; height:15px; font-size:11px; padding:2px; }  
+
+
+.gridfooter td { padding:2px; height:25px; font-weight:bold; }
+.tbl_cnt_02 td { padding:2px; height:25px; font-weight:bold; background:#c8d1d9; color:#000; }

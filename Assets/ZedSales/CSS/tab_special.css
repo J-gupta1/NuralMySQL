@@ -1,0 +1,35 @@
+/* CSS Document */
+#ddimagetabs{}
+
+#ddimagetabs a{display: block;
+text-decoration: none;
+font: bold 12px Arial; /*tab font */
+color:#fff;  /*font color */
+width: 200px; /*width of tab image */
+ /*height of tab image */
+float: left;
+/*display: inline;*/
+margin-left:0px; /*spacing between tabs */
+ /*vertical offset of tab text from top of tab*/
+padding-left:0px; /*vertical offset of tab text from top of tab*/
+height:25px; margin:0; background:#5bab3e url(Images/Tabs/tab.gif) repeat-x; padding:8px 10px 0px 10px;
+text-align: center; 
+}
+
+#ddimagetabs a:hover, #ddimagetabs a.current{
+ /*URL to tab image onmouseover */
+background:#fff url(Images/Tabs/tab-active.gif) repeat-x; color:#3c9e0e; padding-top:8px; border-left:1px solid #accb53; border-right:1px solid #accb53;
+}
+
+
+#tabcontentcontainer{
+width:714px; /*width of 2nd level content*/
+height:auto; vertical-align:top; /*height of 2nd level content. Set to largest's content height to avoid jittering.*/
+}
+
+.tabcontent{
+width:930px; display:none; vertical-align:top; height:auto; border:1px solid #accb53; border-width:1px; text-align:left; padding:10px; margin-top:-1px;
+}
+
+#sc1 a:link, #sc1 a:active, #sc1 a:visited {text-align:right; font-size:11px; color:#5b5b5b; text-decoration:underline; background:none; border:0; padding:0px; margin:0px;}
+#sc1 a:hover{text-align:right; font-size:11px; color:#5b5b5b; text-decoration:none; background:none; border:0; padding:0px; margin:0px;}

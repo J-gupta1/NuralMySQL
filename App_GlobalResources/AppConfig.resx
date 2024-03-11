@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="IsEmailUnique" xml:space="preserve">
+    <value>1</value>
+    <comment>0= EmailId can be duplicate in Excel File, 1 = EmailID must be unique in Excel Upload file.</comment>
+  </data>
+  <data name="IsLoginIDUnique" xml:space="preserve">
+    <value>1</value>
+    <comment>0= LoginID can be duplicate in Excel File, 1 = LoginID must be unique in Excel Upload file.</comment>
+  </data>
+  <data name="LoginIDMaxLength" xml:space="preserve">
+    <value>50</value>
+    <comment>Validate Maxlength of LoginID.</comment>
+  </data>
+  <data name="LoginIDMinLength" xml:space="preserve">
+    <value>5</value>
+    <comment>Validate Minlength of LoginID.</comment>
+  </data>
+  <data name="MaxSerialCountforUpdateCarton" xml:space="preserve">
+    <value>5000</value>
+    <comment>To validate maximum serialcount to update carton.</comment>
+  </data>
+  <data name="PhoneNumberRegex" xml:space="preserve">
+    <value>^(\d{5,12})</value>
+    <comment>Regex to validate Phone number while Retailer creation.</comment>
+  </data>
+  <data name="RetailerAddress1MaxLength" xml:space="preserve">
+    <value>250</value>
+    <comment>Set Max length of Address2 while creating retailor.</comment>
+  </data>
+  <data name="RetailerAddress1MinLength" xml:space="preserve">
+    <value>25</value>
+    <comment>Set min length of Address1 while creating retailor.</comment>
+  </data>
+  <data name="RetailerPhoneNoErrorMsg" xml:space="preserve">
+    <value>Invalid Phone number.</value>
+    <comment>Retailer creation Phone number Regeular expression Error message.</comment>
+  </data>
+  <data name="RetailerPhoneNoMaxLength" xml:space="preserve">
+    <value>12</value>
+    <comment>Set maxlenth of Phone No while cresting retailer.</comment>
+  </data>
+  <data name="RetailerPhoneNoMinLength" xml:space="preserve">
+    <value>5</value>
+    <comment>Set min lenth of Phone No while cresting retailer.</comment>
+  </data>
+  <data name="SaveFileOn" xml:space="preserve">
+    <value>1</value>
+    <comment>0=On Cloud,1= On server.</comment>
+  </data>
+  <data name="ShowHideParentRetailerName" xml:space="preserve">
+    <value>1</value>
+    <comment>0= Hide "Parent Retailer Name" in ViewRetailer Interface ,1= Show "Parent Retailer Name" in ViewRetailer Interface.</comment>
+  </data>
+  <data name="ShowHideRetailerReferanceCode" xml:space="preserve">
+    <value>1</value>
+    <comment>0= Hide Reference Code in Retailer Interface and Upload.</comment>
+  </data>
+  <data name="ShowSalesChannenlOutstandingAmount" xml:space="preserve">
+    <value>1</value>
+    <comment>1= ShowSalesChannenOutstandingAmount, 0= Hide Sales Channenl OutstandingAmount</comment>
+  </data>
+  <data name="UploadedImageSize" xml:space="preserve">
+    <value>5000</value>
+  </data>
+  <data name="UploadedImageSizeType" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="UploadImageError" xml:space="preserve">
+    <value>Uploaded image is in over size.</value>
+  </data>
+  <data name="AzureContainerName" xml:space="preserve">
+    <value>testing</value>
+  </data>
+  <data name="RetailerPinCodeMaxLength" xml:space="preserve">
+    <value>6</value>
+    <comment>Set Max length for Retailer Pincode.</comment>
+  </data>
+  <data name="ViewDOAReport" xml:space="preserve">
+    <value>2</value>
+    <comment>1=for Motorola DOA Reprot Data, 2 = for Comio Report Data (default should be used for Motorola)</comment>
+  </data>
+</root>

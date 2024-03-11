@@ -1,0 +1,84 @@
+.dhtmlwindow{
+position: absolute;
+visibility: hidden;
+background-color: white;
+border-radius: 6px;
+width: 85% !important;
+margin: 1% auto;
+left: 8% !important;
+-webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 21px -1px rgba(0,0,0,1);
+box-shadow: 0px 0px 21px -1px rgba(0,0,0,1);
+}
+
+.drag-handle{ /*CSS for Drag Handle*/
+text-indent: 5px;
+font-family:Arial;
+font-size:14px;
+font-weight:bold;
+background:#666666 ;
+color: white;
+cursor: move;
+overflow: hidden;
+width: auto;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);
+-moz-opacity: 1;
+opacity: 1;
+min-height:30px;
+line-height:30px;
+border-top-left-radius:6px;
+border-top-right-radius:6px;
+}
+.drag-handle img { padding:1px; }
+
+.drag-handle .drag-controls{ /*CSS for controls (min, close etc) within Drag Handle*/
+position: absolute;
+right: 2px;
+top: 0px;
+cursor: pointer;
+}
+
+* html .drag-handle{ /*IE6 and below CSS hack. Width must be set to 100% in order for opaque title bar to render*/
+width: 100%;
+}
+
+
+.drag-contentarea{ /*CSS for Content Display Area div*/
+background-color: White;
+color: black;
+height: 150px;
+padding: 10px 10px;
+border-bottom-left-radius:6px;
+border-bottom-right-radius:6px;
+}
+
+.drag-statusarea{ /*CSS for Status Bar div (includes resizearea)*/
+border-top: 1px solid gray;
+background-color: #F8F8F8;
+height: 13px; /*height of resize image*/
+}
+
+
+.drag-resizearea{ /*CSS for Resize Area itself*/
+float: right;
+cursor: nw-resize;
+font-size: 0;
+background-image: url('Images/DHTML/resize.gif');
+background-repeat: no-repeat;
+background-size: 25px 17px;
+}
+.popupclose {
+    background-image: url('Images/DHTML/close.gif');
+    background-repeat: no-repeat;
+    background-size: 25px 17px;
+}
+
+.popupminimize {
+    background-image: url('Images/DHTML/min.gif');
+     background-repeat: no-repeat;
+    background-size: 25px 17px;
+}
+
+/*newpopup*/
+.popupcontainer { margin-left:auto; margin-right:auto; width:800px; border:1px solid #a1c7e2; }
+.popupheading { float:left; width:800px; background:url(../Images/heading_bg.gif) repeat-x top; height:29px; line-height:29px;}

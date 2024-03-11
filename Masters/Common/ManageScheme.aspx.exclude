@@ -1,0 +1,404 @@
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/CommonMasterPages/MasterPage.master"
+    CodeFile="ManageScheme.aspx.cs" Inherits="Masters_HO_Common_ManageScheme" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Src="~/UserControls/ucDatePicker.ascx" TagName="ucDatePicker" TagPrefix="uc1" %>
+<%@ Register Src="~/UserControls/ucMessage.ascx" TagName="ucMessage" TagPrefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+
+    <script type="text/javascript" language="javascript">
+        function OnCheckBoxCheckChanged(evt) {
+
+            var src = window.event != window.undefined ? window.event.srcElement : evt.target;
+            var isChkBoxClick = (src.tagName.toLowerCase() == "input" && src.type == "checkbox");
+            if (isChkBoxClick) {
+                var parentTable = GetParentByTagName("table", src);
+                var nxtSibling = parentTable.nextSibling;
+                if (nxtSibling && nxtSibling.nodeType == 1)//check if nxt sibling is not null & is an element node
+                {
+                    if (nxtSibling.tagName.toLowerCase() == "div") //if node has children
+                    {
+                        //check or uncheck children at all levels
+                        CheckUncheckChildren(parentTable.nextSibling, src.checked);
+                    }
+                }
+                //check or uncheck parents at all levels
+                CheckUncheckParents(src, src.checked);
+            }
+        }
+        function CheckUncheckChildren(childContainer, check) {
+            var childChkBoxes = childContainer.getElementsByTagName("input");
+            var childChkBoxCount = childChkBoxes.length;
+            for (var i = 0; i < childChkBoxCount; i++) {
+                childChkBoxes[i].checked = check;
+            }
+        }
+        function CheckUncheckParents(srcChild, check) {
+            var parentDiv = GetParentByTagName("div", srcChild);
+            var parentNodeTable = parentDiv.previousSibling;
+            if (parentNodeTable) {
+                var checkUncheckSwitch;
+                if (check) //checkbox checked
+                {
+                    var isAllSiblingsChecked = AreAllSiblingsChecked(srcChild);
+                    if (isAllSiblingsChecked)
+                        checkUncheckSwitch = true;
+                    else
+                        return; //do not need to check parent if any(one or more) child not checked
+                }
+                else //checkbox unchecked
+                {
+                    checkUncheckSwitch = false;
+                }
+                var inpElemsInParentTable = parentNodeTable.getElementsByTagName("input");
+                if (inpElemsInParentTable.length > 0) {
+                    var parentNodeChkBox = inpElemsInParentTable[0];
+                    parentNodeChkBox.checked = checkUncheckSwitch;
+                    //do the same recursively
+                    CheckUncheckParents(parentNodeChkBox, checkUncheckSwitch);
+                }
+            }
+        }
+        function AreAllSiblingsChecked(chkBox) {
+            var parentDiv = GetParentByTagName("div", chkBox);
+            var childCount = parentDiv.childNodes.length;
+            for (var i = 0; i < childCount; i++) {
+                if (parentDiv.childNodes[i].nodeType == 1) //check if the child node is an element node
+                {
+                    if (parentDiv.childNodes[i].tagName.toLowerCase() == "table") {
+                        var prevChkBox = parentDiv.childNodes[i].getElementsByTagName("input")[0];
+                        //if any of sibling nodes are not checked, return false
+                        if (!prevChkBox.checked) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        //utility function to get the container of an element by tagname
+        function GetParentByTagName(parentTagName, childElementObj) {
+            var parent = childElementObj.parentNode;
+            while (parent.tagName.toLowerCase() != parentTagName.toLowerCase()) {
+                parent = parent.parentNode;
+            }
+            return parent;
+        }
+        function validateTreeView() {
+            var isChecked = false;
+            var tvNodes = document.getElementById('<%=tvLevel.ClientID %>');
+            var chBoxes = tvNodes.getElementsByTagName("input");
+            for (var i = 0; i < chBoxes.length; i++) {
+                var chk = chBoxes[i];
+                if (chk.type == "checkbox" && chk.checked == true) {
+                    isChecked = true;
+                }
+            }
+            if (isChecked == true) {
+                document.getElementById('<%=lbltvErrorMsg.ClientID %>').style.display = "none";
+                $("#trContent").hide();
+                document.getElementById("tdContentImg").innerHTML = "<img src='Images/loading.gif' />";
+                
+            } else {
+                document.getElementById('<%=lbltvErrorMsg.ClientID %>').style.display = "";
+            }
+            return isChecked;
+        }
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contentHolderMain" runat="Server">
+    <div align="center">
+     <asp:Label ID="lbltvErrorMsg" runat="server" Visible="false"></asp:Label>
+        <table cellspacing="0" cellpadding="0" width="965" border="0">
+            <tr>
+                <td align="left" valign="top" height="420">
+                    <table cellspacing="0" cellpadding="0" width="965" border="0">
+                       
+                        <tr>
+                            <td align="left" valign="top">
+                                <asp:UpdatePanel ID="updMessage" runat="server" UpdateMode="Always">
+                                    <ContentTemplate>
+                                        <uc2:ucMessage ID="uclblMessage" runat="server" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </td>
+                        </tr>
+                        <tr>
+                                    <td align="left" valign="top">
+                                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                            <tr>
+                                                <td colspan="2">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="70%" align="left" valign="top" colspan = "6" class="tableposition">
+                                                    <div class="mainheading">
+                                                        Manage Scheme <asp:Label ID="lblpage" runat="server" ></asp:Label></div>
+                                                </td>
+                                                <td width="20%" align="left" style="padding-right: 10px;">
+                                                    <asp:LinkButton ID="LBViewScheme" runat="server" CausesValidation="False" OnClick="LBViewScheme_Click"
+                                                        CssClass="elink7">View Scheme</asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                        <tr>
+                            <td align="left" valign="top">
+                                <div class="contentbox">
+                                    <asp:UpdatePanel ID="updForm" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                    <td colspan="6" height="20" class="mandatory" valign="top">
+                                                        (<font class="error">*</font>) marked fields are mandatory.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="35" align="right" valign="top" width="120" class="formtext">
+                                                        <asp:Label ID="Label3" runat="server" Text="Scheme Based Type:"></asp:Label><font
+                                                            class="error">*</font>
+                                                    </td>
+                                                    <td width="200" align="left" valign="top">
+                                                        <asp:DropDownList ID="cmbSchemeBasedType" runat="server"
+                                                            CssClass="form_select" Visible="true" DropDownStyle="DropDownList">
+                                                            <asp:ListItem Value="0">Select</asp:ListItem>
+                                                            <asp:ListItem Value="2">Purchase</asp:ListItem>
+                                                            <asp:ListItem Value="3">Sales</asp:ListItem>
+                                                           <%-- <asp:ListItem Value="3">Stock In Hand</asp:ListItem>--%>
+                                                        </asp:DropDownList>
+                                                        <br />
+                                                        <asp:RequiredFieldValidator ID="requSchemeValidate" runat="server" ControlToValidate="cmbSchemeBasedType"
+                                                            ErrorMessage="Please select scheme based type" CssClass="error" InitialValue="Select"
+                                                            ValidationGroup="UploadGroup"></asp:RequiredFieldValidator>
+                                                    </td>
+                                                    <%--<td align="right" valign="top" width="120" class="formtext">
+                                                        <asp:Label ID="Label2" runat="server" Text="Scheme Period:"></asp:Label><font class="error">*</font>
+                                                    </td>
+                                                    <td width="200" align="left" valign="top">
+                                                        <asp:DropDownList ID="cmbSchemePeriod" runat="server" 
+                                                            CssClass="form_select" Visible="true" DropDownStyle="DropDownList"  >
+                                                            <asp:ListItem Selected="True" Value="0">Select</asp:ListItem>
+                                                            <asp:ListItem Value="1">Monthly</asp:ListItem>
+                                                            <asp:ListItem Value="2">Quarterly</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <br />
+                                                        <asp:RequiredFieldValidator ID="reqSchemeperiod" runat="server" ControlToValidate="cmbSchemePeriod"
+                                                            ErrorMessage="Please select scheme period." CssClass="error" ValidationGroup="SchemeEntry"></asp:RequiredFieldValidator>
+                                                    </td>--%>
+                                                    <td width="100" align="right" valign="top" class="formtext">
+                                                        <asp:Label ID="Label8" runat="server" Text="Scheme Name:"></asp:Label><font class="error">*</font>
+                                                    </td>
+                                                    <td width="200" align="left" valign="top">
+                                                        <asp:TextBox ID="txtScheme" CssClass="form_input2" MaxLength="100" runat="server"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="RequValidaSchemeName" runat="server" ControlToValidate="txtScheme"
+                                                            CssClass="error" ErrorMessage="Please enter scheme name" ValidationGroup="SchemeEntry"></asp:RequiredFieldValidator>
+                                                    </td>
+                                                    <td height="35" align="right" valign="top" class="formtext">
+                                                        <asp:Label ID="Label1" runat="server" Text="Scheme Level:"></asp:Label><font class="error">*</font>
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <asp:DropDownList ID="cmbSchemeLevel" runat="server"  CssClass="form_select"
+                                                            Visible="true" DropDownStyle="DropDownList">
+                                                            <asp:ListItem Selected="True" Value="0">Select</asp:ListItem>
+                                                            <asp:ListItem Value="1">Summary Wise</asp:ListItem>
+                                                            <asp:ListItem Value="2">SKU Wise</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <asp:RequiredFieldValidator ID="reqSchemeLevel" runat="server" ControlToValidate="cmbSchemeLevel"
+                                                            ErrorMessage="Please select scheme level." CssClass="error" ValidationGroup="UploadGroup"></asp:RequiredFieldValidator>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    
+                                                    <td align="right" valign="top" class="formtext">
+                                                        <asp:Label ID="Label4" runat="server" Text="Scheme Based On:"></asp:Label><font class="error">*</font>
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <asp:DropDownList ID="cmbSchemeBasedOn" runat="server" 
+                                                            CssClass="form_select" Visible="true" DropDownStyle="DropDownList">
+                                                            <asp:ListItem Selected="True" Value="0">Select</asp:ListItem>
+                                                            <asp:ListItem Value="1">Quantity</asp:ListItem>
+                                                            <asp:ListItem Value="2">Value</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <asp:RequiredFieldValidator ID="ReqSchemeBasedOn" runat="server" ControlToValidate="cmbSchemeBasedOn"
+                                                            ErrorMessage="Please select scheme based on" CssClass="error" ValidationGroup="SchemeEntry"></asp:RequiredFieldValidator>
+                                                    </td>
+                                                     <td height="35" align="right" valign="top" class="formtext">
+                                                        <asp:Label ID="Label5" runat="server" Text="Start Date:"></asp:Label><font class="error">*</font>
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <uc1:ucDatePicker ID="ucStartDate" runat="server" IsRequired="True" ValidationGroup="UploadGroup"
+                                                            ErrorMessage="Please select start date."  />
+                                                    </td>
+                                                    <td align="right" valign="top" class="formtext">
+                                                        <asp:Label ID="Label6" runat="server" Text="End Date:"></asp:Label><font class="error">*</font>
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <uc1:ucDatePicker ID="ucEndDate" runat="server" IsRequired="True" ValidationGroup="UploadGroup"
+                                                            ErrorMessage="Please select end date." />
+                                                    </td>
+                                                    <td align="right" valign="top" class="formtext">
+                                                        &nbsp;</td>
+                       
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                   
+                                                     <td align="right" class="formtext" height="35" valign="top" width="12%">
+                                                         <asp:Label ID="lblAccessType" runat="server" CssClass="formtext">Access Type:<font 
+                                                                                    class="error">*</font></asp:Label>
+                                                     </td>
+                                                     <td align="left" class="formtext" valign="top" width="20%"  colspan = "3">
+                                                         <asp:RadioButtonList ID="rblAccessType" runat="server" AutoPostBack="true" 
+                                                             OnSelectedIndexChanged="rblAccessType_SelectedIndexChanged" 
+                                                             RepeatDirection="Horizontal">
+                                                             <asp:ListItem Selected="True" Value="1">Allow To All</asp:ListItem>
+                                                             <asp:ListItem Value="2">Specific</asp:ListItem>
+                                                         </asp:RadioButtonList>
+                                                     </td>
+                                                     <td align="right" class="formtext" valign="top" width="15%">
+                                                         &nbsp;</td>
+                                                     <td align="left" valign="top" width="20%">
+                                                         &nbsp;<td align="right" class="formtext" valign="top" width="13%">
+                                                         </td>
+                                                         <td align="left" valign="top" width="20%">
+                                                             &nbsp;
+                                                         </td>
+                                                     </td>
+                                                </tr>
+                                                <asp:Panel ID="tblSpecific" runat="server" BorderWidth="0" Visible="false">
+                                                    <tr>
+                                                        <td>
+                                                            &nbsp;
+                                                        </td>
+                                                        <td colspan="5" style="border: 1px solid #b9d0dd;">
+                                                            <div style="float:left; width:800px; height:150px; overflow-y:scroll; overflow-x:hidden">
+                                                                <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                                                                    <tr>
+                                                                        <td align="left" class="formtext1" style="border-right: 1px solid #b9d0dd;" 
+                                                                            valign="top" width="40%">
+                                                                            <asp:TreeView ID="tvLevel" runat="server" cellpadding="0" cellspacing="0" 
+                                                                                ShowCheckBoxes="All">
+                                                                            </asp:TreeView>
+                                                                        </td>
+                                                                        <td align="left" class="formtext1" valign="top" width="60%">
+                                                                            <asp:TreeView ID="tvSalesChannel" runat="server" cellpadding="0" 
+                                                                                cellspacing="0" ShowCheckBoxes="All">
+                                                                            </asp:TreeView>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </asp:Panel>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" height="10" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top">
+                                <div class="contentbox">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" 
+                                        style="height: 102px">
+                                        <tr>
+                                            <td width="120" align="right" valign="middle" class="style1">
+                                                <asp:Label ID="Label7" runat="server" Text="Select Excel:"></asp:Label><font class="error">*</font>
+                                            </td>
+                                            <td width="260" align="left" valign="middle" class="style1">
+                                                <asp:FileUpload ID="flupdScheme" CssClass="form_file" runat="server" />
+                                            </td>
+                                            <td width="60" align="left" valign="middle" class="style1">
+                                                <asp:Button ID="BtnUpload" CssClass="buttonbg" runat="server" Text="Upload" ValidationGroup="UploadGroup"
+                                                    OnClick="BtnUpload_Click" />
+                                            </td>
+                                              </tr>
+                                            <tr>
+                              
+                           <td align="left" valign="top" colspan="6">
+                              &nbsp; <a class="elink2" href="../../Excel/Templates/SKUWiseScheme.xlsx">
+                                                        Download SKUWise Scheme Template </a>
+                               &nbsp;&nbsp;
+                           
+                               <a class="elink2" href="../../Excel/Templates/BrandWiseScheme.xlsx">
+                                                        Download BrandWise Scheme Template </a>
+                                  &nbsp;&nbsp;
+                             
+                          
+                          <asp:LinkButton ID="LnkDownloadRefCode" runat="server" CssClass="elink2" 
+                                   onclick="LnkDownloadRefCode_Click" >Download Reference Code</asp:LinkButton>
+                          </td>
+                      
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top">
+                                <asp:UpdatePanel ID="updscheme" runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <asp:Panel ID="pnlgrid" runat="server" Visible="false">
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td align="left" valign="top">
+                                                        <div class="contentbox">
+                                                            <div class="grid1">
+                                                                <asp:GridView ID="GrdScheme" runat="server" AlternatingRowStyle-CssClass="gridrow1"
+                                                                    bgcolor="" BorderWidth="0px" CellPadding="4" CellSpacing="1" FooterStyle-CssClass="gridfooter"
+                                                                    FooterStyle-HorizontalAlign="Left" FooterStyle-VerticalAlign="Top" GridLines="none"
+                                                                    HeaderStyle-CssClass="gridheader" HeaderStyle-HorizontalAlign="left" HeaderStyle-VerticalAlign="top"
+                                                                    RowStyle-CssClass="gridrow" RowStyle-HorizontalAlign="left" RowStyle-VerticalAlign="top"
+                                                                    SelectedStyle-CssClass="gridselected" Width="100%">
+                                                                </asp:GridView>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top" height="5">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top">
+                                                        <asp:Button ID="btnSave" CssClass="buttonbg" runat="server" Text="Save" ValidationGroup="UploadGroup"
+                                                            OnClick="btnSave_Click" />&nbsp;
+                                                        <asp:Button ID="btnSave0" runat="server" CausesValidation="False" OnClick="btnReset_Click"
+                                                            CssClass="buttonbg" Text="Reset" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top" height="10">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:Panel>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</asp:Content>

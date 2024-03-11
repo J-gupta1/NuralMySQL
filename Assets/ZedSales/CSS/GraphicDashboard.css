@@ -1,0 +1,638 @@
+/**********************************************************
+'Project          	: 	
+'Created By      	: 	Kalpana
+'Company       	  	: 	Zed-Axis Technologies Pvt. Ltd.(http://www.zed-axis.com)
+'**********************************************************/
+
+
+body {
+    background-color: #e6e7e8 !important;
+     font-family: Arial;
+}
+
+.dash_container {
+    padding: 10px 20px;
+    background-color: #e6e7e8;
+}
+.head_container {
+    padding: 10px 20px;
+    background-color: #fff;
+}
+.float {
+    float:left;
+}
+.clear {
+    clear:both;
+}
+.dashboard {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-family: Arial;
+    font-size: 12px;
+    color: Black;
+    font-weight: bold;
+    padding-bottom: 10px;
+    display: block;
+}
+
+.part_1, .part_2 {
+    width: 29%;
+    height: 240px;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_3 {
+    width: 39%;
+    height: 240px;
+    background-color: white;
+    display: block;
+    margin-top: 10px;
+    float: left;
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+
+.part_4 {
+    width: 39%;
+    height: 250px;
+    background-color: white;
+    display: block;
+    margin-top: 10px;
+    float: left;
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_5 {
+    width: 29%;
+    height: 250px;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_6 {
+    width: 58%;
+    margin-right: 1%;
+    margin-top: 10px;
+    float: left;
+}
+
+.part_7 {
+    width: 40%;
+    height: 430px !important;
+    display: block;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+    /*clear: right;*/
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_8 {
+    width: 100%;
+    height: 170px !important;
+    display: block;
+    background-color: white;
+    float: left;
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_9, .part_10 {
+    width: 48%;
+    height: 250px;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+    margin-right: 1.5%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_10 {
+    width: 49%;
+    height: 250px;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+.part_33 {
+    width: 32.3%;
+    height: 250px;
+    background-color: white;
+    margin-top: 10px;
+    float: left;
+    margin-right: 1%;
+    -webkit-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    box-shadow: 10px 5px 20px 0px rgba(0,0,0,0.24);
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #dbdbdb;
+}
+
+
+.padding {
+    padding: 10px;
+}
+
+svg g g text {
+    /* for gauge middle text (Achievement) */
+    font-size: 11px;
+}
+/* for gauge label text (Target name) */
+svg g text {
+    font-size: 8px;
+}
+
+.google-visualization-atl .border {
+    border: 1px solid #dddddd !important;
+    font-size: 12px;
+}
+.google-visualization-table-table th, .google-visualization-table-tr-head {
+    background-color: black !important;
+    height: 30px;
+    color: white;
+    background-image: none !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.google-visualization-table-tr-even {
+    background-color: #fd7829 !important;
+    color: white;
+    font-size: 11px;
+}
+
+.google-visualization-table-tr-odd {
+    background-color: #fcb400 !important;
+    color: white;
+    font-size: 11px;
+}
+
+.google-visualization-atl .zoomControls {
+    display: block !important;
+    clear: both;
+}
+
+.google-visualization-atl .legend {
+    display: block !important;
+    clear: both;
+    text-align: left !important;
+    font-family: Arial;
+}
+
+.zoomControls {
+    font-family: Arial;
+}
+
+.google-visualization-table-table td {
+    color: white !important;
+    font-size: 11px;
+    font-weight: bold;
+}
+.google-visualization-table-table td:first-child {
+    background-color: black;
+}
+
+
+/*Header*/
+.footer {
+    height: 30px;
+    line-height:30px;
+   text-align: center;
+    color: white !important;
+    font-size: 10px;
+    background-color: #808080;
+    margin-top: 10px;
+}
+.right-header {
+    height: 20px;
+    text-align: right;
+    background: url('Images/zedsaleslogo.gif') no-repeat right top;
+    display: block;
+}
+.logo {
+
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+    height: 45px;
+}
+
+#welcome {
+    float: left;
+    padding: 0;
+    margin-top: 25px;
+    width: 48%;
+}
+
+.welcomeuser {
+    text-align: center;
+}
+.welcometext {
+    font-size: 11px;
+    color: #000000;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+}
+.welcomeuser-margin {
+    float: left;
+    color: #000000;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    margin-right: 30px;
+}
+
+.logintimearea {
+    float: right;
+    text-align: right;
+}
+
+.logintime {
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+}
+.toplinks {
+    float: right;
+    color: #000;
+    padding-top: 7px;
+    text-align: right;
+    display: -webkit-inline-box;
+}
+.elink6, a.elink6:link, a.elink6:active, a.elink6:visited {
+    font-size: 10px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    float: left;
+    padding-left:10px;
+}
+
+a.elink6:hover {
+    font-size: 10px;
+    color: #02bbcf;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.container {
+    padding: 0;
+}
+@media only screen and (min-width: 250px) and (max-width: 480px) {
+    .welcomepagebg {
+        height: auto;
+        min-height: 485px;
+        padding-bottom: 0.9%;
+        background-color: #124679 !important;
+        background: url('Images/wel_bg.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .welcomeleft {
+        background-image: url('Images/welcomeleft.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+    }
+
+    .welcomeright {
+        float: left;
+        background-image: url('Images/welcomeright.png');
+    }
+
+    .change_pw_icon {
+        background: url('Images/change_pw.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .logout_icon {
+        background: url('Images/logout.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .icon_text {
+        height: 16px;
+        font-size: 11px;
+        line-height: 11px;
+        display: none;
+    }
+
+    .logo {
+        width: 100%;
+        background-position-y: center;
+        display: block;
+        overflow: hidden;
+    }
+
+    .part_1, .part_2, .part_3, .part_4, .part_5, .part_6, .part_7 {
+        width: 98%;
+        display:block;
+        float: left;
+        overflow: auto;
+    }
+ 
+     .part_8, .part_9, .part_10 {
+        width: 98%;
+        display:block;
+        float: left;
+        overflow-y: hidden;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .welcomepagebg {
+        height: auto;
+        /*min-height: 485px;*/
+        padding-bottom: 0.9%;
+        background-color: #124679 !important;
+        background: url('Images/wel_bg.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .welcomeleft {
+        display: block;
+        background-image: url('Images/welcomeleft.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        width: 100%;
+    }
+
+    .welcomeright {
+        float: left;
+        background-image: url('Images/welcomeright.png');
+    }
+        .change_pw_icon {
+        background: url('Images/change_pw.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .logout_icon {
+        background: url('Images/logout.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+       .icon_text {
+        height: 16px;
+        font-size: 11px;
+        line-height: 11px;
+        display: none;
+    }
+    .logo {
+        width: 100%;
+        background-position-y: center;
+        display: block;
+        overflow: hidden;
+    }
+        .part_1, .part_2, .part_3, .part_4, .part_5, .part_6, .part_7 {
+        width: 98%;
+        display:block;
+        float: left;
+        overflow: auto;
+    }
+ 
+     .part_8, .part_9, .part_10 {
+        width: 98%;
+        display:block;
+        float: left;
+        overflow: auto;
+        overflow-y: hidden;
+    }
+
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .welcomepagebg {
+        height: auto;
+        /*min-height: 485px;*/
+        padding-bottom: 0.9%;
+        background-color: #124679 !important;
+        background: url('Images/wel_bg.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .welcomeleft {
+        float: left;
+        margin-right: 2%;
+        margin-left: 10%;
+        background-image: url('Images/welcomeleft.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 400px;
+        width: 35%;
+    }
+
+    .welcomeright {
+        float: left;
+        background-image: url('Images/welcomeright.png');
+    }
+
+    .change_pw_icon {
+        background: url('Images/change_pw.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .logout_icon {
+        background: url('Images/logout.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .icon_text {
+        height: 16px;
+        font-size: 11px;
+        line-height: 11px;
+        display: none;
+    }
+
+    .logo {
+        width: 100%;
+        background-position-y: center;
+        display: block;
+        overflow: hidden;
+    }
+
+    .part_1, .part_2, .part_3, .part_4, .part_5, .part_6, .part_7 {
+        width: 98%;
+        display:block;
+        float: left;
+        overflow: auto;
+        overflow-y: hidden;
+    }
+ 
+     .part_8, .part_9, .part_10 {
+        width: 98%;
+        display:block;
+        float: left;
+        overflow: auto;
+        overflow-y: hidden;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+   .welcomepagebg {
+        height: auto;
+        min-height: 485px;
+        padding-bottom: 0.9%;
+        background-color: #124679 !important;
+        background: url('Images/wel_bg.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .welcomeleft {
+        float: left;
+        margin-right: 2%;
+        margin-left: 10%;
+        background-image: url('Images/welcomeleft.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 400px;
+        width: 35%;
+    }
+
+    .welcomeright {
+        float: left;
+        background-image: url('Images/welcomeright.png');
+    }
+
+    .logo {
+        width: 100%;
+        /*display: block;
+        overflow: hidden;*/
+    }
+    
+}
+
+@media only screen and (min-width: 1024px) {
+   .welcomepagebg {
+        height: auto;
+        min-height: 485px;
+        padding-bottom: 0.9%;
+        background-color: #124679 !important;
+        background: url('Images/wel_bg.png') no-repeat center center;
+        background-size: cover;
+    }
+
+    .welcomeleft {
+        float: left;
+        margin-right: 2%;
+        margin-left: 10%;
+        background-image: url('Images/welcomeleft.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 400px;
+        width: 35%;
+    }
+
+    .welcomeright {
+        float: left;
+        background-image: url('Images/welcomeright.png');
+    }
+
+    .change_pw_icon {
+        background: url('Images/change_pw.png') no-repeat left top;
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+        margin-top: 5px;
+        display: none;
+    }
+
+    .change_pw_text {
+        height: 16px;
+        font-size: 11px;
+        line-height: 11px;
+    }
+
+    .logo {
+        display: block;
+        overflow: hidden;
+    }
+}

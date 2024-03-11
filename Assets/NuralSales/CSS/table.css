@@ -1,0 +1,16 @@
+
+div#tblcontainer 			{ overflow: auto; WIDTH: 900px; SCROLLBAR-BASE-COLOR: #c4cfc4; HEIGHT: 500px }
+div#tblcontainer table th 	{ WIDTH: 120px }
+div#tblcontainer table th.Model { WIDTH: 70px;  }
+
+thhead th 		{ BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 7px; FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #333; HEIGHT: 28px; BACKGROUND-COLOR: #c4cfc4; TEXT-ALIGN: left }
+thead th.locked { BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 7px; FONT-WEIGHT: bold; FONT-SIZE: 10px; CURSOR: default; POSITION: relative; HEIGHT: 28px;  BACKGROUND-COLOR: #c4cfc4; Z-INDEX: 30;}
+thead th 		{ Z-INDEX: 20; top: expression(parentNode.parentNode.parentNode.parentNode.scrollTop-2);}
+td.locked 		{ BORDER-RIGHT: silver 1px solid; PADDING-LEFT: 13px;  Z-INDEX: 10; LEFT: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft-2); POSITION: relative; BACKGROUND-COLOR: #c4cfc4 }
+th.locked 		{ BORDER-RIGHT: silver 1px solid; FONT-WEIGHT: bold; Z-INDEX: 10; LEFT: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft-2); POSITION: relative; BACKGROUND-COLOR: #ffeaff }
+button 			{ BORDER-RIGHT: #78a178 1px solid; BORDER-TOP: #78a178 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 10px; BORDER-LEFT: #78a178 1px solid; COLOR: #333; BORDER-BOTTOM: #78a178 1px solid; BACKGROUND-COLOR: #c7d3c7 }
+	
+td.inputboxtd		{ padding-left:7px; padding-right:5px; FONT-SIZE: 9px; } 
+td.inputboxtd input	{ width: 40px; }  
+
+thead th, thead th.locked { font-size: 10px; text-align: center; background-color: #c4cfc4; border-right: 1px solid silver; position:relative; cursor: default; }

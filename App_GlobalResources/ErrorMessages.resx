@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CityLength" xml:space="preserve">
+    <value>The City Name should be of maximum length 50</value>
+  </data>
+  <data name="CountryLength" xml:space="preserve">
+    <value>The Country Name should be of maximum length 50</value>
+  </data>
+  <data name="DisplayOrderValidation" xml:space="preserve">
+    <value>The display order should be of maximum 3 digits</value>
+  </data>
+  <data name="DuplicateBrand" xml:space="preserve">
+    <value>Brand name or Brand Sap Code already exist</value>
+  </data>
+  <data name="DuplicateCity" xml:space="preserve">
+    <value>City name already exist in selected State</value>
+  </data>
+  <data name="DuplicateCityGroup" xml:space="preserve">
+    <value>Duplicate City Group Name</value>
+  </data>
+  <data name="DuplicateClassification" xml:space="preserve">
+    <value>Classification Name already exist in Selected ProductCategory.</value>
+  </data>
+  <data name="DuplicateClassificationCode" xml:space="preserve">
+    <value>Classification Code already exist</value>
+  </data>
+  <data name="DuplicateCountry" xml:space="preserve">
+    <value>Country name already exist</value>
+  </data>
+  <data name="DuplicateDistrict" xml:space="preserve">
+    <value>District name already exist in selected Country.</value>
+  </data>
+  <data name="DuplicateEntitySapCode" xml:space="preserve">
+    <value>Duplicate Entity Sap Code.</value>
+  </data>
+  <data name="DuplicateForm" xml:space="preserve">
+    <value>Duplicate Form Name</value>
+  </data>
+  <data name="DuplicateLocality" xml:space="preserve">
+    <value>Locality name already exist in selected City</value>
+  </data>
+  <data name="DuplicatePartSpec" xml:space="preserve">
+    <value>Duplicate Part Specification For PartCode.</value>
+  </data>
+  <data name="DuplicateProduct" xml:space="preserve">
+    <value>Duplicate Terminal Model</value>
+    <comment>Duplicate Product Name</comment>
+  </data>
+  <data name="DuplicateProductCategoryCode" xml:space="preserve">
+    <value>Duplicate Product Category Code.</value>
+  </data>
+  <data name="DuplicateProductCategoryName" xml:space="preserve">
+    <value>Duplicate Product Category Name.</value>
+  </data>
+  <data name="DuplicateProductCode" xml:space="preserve">
+    <value>Duplicate Product Code</value>
+  </data>
+  <data name="DuplicateProductWarranty" xml:space="preserve">
+    <value>Duplicate Product Warranty.</value>
+  </data>
+  <data name="DuplicateRegion" xml:space="preserve">
+    <value>Region name already exist in selected Country</value>
+  </data>
+  <data name="DuplicateReportingState" xml:space="preserve">
+    <value>Reporting State name already exist in selected Country</value>
+  </data>
+  <data name="DuplicateRole" xml:space="preserve">
+    <value>Duplicate Role.</value>
+  </data>
+  <data name="DuplicateSerialCode" xml:space="preserve">
+    <value>Duplicate Serial Code</value>
+  </data>
+  <data name="DuplicateSerialValue" xml:space="preserve">
+    <value>Duplicate Year</value>
+  </data>
+  <data name="DuplicateState" xml:space="preserve">
+    <value>State name already exist in selected Country</value>
+  </data>
+  <data name="DuplicateSubClassification" xml:space="preserve">
+    <value>Sub Classification name already exist in selected Classification</value>
+  </data>
+  <data name="DuplicateSubClassificationCode" xml:space="preserve">
+    <value>Sub Classification Code already exist</value>
+  </data>
+  <data name="DuplicateTax" xml:space="preserve">
+    <value>Duplicate Tax Name</value>
+  </data>
+  <data name="DuplicateTaxGroup" xml:space="preserve">
+    <value>Duplicate Tax Group.</value>
+  </data>
+  <data name="DuplicateUOM" xml:space="preserve">
+    <value>UOM already exist</value>
+  </data>
+  <data name="DuplicateZone" xml:space="preserve">
+    <value>Zone name already exist in selected Country</value>
+  </data>
+  <data name="InactivePartSpec" xml:space="preserve">
+    <value>PartSpecification is  for Inactive Part not Allowed.</value>
+  </data>
+  <data name="InactiveProduct" xml:space="preserve">
+    <value>Product is inactive</value>
+  </data>
+  <data name="InvalidRecords" xml:space="preserve">
+    <value>Data have some invalid Records!</value>
+  </data>
+  <data name="LocalityLength" xml:space="preserve">
+    <value>The Locality Name should be of maximum length 50</value>
+  </data>
+  <data name="NotExistLocalityName" xml:space="preserve">
+    <value>Localitiy Name does not exist for the selected City.</value>
+  </data>
+  <data name="NotExistProductCode" xml:space="preserve">
+    <value>Product Code does not exist.</value>
+  </data>
+  <data name="NotExistsCategorySerialCode" xml:space="preserve">
+    <value>Serial Code Doesn't exists for Categoy of Part</value>
+  </data>
+  <data name="NotExistSerialCodeProductCategory" xml:space="preserve">
+    <value>Serial Code for the product category does not exist</value>
+  </data>
+  <data name="NotExistSerialCodeProductSC" xml:space="preserve">
+    <value>Serial Code for the product sub classification does not exist</value>
+  </data>
+  <data name="NotExistSerialCodeYear" xml:space="preserve">
+    <value>Serial Code for the year does not exist</value>
+  </data>
+  <data name="NotExistsMonthSerialCode" xml:space="preserve">
+    <value>Serial Code Doesn't exists for Current Month</value>
+  </data>
+  <data name="NotExistsYearSerialCode" xml:space="preserve">
+    <value>Serial Code Doesn't exists for Current Year</value>
+  </data>
+  <data name="NotExitsPlantSerialCode" xml:space="preserve">
+    <value>Serial Code Doesn't exists for Plant </value>
+  </data>
+  <data name="NotExitsSeriesSerialCode" xml:space="preserve">
+    <value>Serial Code Doesn't exists for SubClassification of Part</value>
+  </data>
+  <data name="NotSaved" xml:space="preserve">
+    <value>Record Could not be saved</value>
+    <comment>Deprecated</comment>
+  </data>
+  <data name="NotUpdate" xml:space="preserve">
+    <value>Record Could not be Updated</value>
+    <comment>Deprecated</comment>
+  </data>
+  <data name="PartExist" xml:space="preserve">
+    <value>Part does not exist</value>
+  </data>
+  <data name="PinCodeValidation" xml:space="preserve">
+    <value>The PinCode should be  of exactly 6 digits </value>
+  </data>
+  <data name="StateLength" xml:space="preserve">
+    <value>The State Name should be of maximum length 50</value>
+  </data>
+  <data name="UPloadFail" xml:space="preserve">
+    <value>Records can't be uploaded due to some problem</value>
+  </data>
+  <data name="ValidCountryLength" xml:space="preserve">
+    <value>The Country Name should be of maximum length 50</value>
+  </data>
+  <data name="ValidPartCode" xml:space="preserve">
+    <value>The  Part Code should not exceed more than 20 characters</value>
+  </data>
+  <data name="ValidPrice" xml:space="preserve">
+    <value>The Price should not exceed more than 8 digits</value>
+  </data>
+  <data name="ValidPriceType" xml:space="preserve">
+    <value>The Price Type should not exceed more than 20 characters</value>
+  </data>
+  <data name="WrongDCBus" xml:space="preserve">
+    <value>DCBus Should be multiple of 12</value>
+  </data>
+  <data name="InValidPercentage" xml:space="preserve">
+    <value>Percentage entered is not valid</value>
+  </data>
+  <data name="InValidActivationDate" xml:space="preserve">
+    <value>Tax already exists on this date </value>
+  </data>
+  <data name="InValidTaxDate" xml:space="preserve">
+    <value>Tax date must be greater than the current date</value>
+  </data>
+  <data name="NotSelectEntity" xml:space="preserve">
+    <value>User has not select any Entity.</value>
+  </data>
+  <data name="NotSelectRole" xml:space="preserve">
+    <value>User has not select any Role.</value>
+  </data>
+  <data name="DuplicateCompanyName" xml:space="preserve">
+    <value>Duplicate Entity CompanyName</value>
+  </data>
+  <data name="DuplicateAccountNumber" xml:space="preserve">
+    <value>Duplicate Account Number.</value>
+  </data>
+  <data name="DuplicatePriceGroup" xml:space="preserve">
+    <value>Duplicate Price Group</value>
+  </data>
+  <data name="ValidPriceGroupLength" xml:space="preserve">
+    <value>The Price Group Length should not exceed 50 characters</value>
+  </data>
+  <data name="DuplicateEntityPriceGroup" xml:space="preserve">
+    <value>Entity Price Group already defined in this Date Range.</value>
+  </data>
+  <data name="DuplicateEntityCreditTerm" xml:space="preserve">
+    <value>Duplicate Entity Credit Term</value>
+  </data>
+  <data name="DuplicateSerialNumber" xml:space="preserve">
+    <value>Duplicate SerialNumber , Please check the excel sheet.</value>
+  </data>
+  <data name="ErrorProneData" xml:space="preserve">
+    <value>Excel file contains error. Please correct data before uploading.</value>
+  </data>
+  <data name="PartNotSerializable" xml:space="preserve">
+    <value>The selected part is not serializable or does not exists in masters</value>
+  </data>
+  <data name="DuplicateInfoWhileActiveing" xml:space="preserve">
+    <value>Can not active the Account information because this information is already exist</value>
+  </data>
+  <data name="DuplicateTaxRate" xml:space="preserve">
+    <value>Tax rate already exists for this date under the given State and Tax</value>
+  </data>
+  <data name="InvalidPriceGroupForMapping" xml:space="preserve">
+    <value>Price Group Is Inactive.</value>
+  </data>
+  <data name="DuplicatePrice" xml:space="preserve">
+    <value>The price already exists for this price type which is valid from same date. </value>
+  </data>
+  <data name="InValidDateRange" xml:space="preserve">
+    <value>The Date range is invalid</value>
+  </data>
+  <data name="SerialNumberCancelation" xml:space="preserve">
+    <value>SerialNumber is in Use, can not be Canceled.</value>
+  </data>
+  <data name="DuplicateServiceTax" xml:space="preserve">
+    <value>Duplicate Service Tax Information.</value>
+  </data>
+  <data name="DuplicateSymtomCode" xml:space="preserve">
+    <value>Problem Type with same code or description already exists.</value>
+    <comment>Symptom with same code or description already exists.</comment>
+  </data>
+  <data name="DuplicateDefectCode" xml:space="preserve">
+    <value>Defect with same code or description already exists.</value>
+  </data>
+  <data name="DuplicateRepairCode" xml:space="preserve">
+    <value>Repair with same code or description already exists.</value>
+  </data>
+  <data name="DuplicateInvoiceNumber" xml:space="preserve">
+    <value>Invoice Number is Duplicate.</value>
+  </data>
+  <data name="MappingNotFound" xml:space="preserve">
+    <value>SalesType Mapping not Found</value>
+  </data>
+  <data name="DuplicatePartWarranty" xml:space="preserve">
+    <value>Duplicate Part Warranty</value>
+  </data>
+  <data name="NotExistPartCode" xml:space="preserve">
+    <value>Part Code doesn't exists</value>
+  </data>
+  <data name="DuplicateRate" xml:space="preserve">
+    <value>Duplicate Travel Rate</value>
+  </data>
+  <data name="DuplicateExpirationPeriod" xml:space="preserve">
+    <value>Duplicate Expiration Period</value>
+  </data>
+  <data name="ValidFromDate" xml:space="preserve">
+    <value>Valid From Date Cannot be less than specified Valid From</value>
+  </data>
+  <data name="NoDistributor" xml:space="preserve">
+    <value>Please Select Distributor</value>
+  </data>
+  <data name="EffectiveDateNotLessTodaydate" xml:space="preserve">
+    <value>Effective  from date cannot be less than today date</value>
+  </data>
+  <data name="PartInactive" xml:space="preserve">
+    <value>This Part Is Inactive .</value>
+  </data>
+  <data name="DuplicatePromotionName" xml:space="preserve">
+    <value>Duplicate Promotion Name.</value>
+  </data>
+  <data name="EndDatenotlessCurrent" xml:space="preserve">
+    <value>End date cannot be less than Current Date.</value>
+  </data>
+  <data name="DuplicateShopName" xml:space="preserve">
+    <value>Shop Name Already Exists</value>
+  </data>
+  <data name="DuplicateEntityErpCode" xml:space="preserve">
+    <value>Duplicate Entity Erp Code.</value>
+  </data>
+  <data name="QuantityShouldMatchBatchNo" xml:space="preserve">
+    <value>Quantity Should Match BatchNo Qty of this Part Code</value>
+  </data>
+  <data name="QuantityShouldNotBeGreater" xml:space="preserve">
+    <value>It is Serialized part thus Quantity cannot be greater than one.</value>
+  </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value>Please insert the valid input.</value>
+  </data>
+  <data name="PromotionDurationAlready" xml:space="preserve">
+    <value>Promotion Duration Already Exists.</value>
+  </data>
+  <data name="NoDataForDispatch" xml:space="preserve">
+    <value>There is no data For dispatch.</value>
+  </data>
+  <data name="DuplicateEntityType" xml:space="preserve">
+    <value>Duplicate Entity Type</value>
+  </data>
+  <data name="DuplicateProcessKey" xml:space="preserve">
+    <value>Duplicate Process Key</value>
+  </data>
+  <data name="DuplicateBaseEntityType" xml:space="preserve">
+    <value>Duplicate Base Entity Type</value>
+  </data>
+  <data name="DuplicatePriceType" xml:space="preserve">
+    <value>Duplicate Price Type</value>
+  </data>
+  <data name="DuplicateEventName" xml:space="preserve">
+    <value>Duplicate Event Name</value>
+  </data>
+  <data name="DuplicateJobSheetType" xml:space="preserve">
+    <value>Duplicate Job Sheet Type</value>
+  </data>
+  <data name="DuplicateDurationName" xml:space="preserve">
+    <value>Duplicate Duration Name.</value>
+  </data>
+  <data name="DuplicateDurationDetailName" xml:space="preserve">
+    <value>Duplicate Duration Detail Name</value>
+  </data>
+  <data name="DuplicateDurationWithInSameGroup" xml:space="preserve">
+    <value>Duplicate Duration with in same Duration Group.</value>
+  </data>
+  <data name="DuplicateCodeNumber" xml:space="preserve">
+    <value>Duplicate Code Number Description</value>
+  </data>
+  <data name="DuplicateCodeNumberPrefix" xml:space="preserve">
+    <value>Duplicate Code Number Prefix</value>
+  </data>
+  <data name="InValidActiveFlags" xml:space="preserve">
+    <value>Invalid Active Flags in the Sheet</value>
+  </data>
+  <data name="InValidQuantityOrValue" xml:space="preserve">
+    <value>Inserted Value/Quantity is invalid</value>
+  </data>
+  <data name="DuplicateWarrantyType" xml:space="preserve">
+    <value>Duplicate Warranty Type</value>
+  </data>
+  <data name="PromotionDurationEndDate" xml:space="preserve">
+    <value>Promotion Duration Enddate can not be before Start Date.</value>
+  </data>
+  <data name="QuantityMusttbeone" xml:space="preserve">
+    <value>This is Serialized Part hence Multiple serial no not allowed.</value>
+  </data>
+  <data name="ValidDateNotLessCurrent" xml:space="preserve">
+    <value>Valid From Date Cannot be less than Current Date</value>
+  </data>
+  <data name="ValidTillManadatory" xml:space="preserve">
+    <value>Please Insert ValidTill</value>
+  </data>
+  <data name="DuplicateQuantity" xml:space="preserve">
+    <value>The quantity already exists for this entity type or entity which is valid from same date.</value>
+  </data>
+  <data name="ValidEntityType" xml:space="preserve">
+    <value>The Entity Type or Entity should not exceed more than 30 characters</value>
+  </data>
+  <data name="ValidQuantity" xml:space="preserve">
+    <value>The Quantity should not exceed more than 8 digits</value>
+  </data>
+  <data name="DuplicateCheckListText" xml:space="preserve">
+    <value>Duplicate checklist text</value>
+  </data>
+  <data name="EnterReffNumber" xml:space="preserve">
+    <value>Please enter ref Number</value>
+  </data>
+  <data name="InvoicePendingForPreviousPcSlip" xml:space="preserve">
+    <value>Invoice Pending for previous Packing Slip</value>
+  </data>
+  <data name="NotExistBatch" xml:space="preserve">
+    <value>BatchNumber Does not Exist</value>
+  </data>
+  <data name="NotExistSerialNumber" xml:space="preserve">
+    <value>SerialNumber does not exist.</value>
+  </data>
+  <data name="QuantityMismatch" xml:space="preserve">
+    <value>User has not inserted the Quantity according to the Batch/Serial</value>
+  </data>
+  <data name="SelectServiceCentre" xml:space="preserve">
+    <value>Select ASP Name.</value>
+    <comment>Client Specific -  Select service center.</comment>
+  </data>
+  <data name="WrongSapPartCode" xml:space="preserve">
+    <value>PartCodeInformation is wrong</value>
+  </data>
+</root>
